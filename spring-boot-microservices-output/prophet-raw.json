@@ -1,0 +1,1 @@
+{"global":{"projectName":"spring-boot-microservices","noCommunication":true,"communication":"graph TD\nN/A\n","noContextMap":true,"contextMap":"classDiagram\n","cannotClone":false},"ms":[{"name":"images","noBoundedContext":true,"notJava":true,"boundedContext":null}]}

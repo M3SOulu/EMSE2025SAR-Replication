@@ -1,0 +1,1 @@
+{"global":{"projectName":"blog-microservices","noCommunication":true,"communication":"graph TD\nN/A\n","noContextMap":true,"contextMap":"classDiagram\n","cannotClone":false},"ms":[{"name":"elk-config","noBoundedContext":true,"notJava":true,"boundedContext":null}]}
