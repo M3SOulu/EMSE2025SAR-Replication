@@ -42,7 +42,7 @@
 	url = https://github.com/rohitghatol/spring-boot-microservices.git
 [submodule "Springboot-Microservice"]
 	path = Springboot-Microservice
-	url = https://github.com/shabbirdwd53/Springboot-Microservice.git
+	url = https://github.com/M3SOulu/Springboot-Microservice.git
 [submodule "spring-petclinic-microservices"]
 	path = spring-petclinic-microservices
 	url = https://github.com/spring-petclinic/spring-petclinic-microservices.git
