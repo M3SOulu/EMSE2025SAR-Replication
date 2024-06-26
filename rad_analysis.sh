@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BASE_PATH="/Users/abakhtin22/Documents/StaticTools/SARbenchmarks"
-PROJECTS=$(<project_list.txt)
+PROJECTS=$(<spring_project_list.txt)
 
 for PROJECT in $PROJECTS; do
     PROJECT_PATH="${BASE_PATH}/${PROJECT}"
