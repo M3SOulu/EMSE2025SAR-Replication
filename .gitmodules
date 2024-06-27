@@ -3,52 +3,52 @@
 	url = https://github.com/M3SOulu/train-ticket.git
 [submodule "microservices-basics-spring-boot"]
 	path = microservices-basics-spring-boot
-	url = https://github.com/anilallewar/microservices-basics-spring-boot.git
+	url = https://github.com/M3SOulu/microservices-basics-spring-boot.git
 [submodule "java-microservice"]
 	path = java-microservice
-	url = https://github.com/apssouza22/java-microservice.git
+	url = https://github.com/M3SOulu/java-microservice.git
 [submodule "blog-microservices"]
 	path = blog-microservices
-	url = https://github.com/callistaenterprise/blog-microservices.git
+	url = https://github.com/M3SOulu/blog-microservices
 [submodule "microservice"]
 	path = microservice
-	url = https://github.com/ewolff/microservice.git
+	url = https://github.com/M3SOulu/microservice.git
 [submodule "microservice-kafka"]
 	path = microservice-kafka
-	url = https://github.com/ewolff/microservice-kafka.git
+	url = https://github.com/M3SOulu/microservice-kafka.git
 [submodule "spring-netflix-oss-microservices"]
 	path = spring-netflix-oss-microservices
-	url = https://github.com/fernandoabcampos/spring-netflix-oss-microservices.git
+	url = https://github.com/M3SOulu/spring-netflix-oss-microservices.git
 [submodule "apache-spring-boot-microservice-example"]
 	path = apache-spring-boot-microservice-example
-	url = https://github.com/georgwittberger/apache-spring-boot-microservice-example.git
+	url = https://github.com/M3SOulu/apache-spring-boot-microservice-example.git
 [submodule "Tap-And-Eat-MicroServices"]
 	path = Tap-And-Eat-MicroServices
 	url = https://github.com/M3SOulu/Tap-And-Eat-MicroServices.git
 [submodule "spring-boot-microservices-workshop"]
 	path = spring-boot-microservices-workshop
-	url = https://github.com/koushikkothagal/spring-boot-microservices-workshop.git
+	url = https://github.com/M3SOulu/spring-boot-microservices-workshop.git
 [submodule "spring-cloud-movie-recommendation"]
 	path = spring-cloud-movie-recommendation
-	url = https://github.com/mdeket/spring-cloud-movie-recommendation.git
+	url = https://github.com/M3SOulu/spring-cloud-movie-recommendation.git
 [submodule "microservices-sample"]
 	path = microservices-sample
-	url = https://github.com/mudigal-technologies/microservices-sample.git
+	url = https://github.com/M3SOulu/microservices-sample.git
 [submodule "sample-spring-oauth2-microservices"]
 	path = sample-spring-oauth2-microservices
-	url = https://github.com/piomin/sample-spring-oauth2-microservices.git
+	url = https://github.com/M3SOulu/sample-spring-oauth2-microservices.git
 [submodule "spring-boot-microservices"]
 	path = spring-boot-microservices
-	url = https://github.com/rohitghatol/spring-boot-microservices.git
+	url = https://github.com/M3SOulu/spring-boot-microservices.git
 [submodule "Springboot-Microservice"]
 	path = Springboot-Microservice
 	url = https://github.com/M3SOulu/Springboot-Microservice.git
 [submodule "spring-petclinic-microservices"]
 	path = spring-petclinic-microservices
-	url = https://github.com/spring-petclinic/spring-petclinic-microservices.git
+	url = https://github.com/M3SOulu/spring-petclinic-microservices-SAR.git
 [submodule "piggymetrics"]
 	path = piggymetrics
-	url = https://github.com/sqshq/piggymetrics.git
+	url = https://github.com/M3SOulu/piggymetrics.git
 [submodule "spring-cloud-netflix-example"]
 	path = spring-cloud-netflix-example
-	url = https://github.com/yidongnan/spring-cloud-netflix-example.git
+	url = https://github.com/M3SOulu/spring-cloud-netflix-example.git
