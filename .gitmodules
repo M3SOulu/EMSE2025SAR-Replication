@@ -52,3 +52,12 @@
 [submodule "spring-cloud-netflix-example"]
 	path = spring-cloud-netflix-example
 	url = https://github.com/M3SOulu/spring-cloud-netflix-example.git
+[submodule "DeathStarBench"]
+	path = DeathStarBench
+	url = https://github.com/M3SOulu/DeathStarBench.git
+[submodule "RPCover"]
+	path = RPCover
+	url = https://github.com/M3SOulu/RPCover.git
+[submodule "tms-testbed"]
+	path = tms-testbed
+	url = https://github.com/M3SOulu/tms-testbed.git
