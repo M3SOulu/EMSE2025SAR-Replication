@@ -5,6 +5,7 @@ while IFS=, read -r PROJECT ORG_PATH; do
         PATH_HERE=${PWD}/$PROJECT
         OUTPUT_PATH="${PATH_HERE}-output/rad-raw"
         mkdir -p $OUTPUT_PATH
+        echo "Analyzing project $PROJECT"
         curl --request POST \
             --url http://localhost:8080/ \
             --header 'content-type: application/json' \
