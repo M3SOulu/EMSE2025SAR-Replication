@@ -1,5 +1,3 @@
-Springboot-Microservice
-Tap-And-Eat-MicroServices
 apache-spring-boot-microservice-example
 blog-microservices
 java-microservice
@@ -15,4 +13,7 @@ spring-cloud-movie-recommendation
 spring-cloud-netflix-example
 spring-netflix-oss-microservices
 spring-petclinic-microservices
+Springboot-Microservice
+Tap-And-Eat-MicroServices
 train-ticket
+tms-testbed
