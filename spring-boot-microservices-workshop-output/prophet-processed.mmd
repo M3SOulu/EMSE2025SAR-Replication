@@ -1,0 +1,3 @@
+graph TD
+    movie-catalog-service-->|"HTTP Verb: GET<br/>Arguments: [@PathVariable('movieId') String movieId]<br/>Return: io.javabrains.movieinfoservice.models.Movie<br/>Endpoint function: io.javabrains.movieinfoservice.resources.MovieResource.getMovieInfo"|movie-info-service
+    movie-catalog-service-->|"HTTP Verb: GET<br/>Arguments: [@PathVariable('userId') String userId]<br/>Return: io.javabrains.ratingsdataservice.model.UserRating<br/>Endpoint function: io.javabrains.ratingsdataservice.resources.RatingsResource.getUserRatings"|ratings-data-service
