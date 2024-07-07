@@ -1,0 +1,6 @@
+microservice-demo/microservice-demo-catalog
+microservice-demo/microservice-demo-customer
+microservice-demo/microservice-demo-eureka-server
+microservice-demo/microservice-demo-order
+microservice-demo/microservice-demo-turbine-server
+microservice-demo/microservice-demo-zuul-server

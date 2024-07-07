@@ -1,0 +1,9 @@
+card-service
+card-statement-composite
+config-server
+discovery-service
+edge-server
+monitor-dashboard
+rabbit-mq-server
+statement-service
+turbine

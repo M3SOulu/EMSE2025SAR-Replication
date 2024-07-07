@@ -1,0 +1,9 @@
+api-gateway
+auth-server
+comments-webservice
+config-server
+task-webservice
+user-webservice
+web-portal
+webservice-registry
+zipkin-server
