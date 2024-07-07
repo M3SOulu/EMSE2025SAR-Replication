@@ -1,0 +1,5 @@
+mail-service
+user-service
+remainder-service
+proxy
+assets

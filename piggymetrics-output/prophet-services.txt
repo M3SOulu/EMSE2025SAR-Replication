@@ -1,0 +1,5 @@
+statistics-service
+account-service
+notification-service
+auth-service
+mongodb
