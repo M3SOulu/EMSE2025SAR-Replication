@@ -1,2 +1,2 @@
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/microservice/microservice-demo/microservice-demo-catalog --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/microservice/microservice-demo/microservice-demo-order
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/microservice/microservice-demo/microservice-demo-customer --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/microservice/microservice-demo/microservice-demo-order
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/microservice/microservice-demo/microservice-demo-catalog --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/microservice/microservice-demo/microservice-demo-order  /catalog/{id}
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/microservice/microservice-demo/microservice-demo-customer --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/microservice/microservice-demo/microservice-demo-order  /customer/{id}

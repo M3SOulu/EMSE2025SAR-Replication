@@ -1,14 +1,14 @@
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-qms
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ums
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ums
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ums
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ums
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-qms
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ums
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems  /exam/finish/{id}
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems  /exam/finish/{id}
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems  /exam
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems  /exam/getByUsername/{username}
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems  /exam/{id}/questions
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems  /exam
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems  /exam/getByUsername/{username}
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-qms  /question/all
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ums  /userinfo/emailInUse/{email}
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ums  /userinfo/emailInUse/{email}
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ums  /userinfo/userById/{id}
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-cms --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ums  /userinfo/userByUsername/{username}
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-qms  /test
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ems --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/tms-testbed/tms-ums  /userinfo/emailInUse/{email}

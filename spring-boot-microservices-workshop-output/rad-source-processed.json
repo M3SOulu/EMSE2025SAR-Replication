@@ -1,2 +1,2 @@
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/spring-boot-microservices-workshop/movie-catalog-service --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/spring-boot-microservices-workshop/movie-info-service
-/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/spring-boot-microservices-workshop/movie-catalog-service --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/spring-boot-microservices-workshop/ratings-data-service
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/spring-boot-microservices-workshop/movie-catalog-service --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/spring-boot-microservices-workshop/movie-info-service  /movies/{movieId}
+/Users/abakhtin22/Documents/StaticTools/SARbenchmarks/spring-boot-microservices-workshop/movie-catalog-service --> /Users/abakhtin22/Documents/StaticTools/SARbenchmarks/spring-boot-microservices-workshop/ratings-data-service  /ratingsdata/user/{userId}
