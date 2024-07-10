@@ -10,12 +10,8 @@ fi
 
 #LIST ALL MICROSERVICE ROOTS IN SYSTEM
 
-SERVICES=()
-SERVICE_LIST=$MS_ROOT-service-list.txt
-while IFS= read -r line; do
-        SERVICES+=("$PROJECT_PATH/$line")
-done < "$SERVICE_LIST"
-
+microservices=$(jq -r '.microservices[].microserviceName' $1 | tr '\n' ' ')
+microservices=($microservices)
 directory="${MS_ROOT}"
 
 cd $directory
@@ -25,8 +21,8 @@ cd -
 target_dir="target"
 ending=".jar"
 
-for microservice in "${SERVICES[@]}"; do
-    fatjar="${directory}/${microservice}/${target_dir}/*${ending}"
+for microservice in "${microservices[@]}"; do
+    fatjar="${directory}/${microservice}/${target_dir}/${microservice}*${ending}"
     output_path="${directory}/${microservice}/${target_dir}"
     unzip -o $fatjar -d $output_path
     lib_dir="${directory}/${microservice}/${target_dir}/BOOT-INF/lib/"
