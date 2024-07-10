@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "microservice-demo-zuul-server",
+			"fullName" : "microservice-demo-zuul-server"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

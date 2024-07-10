@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "microservice-demo-turbine-server",
+			"fullName" : "microservice-demo-turbine-server"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

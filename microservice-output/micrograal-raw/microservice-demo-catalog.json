@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "microservice-demo-catalog",
+			"fullName" : "microservice-demo-catalog"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	
