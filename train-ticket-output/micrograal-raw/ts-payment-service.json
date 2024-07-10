@@ -1,0 +1,261 @@
+{
+		"name" : {
+			"name" : "ts-payment-service",
+			"fullName" : "ts-payment-service"
+			}
+		,
+		"entities" : [
+			{
+				"entityName" : {
+					"name" : "Payment",
+					"fullName" : "Payment"
+					}
+				,
+				"fields" : [
+					{
+						"name" : {
+							"name" : "orderId",
+							"fullName" : "orderId"
+							}
+						,
+						"type" : "String",
+						"annotations" : [
+							{
+								"name" : "@Column",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							
+							]
+						,
+						"isReference" : true,
+						"entityRefName" : "String",
+						"isCollection" : false
+						}
+					,
+					{
+						"name" : {
+							"name" : "userId",
+							"fullName" : "userId"
+							}
+						,
+						"type" : "String",
+						"annotations" : [
+							{
+								"name" : "@Column",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							
+							]
+						,
+						"isReference" : true,
+						"entityRefName" : "String",
+						"isCollection" : false
+						}
+					,
+					{
+						"name" : {
+							"name" : "price",
+							"fullName" : "price"
+							}
+						,
+						"type" : "String",
+						"annotations" : [
+							{
+								"name" : "@Column",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							
+							]
+						,
+						"isReference" : true,
+						"entityRefName" : "String",
+						"isCollection" : false
+						}
+					,
+					{
+						"name" : {
+							"name" : "id",
+							"fullName" : "id"
+							}
+						,
+						"type" : "String",
+						"annotations" : [
+							{
+								"name" : "@Id",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							,
+							{
+								"name" : "@GeneratedValue",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							,
+							{
+								"name" : "@Column",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							
+							]
+						,
+						"isReference" : true,
+						"entityRefName" : "String",
+						"isCollection" : false
+						}
+					
+					]
+				
+				}
+			,
+			{
+				"entityName" : {
+					"name" : "Money",
+					"fullName" : "Money"
+					}
+				,
+				"fields" : [
+					{
+						"name" : {
+							"name" : "money",
+							"fullName" : "money"
+							}
+						,
+						"type" : "String",
+						"annotations" : [
+							]
+						,
+						"isReference" : true,
+						"entityRefName" : "String",
+						"isCollection" : false
+						}
+					,
+					{
+						"name" : {
+							"name" : "userId",
+							"fullName" : "userId"
+							}
+						,
+						"type" : "String",
+						"annotations" : [
+							{
+								"name" : "@Column",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							
+							]
+						,
+						"isReference" : true,
+						"entityRefName" : "String",
+						"isCollection" : false
+						}
+					,
+					{
+						"name" : {
+							"name" : "id",
+							"fullName" : "id"
+							}
+						,
+						"type" : "String",
+						"annotations" : [
+							{
+								"name" : "@Id",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							,
+							{
+								"name" : "@GeneratedValue",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							,
+							{
+								"name" : "@Column",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							
+							]
+						,
+						"isReference" : true,
+						"entityRefName" : "String",
+						"isCollection" : false
+						}
+					
+					]
+				
+				}
+			
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			{
+				"httpMethod" : "GET",
+				"parentMethod" : "com.trainticket.controller.PaymentController.home",
+				"arguments" : [
+					]
+				,
+				"returnType" : "class java.lang.String",
+				"path" : "/api/v1/paymentservice/welcome",
+				"isCollection" : false,
+				"endpointInClassName" : "com.trainticket.controller.PaymentController",
+				"msName" : "ts-payment-service"
+				}
+			,
+			{
+				"httpMethod" : "POST",
+				"parentMethod" : "com.trainticket.controller.PaymentController.pay",
+				"arguments" : [
+					"@RequestBody Payment info",
+					"@RequestHeader HttpHeaders headers"
+					]
+				,
+				"returnType" : "class org.springframework.http.HttpEntity",
+				"path" : "/api/v1/paymentservice/payment",
+				"isCollection" : false,
+				"endpointInClassName" : "com.trainticket.controller.PaymentController",
+				"msName" : "ts-payment-service"
+				}
+			,
+			{
+				"httpMethod" : "POST",
+				"parentMethod" : "com.trainticket.controller.PaymentController.addMoney",
+				"arguments" : [
+					"@RequestBody Payment info",
+					"@RequestHeader HttpHeaders headers"
+					]
+				,
+				"returnType" : "class org.springframework.http.HttpEntity",
+				"path" : "/api/v1/paymentservice/payment/money",
+				"isCollection" : false,
+				"endpointInClassName" : "com.trainticket.controller.PaymentController",
+				"msName" : "ts-payment-service"
+				}
+			,
+			{
+				"httpMethod" : "GET",
+				"parentMethod" : "com.trainticket.controller.PaymentController.query",
+				"arguments" : [
+					"@RequestHeader HttpHeaders headers"
+					]
+				,
+				"returnType" : "class org.springframework.http.HttpEntity",
+				"path" : "/api/v1/paymentservice/payment",
+				"isCollection" : false,
+				"endpointInClassName" : "com.trainticket.controller.PaymentController",
+				"msName" : "ts-payment-service"
+				}
+			
+			]
+		
+		}
+	
