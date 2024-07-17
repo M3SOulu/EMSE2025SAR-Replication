@@ -1,0 +1,29 @@
+{
+  "systemName": "spring-boot-microservices-workshop",
+  "microservices": [
+    {
+      "baseDir": "$MS_ROOT/discovery-server",
+      "basePackage": "discoveryserver",
+      "microserviceName": "discovery-server"
+    },
+    {
+      "baseDir": "$MS_ROOT/movie-catalog-service",
+      "basePackage": "moviecatalogservice",
+      "microserviceName": "movie-catalog-service"
+    },
+    {
+      "baseDir": "$MS_ROOT/movie-info-service",
+      "basePackage": "movieinfoservice",
+      "microserviceName": "movie-info-service"
+    },
+    {
+      "baseDir": "$MS_ROOT/ratings-data-service",
+      "basePackage": "ratingsdataservice",
+      "microserviceName": "ratings-data-service"
+    }
+  ]
+}
+
+
+
+

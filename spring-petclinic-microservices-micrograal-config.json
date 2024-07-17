@@ -1,0 +1,40 @@
+{
+  "systemName": "spring-petclinic-microservices",
+  "microservices": [
+    {
+      "baseDir": "$MS_ROOT/spring-petclinic-admin-server",
+      "basePackage": "admin",
+      "microserviceName": "spring-petclinic-admin-server"
+    },
+    {
+      "baseDir": "$MS_ROOT/spring-petclinic-api-gateway",
+      "basePackage": "api",
+      "microserviceName": "spring-petclinic-api-gateway"
+    },
+    {
+      "baseDir": "$MS_ROOT/spring-petclinic-config-server",
+      "basePackage": "config",
+      "microserviceName": "spring-petclinic-config-server"
+    },
+    {
+      "baseDir": "$MS_ROOT/spring-petclinic-customers-service",
+      "basePackage": "customers",
+      "microserviceName": "spring-petclinic-customers-service"
+    },
+    {
+      "baseDir": "$MS_ROOT/spring-petclinic-discovery-server",
+      "basePackage": "discovery",
+      "microserviceName": "spring-petclinic-discovery-server"
+    },
+    {
+      "baseDir": "$MS_ROOT/spring-petclinic-vets-service",
+      "basePackage": "vets",
+      "microserviceName": "spring-petclinic-vets-service"
+    },
+    {
+      "baseDir": "$MS_ROOT/spring-petclinic-visits-service",
+      "basePackage": "visits",
+      "microserviceName": "spring-petclinic-visits-service"
+    }
+  ]
+}

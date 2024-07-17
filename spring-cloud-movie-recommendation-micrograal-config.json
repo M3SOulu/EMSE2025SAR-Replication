@@ -1,0 +1,41 @@
+{
+  "systemName": "spring-cloud-movie-recommendation",
+  "microservices": [
+    {
+      "baseDir": "$MS_ROOT/config-service",
+      "basePackage": "example",
+      "microserviceName": "config-service"
+    },
+    {
+      "baseDir": "$MS_ROOT/eureka-service",
+      "basePackage": "example",
+      "microserviceName": "eureka-service"
+    },
+    {
+      "baseDir": "$MS_ROOT/movie-service",
+      "basePackage": "example",
+      "microserviceName": "movie-service"
+    },
+    {
+      "baseDir": "$MS_ROOT/recommendation-client",
+      "basePackage": "example",
+      "microserviceName": "recommendation-client"
+    },
+    {
+      "baseDir": "$MS_ROOT/recommendation-service",
+      "basePackage": "example",
+      "microserviceName": "recommendation-service"
+    },
+    {
+      "baseDir": "$MS_ROOT/user-service",
+      "basePackage": "example",
+      "microserviceName": "user-service"
+    }
+  ]
+}
+
+
+
+
+
+

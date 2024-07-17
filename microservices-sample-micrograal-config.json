@@ -1,0 +1,20 @@
+{
+  "systemName": "microservices-sample",
+  "microservices": [
+    {
+      "baseDir": "$MS_ROOT/api-gateway",
+      "basePackage": "mudigal",
+      "microserviceName": "api-gateway"
+    },
+    {
+      "baseDir": "$MS_ROOT/service-one",
+      "basePackage": "one",
+      "microserviceName": "service-one"
+    },
+    {
+      "baseDir": "$MS_ROOT/service-two",
+      "basePackage": "two",
+      "microserviceName": "service-two"
+    }
+  ]
+}

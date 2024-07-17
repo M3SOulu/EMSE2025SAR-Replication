@@ -1,0 +1,20 @@
+{
+  "systemName": "apache-spring-boot-microservice-example",
+  "microservices": [
+    {
+      "baseDir": "$MS_ROOT/cart-service",
+      "basePackage": "cartservice",
+      "microserviceName": "cart-service"
+    },
+    {
+      "baseDir": "$MS_ROOT/content-service",
+      "basePackage": "contentservice",
+      "microserviceName": "content-service"
+    },
+    {
+      "baseDir": "$MS_ROOT/product-service",
+      "basePackage": "productservice",
+      "microserviceName": "product-service"
+    }
+  ]
+}
