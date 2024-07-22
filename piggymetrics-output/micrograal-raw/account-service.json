@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "account-service",
+			"fullName" : "account-service"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

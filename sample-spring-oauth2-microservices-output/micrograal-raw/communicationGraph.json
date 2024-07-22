@@ -1,0 +1,1 @@
+{"nodes": [{"nodeName":"gateway","nodeType":"service"},{"nodeName":"account","nodeType":"service"},{"nodeName":"discovery","nodeType":"service"},{"nodeName":"auth","nodeType":"service"}], "links": []}

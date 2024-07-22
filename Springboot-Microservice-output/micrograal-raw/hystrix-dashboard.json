@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "hystrix-dashboard",
+			"fullName" : "hystrix-dashboard"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

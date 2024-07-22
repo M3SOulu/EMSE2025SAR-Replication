@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "jmx-monitoring",
+			"fullName" : "jmx-monitoring"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

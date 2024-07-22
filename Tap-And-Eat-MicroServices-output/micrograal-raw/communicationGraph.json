@@ -1,0 +1,1 @@
+{"nodes": [{"nodeName":"DiscoveryService","nodeType":"service"},{"nodeName":"FoodTrayService","nodeType":"service"},{"nodeName":"ConfigService","nodeType":"service"},{"nodeName":"StoreService","nodeType":"service"},{"nodeName":"AccountService","nodeType":"service"},{"nodeName":"CustomerService","nodeType":"service"},{"nodeName":"PriceService","nodeType":"service"}], "links": []}

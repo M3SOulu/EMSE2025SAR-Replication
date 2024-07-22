@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "movie-catalog-service",
+			"fullName" : "movie-catalog-service"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

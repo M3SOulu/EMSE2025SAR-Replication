@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "config-server",
+			"fullName" : "config-server"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

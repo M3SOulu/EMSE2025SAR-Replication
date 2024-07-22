@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "eureka-server",
+			"fullName" : "eureka-server"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

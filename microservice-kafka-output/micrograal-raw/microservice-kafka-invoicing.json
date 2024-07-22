@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "microservice-kafka-invoicing",
+			"fullName" : "microservice-kafka-invoicing"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "recommendation-service",
+			"fullName" : "recommendation-service"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

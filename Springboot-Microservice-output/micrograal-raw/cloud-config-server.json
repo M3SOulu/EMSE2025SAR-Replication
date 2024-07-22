@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "cloud-config-server",
+			"fullName" : "cloud-config-server"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	
