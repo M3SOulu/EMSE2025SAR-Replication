@@ -10,7 +10,7 @@ while IFS=, read -r PROJECT ORG_PATH; do
         mkdir -p $OUTPUT_PATH
         echo "Analyzing project $PROJECT"
         ./micrograal_setup.sh $CONFIG_PATH
-        $JAVA_HOME/bin/java -jar "${PROPHET_PLUGIN_HOME}"/graal-prophet-utils/target/graal-prophet-utils-0.0.8.jar $CONFIG_PATH
+        $JAVA_HOME/bin/java -jar "${PROPHET_PLUGIN_HOME}"/graal-prophet-utils/target/graal-prophet-utils-0.0.8.jar $CONFIG_PATH > "$PROJECT-micrograal-log.log" 2>&1
         mv -f output* $OUTPUT_PATH/micrograal-raw
 done < "$PROJECT_FILE"
 
