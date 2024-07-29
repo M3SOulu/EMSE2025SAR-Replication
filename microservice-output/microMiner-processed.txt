@@ -1,0 +1,21 @@
+TP eureka (eureka.default)
+TP zuul (zuul.default)
+FN user
+TP turbine (turbine.default)
+TP catalog (catalog.default)
+TP customer (customer.default)
+TP order (order.default)
+
+FN eureka -> zuul  
+FN user -> zuul 
+FN zuul -> user 
+FN turbine -> eureka 
+FN catalog -> eureka 
+FN customer -> eureka 
+FN order -> eureka 
+FN order -> catalog 
+FN order -> customer 
+FN order -> turbine 
+FN zuul -> customer 
+FN zuul -> catalog 
+FN zuul -> order 

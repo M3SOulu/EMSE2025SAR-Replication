@@ -1,0 +1,28 @@
+TP service_registry (eureka.default)
+TP config_server (cloud-config-server-app.default)
+FN github_repository 
+FN zipkin_server
+TP department_service (department-service-app.default)
+TP user_service (user-service-app.default)
+TP hystrix_dashboard (hystrix-dashboard-app.default)
+TP api_gateway (cloud-gateway-app.default)
+FN user
+
+FN github_repository -> config_server 
+FN config_server -> service_registry 
+FN department_service -> zipkin_server 
+FN config_server -> department_service 
+FN department_service -> service_registry 
+FN user_service -> zipkin_server 
+FN config_server -> user_service 
+FN user_service -> service_registry 
+FN user_service -> department_service 
+FN config_server -> hystrix_dashboard 
+FN hystrix_dashboard -> service_registry 
+FN api_gateway -> user 
+FN user -> api_gateway 
+FN service_registry -> api_gateway 
+FN config_server -> api_gateway 
+FN api_gateway -> user_service 
+FN api_gateway -> department_service 
+FN zipkin_server -> hystrix_dashboard 
