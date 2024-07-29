@@ -1,0 +1,40 @@
+TP admin_dashboard (admin_dashboard)
+TP eureka_server (eureka_server)
+TP rabbitmq (rabbitmq)
+TP config_server (config_server)
+TP hystrix_dashboard (hystrix_dashboard)
+TP service_a (service_a)
+TP service_b (service_b)
+TP zuul (zuul)
+FN user
+TP zipkin (zipkin)
+
+TP admin_dashboard -> config_server 
+TP config_server -> eureka_server 
+TP config_server -> rabbitmq 
+TP admin_dashboard -> eureka_server 
+TP admin_dashboard -> hystrix_dashboard 
+TP hystrix_dashboard -> eureka_server
+TP admin_dashboard -> service_a 
+TP service_a -> rabbitmq 
+TP config_server -> service_a 
+TP service_a -> eureka_server 
+TP service_a -> hystrix_dashboard 
+TP admin_dashboard -> service_b 
+TP service_b -> rabbitmq 
+TP config_server -> service_b 
+TP service_b -> eureka_server 
+TP service_a -> service_b 
+FN zuul -> user 
+FN user -> zuul 
+TP zuul -> service_a 
+TP eureka_server -> zuul 
+FN rabbitmq -> zipkin 
+TP service_b -> zipkin 
+TP service_b -> hystrix_dashboard 
+TP service_a -> zipkin 
+TP admin_dashboard -> rabbitmq 
+TP admin_dashboard -> zuul 
+TP zuul -> rabbitmq 
+TP zuul -> zipkin 
+TP zuul -> config_server 

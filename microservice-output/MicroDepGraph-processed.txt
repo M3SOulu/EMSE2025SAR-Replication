@@ -1,0 +1,21 @@
+TP eureka (eureka)
+TP zuul (zuul)
+FN user 
+TP turbine (turbine)
+TP catalog (catalog)
+TP customer (customer)
+TP order (order)
+
+TP eureka -> zuul  
+FN user -> zuul 
+FN zuul -> user 
+TP turbine -> eureka 
+TP catalog -> eureka 
+TP customer -> eureka 
+TP order -> eureka 
+FN order -> catalog 
+FN order -> customer 
+FN order -> turbine 
+FN zuul -> customer 
+FN zuul -> catalog 
+FN zuul -> order 
