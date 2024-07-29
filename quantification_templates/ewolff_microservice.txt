@@ -1,0 +1,21 @@
+eureka 
+zuul 
+user
+turbine
+catalog
+customer
+order
+
+eureka -> zuul  
+user -> zuul 
+zuul -> user 
+turbine -> eureka 
+catalog -> eureka 
+customer -> eureka 
+order -> eureka 
+order -> catalog 
+order -> customer 
+order -> turbine 
+zuul -> customer 
+zuul -> catalog 
+zuul -> order 

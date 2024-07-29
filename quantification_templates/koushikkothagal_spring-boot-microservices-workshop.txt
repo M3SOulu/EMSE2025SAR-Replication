@@ -1,0 +1,13 @@
+discovery_server 
+ratings_data_service 
+movie_info_service
+external_website
+movie_catalog_service
+
+ratings_data_service -> discovery_server 
+movie_info_service -> discovery_server 
+external_website -> movie_info_service 
+movie_catalog_service -> discovery_server 
+movie_catalog_service -> ratings_data_service 
+movie_catalog_service -> movie_info_service 
+

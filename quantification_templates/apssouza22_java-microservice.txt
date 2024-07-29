@@ -1,0 +1,50 @@
+config_server 
+admin 
+eureka_server
+user_service
+kafka 
+mailer 
+reminder
+api_gateway 
+oauth
+proxy 
+user 
+zookeeper
+logstash
+jmx_monitoring 
+todo_infra 
+
+admin -> config_server  
+config_server -> eureka_server 
+eureka_server -> admin 
+admin -> user_service 
+config_server -> user_service 
+admin -> mailer 
+config_server -> mailer 
+mailer -> eureka_server 
+kafka -> mailer 
+reminder -> eureka_server 
+admin -> reminder 
+config_server -> reminder 
+reminder -> kafka 
+eureka_server -> api_gateway 
+admin -> api_gateway 
+config_server -> api_gateway 
+api_gateway -> user_service 
+config_server -> oauth 
+oauth -> user_service 
+oauth -> eureka_server 
+admin -> oauth 
+user -> proxy 
+proxy -> user 
+proxy -> api_gateway 
+zookeeper -> kafka 
+proxy -> logstash 
+user_service -> logstash 
+reminder -> logstash 
+eureka_server -> logstash 
+api_gateway -> logstash 
+oauth -> logstash 
+admin -> logstash 
+config_server -> logstash 
+mailer -> logstash 

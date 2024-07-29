@@ -1,0 +1,30 @@
+config_service 
+github_repository 
+eureka_service
+movie_service
+database_movie_service
+user_service
+database_user_service
+recommendation_service
+database_recommendation_service
+recommendation_client
+user
+
+github_repository -> config_service 
+config_service -> eureka_service 
+movie_service -> eureka_service 
+config_service -> movie_service 
+database_movie_service -> movie_service 
+user_service -> eureka_service 
+config_service -> user_service 
+database_user_service -> user_service 
+recommendation_service -> eureka_service
+config_service -> recommendation_service 
+database_recommendation_service -> recommendation_service 
+eureka_service -> recommendation_client 
+user -> recommendation_client 
+recommendation_client -> user 
+config_service -> recommendation_client 
+recommendation_client -> recommendation_service 
+recommendation_client -> movie_service 
+recommendation_client -> user_service 
