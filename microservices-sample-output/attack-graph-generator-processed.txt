@@ -1,0 +1,119 @@
+TP consul (consul)
+FN consul2 
+FN consul3 
+TP elasticsearch (elasticsearch)
+TP logstash (logstash)
+TP kibana (kibana)
+TP rabbit (rabbitmq)
+TP service_one (_service-one)
+TP service_two (_service-two)
+TP service_one_db (mongo)
+TP service_two_db (mysql/mysql-server)
+TP api_gateway (_api-gateway)
+TP web_application (nginx)
+TP user (outside)
+TP scope (weaveworks/scope)
+
+FN consul2 -> consul 
+FN consul3 -> consul 
+FN consul3 -> consul2 
+TP logstash -> elasticsearch 
+TP elasticsearch -> kibana 
+TP consul -> service_one 
+TP service_one -> logstash 
+TP service_one -> rabbit 
+TP rabbit -> service_one 
+TP consul -> service_two 
+TP service_two -> logstash 
+TP service_two -> rabbit 
+TP rabbit -> service_two 
+TP service_one_db -> service_one 
+TP service_two_db -> service_two 
+TP api_gateway -> service_one 
+TP api_gateway -> service_two 
+TP consul -> api_gateway 
+TP user -> web_application 
+TP web_application -> user 
+FN web_application -> api_gateway 
+TP api_gateway -> scope 
+TP service_one -> scope 
+TP service_one_db -> scope 
+TP service_two -> scope 
+TP service_two_db -> scope 
+FN web_application -> scope 
+TP rabbit -> scope 
+TP consul -> scope 
+FN consul2 -> scope 
+FN consul3 -> scope 
+TP kibana -> scope 
+TP elasticsearch -> scope 
+TP logstash -> scope 
+
+FP:
+docker host
+mongo:4.2.21
+mysql/mysql-server:latest
+nginx:1.23.0-alpine
+rabbitmq:3.9.20-management-alpine
+consul:1.12.2
+weaveworks/scope:latest
+kibana:8.2.3
+elasticsearch:8.2.3
+logstash:8.2.3
+outside - logstash 
+outside - elasticsearch
+outside - weaveworks/scope
+outside - consul
+outside - rabbitmq
+outside - mongo
+outside - _api-gateway
+outside - _service-two
+outside - _service-one
+outside - mysql/mysql-server
+outside - kibana
+weaveworks/scope - docker host
+mysql/mysql-server - mongo
+mysql/mysql-server - _service-one
+mysql/mysql-server - _api-gateway
+mysql/mysql-server - docker host
+mysql/mysql-server - logstash
+mysql/mysql-server - kibana
+mysql/mysql-server - elasticsearch
+mysql/mysql-server - consul
+mysql/mysql-server - rabbitmq
+_service-one - docker host
+_service-one - kibana
+_service-one - _service-two
+_service-one - elasticsearch
+elasticsearch - mongo
+elasticsearch - _api-gateway
+elasticsearch - docker host
+elasticsearch - consul
+elasticsearch - rabbitmq
+elasticsearch - _service-two
+logstash - _api-gateway
+logstash - mongo
+logstash - rabbitmq
+logstash - kibana
+logstash - docker host
+logstash - consul
+_api-gateway - docker host
+_api-gateway - kibana
+_api-gateway - mongo
+_api-gateway - rabbitmq
+mongo - docker host
+mongo - kibana
+mongo - _service-two
+mongo - rabbitmq
+mongo - consul
+_service-two - kibana
+_service-two - docker host
+nginx - docker host
+rabbitmq - docker host
+rabbitmq - kibana
+rabbitmq - consul
+consul - docker host
+consul - kibana
+kibana - docker host
+consul- consul
+

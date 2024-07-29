@@ -1,0 +1,42 @@
+FN discovery_service 
+TP config_service (jferrat/ConfigService)
+FN github_repository 
+TP account_service (jferrat/AccountService)
+TP customer_service (jferrat/CustomerService)
+TP store_service (jferrat/StoreService)
+FN item_service
+TP price_service (jferrat/PriceService)
+FN foodtray_service
+
+FN github_repository -> config_service 
+FN config_service -> discovery_service 
+TP config_service -> account_service 
+FN account_service -> discovery_service 
+TP config_service -> customer_service 
+FN customer_service -> discovery_service 
+TP config_service -> store_service 
+FN store_service -> discovery_service 
+FN config_service -> item_service
+FN item_service -> discovery_service 
+TP config_service -> price_service 
+FN price_service -> discovery_service 
+FN config_service -> foodtray_service 
+FN foodtray_service -> discovery_service 
+FN foodtray_service -> item_service 
+FN foodtray_service -> price_service 
+
+FP
+outside
+docker host
+outside - jferrat/ConfigService
+docker host - jferrat/ConfigService
+docker host - jferrat/AccountService
+docker host - jferrat/PriceService
+docker host - jferrat/CustomerService
+docker host - jferrat/StoreService
+jferrat/AccountService - jferrat/PriceService
+jferrat/AccountService - jferrat/CustomerService
+jferrat/AccountService - jferrat/StoreService
+jferrat/PriceService - jferrat/CustomerService
+jferrat/StoreService - jferrat/CustomerService
+jferrat/PriceService - jferrat/StoreService
