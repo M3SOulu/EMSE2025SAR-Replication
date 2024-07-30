@@ -1,3 +1,4 @@
+Components:
 config_server 
 github_repository 
 discovery_service
@@ -10,6 +11,7 @@ card_statement_composite
 edge_server 
 user 
 
+Connections:
 github_repository -> config_server 
 config_server -> discovery_service 
 monitor_dashboard -> discovery_service 
@@ -34,3 +36,9 @@ config_server -> edge_server
 edge_server -> card_service 
 edge_server -> statement_service 
 edge_server -> card_statement_composite 
+
+Endpoints:
+card_service: "/api", "/api/cards", "/api/card/{cardId}", "/api/new-card"
+statement_service: "/api", "api/statement/{statementId}", "api/statement", "api/statements"
+card_statement_composite: "api", "/api/cards", "/api/card/{cardId}", "/api/new-card", "api/statement/{statementId}", "api/statement", "api/statements", "api/statement-by-card"
+monitor_dashboard: "/"
