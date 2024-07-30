@@ -1,3 +1,4 @@
+Components:
 config_server 
 admin 
 eureka_server
@@ -14,6 +15,7 @@ logstash
 jmx_monitoring 
 todo_infra 
 
+Connections:
 admin -> config_server  
 config_server -> eureka_server 
 eureka_server -> admin 
@@ -48,3 +50,10 @@ oauth -> logstash
 admin -> logstash 
 config_server -> logstash 
 mailer -> logstash 
+
+Endpoints:
+api_gateway: "/todos", "/todos/search", "/accounts", "/accounts/me", "/accounts/me/todos", "/accounts/search", "/users"
+oauth: "/accounts/search"
+reminder: "/todo-changes", "/todos", "/todos/search", "/todos/{id}", "/todos/{id}/status", "/todo-statistics"
+mailer: "/emails", "/send", "/send/email"
+user_service: "/accounts", "/accounts/{id}", "/accounts/search"
