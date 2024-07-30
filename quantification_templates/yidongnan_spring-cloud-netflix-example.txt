@@ -1,3 +1,4 @@
+Components:
 admin_dashboard 
 eureka_server 
 rabbitmq 
@@ -9,6 +10,7 @@ zuul
 user
 zipkin
 
+Connections:
 admin_dashboard -> config_server 
 config_server -> eureka_server 
 config_server -> rabbitmq 
@@ -38,3 +40,7 @@ admin_dashboard -> zuul
 zuul -> rabbitmq 
 zuul -> zipkin 
 zuul -> config_server 
+
+Endpoints:
+service_a: "/"
+service_b: "/"

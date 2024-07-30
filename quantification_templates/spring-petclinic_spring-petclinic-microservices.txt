@@ -1,3 +1,4 @@
+Components:
 config_server 
 github_repository 
 discovery_server
@@ -11,6 +12,7 @@ visits_service
 api_gateway
 user
 
+Connections:
 github_repository -> config_server 
 config_server -> discovery_server 
 tracing_server -> discovery_server 
@@ -39,3 +41,8 @@ api_gateway -> vets_service
 api_gateway -> visits_service 
 api_gateway -> customers_service 
 api_gateway -> tracing_server 
+
+Endpoints:
+api_gateway: "/api/gatewayowners/{ownerId}", "/api/gateway"
+customers_service: "/owners", "/owners/{ownerId}"
+vets_service: "/vets"

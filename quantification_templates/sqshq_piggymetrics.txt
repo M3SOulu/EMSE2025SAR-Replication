@@ -1,3 +1,4 @@
+Components:
 config 
 registry 
 monitoring
@@ -16,6 +17,7 @@ notification_mongodb
 gateway
 user
 
+Connections:
 config -> registry 
 config -> monitoring 
 turbine_stream_service -> registry 
@@ -53,3 +55,9 @@ gateway -> account_service
 gateway -> statistics_service 
 gateway -> notification_service 
 gateway -> auth_service 
+
+Endpoints:
+auth_service: "/users", "/users/current"
+account_service: "/{name}", "/", "/uaa/users", "/statistics/{accountName}", "/current"
+notification_service: "/accounts/{accountName}", "/recipients/current", "/recipients"
+statistics_service: "/latest", "/current", "/{accountName}"

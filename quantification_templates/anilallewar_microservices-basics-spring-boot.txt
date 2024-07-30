@@ -1,3 +1,4 @@
+Components:
 configserver
 github_repository 
 webservice_registry
@@ -11,6 +12,7 @@ task_webservice
 api_gateway
 user 
 
+Connections:
 github_repository -> configserver 
 configserver -> webservice_registry 
 configserver -> zipkin_tracing  
@@ -40,3 +42,9 @@ api_gateway -> zipkin_tracing
 auth_server -> api_gateway 
 api_gateway -> user_webservice 
 api_gateway -> task_webservice 
+
+Endpoints:
+auth_server: "/me"
+user_webservice: "/", "/{userName}"
+comments_webservice: "/comments", "/comments/{taskId}"
+task_webservice: "/", "/{taskId}", "/usertask/{userName}"

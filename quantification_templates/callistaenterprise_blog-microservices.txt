@@ -1,3 +1,4 @@
+Components:
 elasticsearch 
 kibana 
 logstash
@@ -16,6 +17,7 @@ composite_service
 edge_server 
 user 
 
+Connections:
 elasticsearch -> kibana  
 logstash -> elasticsearch 
 github_repository -> config_server 
@@ -58,3 +60,11 @@ composite_service -> logstash
 monitor_dashboard -> logstash 
 edge_server -> logstash 
 zipkin_server -> logstash 
+
+Endpoints:
+auth_server: "/user"
+product_service: "/product/{productId}", "/set-processing-time"
+recommendation_service: "/recommendation", "/set-processing-time"
+review_service: "/review", "/set-processing-time"
+composite_service: "/", "/{productId}"
+monitor_dashboard: "/"

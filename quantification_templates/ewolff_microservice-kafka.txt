@@ -1,3 +1,4 @@
+Components:
 zookeeper
 kafka
 shipping
@@ -7,6 +8,7 @@ apache
 user
 postgres
 
+Connections:
 zookeeper -> kafka
 order -> kafka
 kafka -> invoicing
@@ -19,3 +21,6 @@ apache -> user
 postgres -> order
 postgres -> shipping
 postgres -> invoicing
+
+Endpoints:
+order: "/order"
