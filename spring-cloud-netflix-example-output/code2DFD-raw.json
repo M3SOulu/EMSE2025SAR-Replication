@@ -1,0 +1,380 @@
+{
+    "microservices": {
+        "0": {
+            "servicename": "service-a",
+            "type": "service",
+            "gradle_path": "service-a/build.gradle",
+            "stereotype_instances": [
+                "csrf_disabled",
+                "circuit_breaker",
+                "internal"
+            ],
+            "tagged_values": [
+                [
+                    "Circuit Breaker",
+                    "Hystrix"
+                ],
+                [
+                    "Port",
+                    8080
+                ]
+            ]
+        },
+        "1": {
+            "servicename": "eureka-server",
+            "type": "service",
+            "gradle_path": "eureka-server/build.gradle",
+            "stereotype_instances": [
+                "service_discovery",
+                "csrf_disabled",
+                "infrastructural"
+            ],
+            "tagged_values": [
+                [
+                    "Port",
+                    8761
+                ],
+                [
+                    "Service Discovery",
+                    "Eureka"
+                ]
+            ]
+        },
+        "2": {
+            "servicename": "admin-dashboard",
+            "type": "service",
+            "gradle_path": "admin-dashboard/build.gradle",
+            "stereotype_instances": [
+                "csrf_disabled",
+                "infrastructural",
+                "administration_server"
+            ],
+            "tagged_values": [
+                [
+                    "Administration Server",
+                    "Spring Boot Admin"
+                ],
+                [
+                    "Port",
+                    8040
+                ]
+            ]
+        },
+        "3": {
+            "servicename": "hystrix-dashboard",
+            "type": "service",
+            "gradle_path": "hystrix-dashboard/build.gradle",
+            "stereotype_instances": [
+                "csrf_disabled",
+                "monitoring_server",
+                "monitoring_dashboard",
+                "infrastructural"
+            ],
+            "tagged_values": [
+                [
+                    "Monitoring Server",
+                    "Turbine"
+                ],
+                [
+                    "Port",
+                    8050
+                ],
+                [
+                    "Monitoring Dashboard",
+                    "Hystrix"
+                ]
+            ]
+        },
+        "4": {
+            "servicename": "service-b",
+            "type": "service",
+            "gradle_path": "service-b/build.gradle",
+            "stereotype_instances": [
+                "csrf_disabled",
+                "internal"
+            ],
+            "tagged_values": [
+                [
+                    "Port",
+                    8070
+                ]
+            ]
+        },
+        "5": {
+            "servicename": "zuul",
+            "type": "service",
+            "gradle_path": "zuul/build.gradle",
+            "stereotype_instances": [
+                "csrf_disabled",
+                "load_balancer",
+                "gateway",
+                "infrastructural"
+            ],
+            "tagged_values": [
+                [
+                    "Gateway",
+                    "Zuul"
+                ],
+                [
+                    "Load Balancer",
+                    "Ribbon"
+                ],
+                [
+                    "Port",
+                    8060
+                ]
+            ]
+        },
+        "6": {
+            "servicename": "config-server",
+            "type": "service",
+            "gradle_path": "config-server/build.gradle",
+            "stereotype_instances": [
+                "csrf_disabled",
+                "configuration_server",
+                "infrastructural"
+            ],
+            "tagged_values": [
+                [
+                    "Port",
+                    8100
+                ],
+                [
+                    "Configuration Server",
+                    "Spring Cloud Config"
+                ]
+            ]
+        },
+        "7": {
+            "servicename": "rabbitmq",
+            "type": "service",
+            "stereotype_instances": [
+                "message_broker",
+                "infrastructural"
+            ],
+            "tagged_values": [
+                [
+                    "Message Broker",
+                    "RabbitMQ"
+                ],
+                [
+                    "Port",
+                    4369
+                ]
+            ]
+        },
+        "8": {
+            "servicename": "zipkin",
+            "type": "service",
+            "stereotype_instances": [
+                "tracing_server",
+                "infrastructural"
+            ],
+            "tagged_values": [
+                [
+                    "Port",
+                    9411
+                ],
+                [
+                    "Tracing Server",
+                    "Zipkin"
+                ]
+            ]
+        }
+    },
+    "information_flows": {
+        "0": {
+            "sender": "config-server",
+            "receiver": "service-a",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "1": {
+            "sender": "config-server",
+            "receiver": "service-b",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "2": {
+            "sender": "config-server",
+            "receiver": "rabbitmq",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "3": {
+            "sender": "service-b",
+            "receiver": "hystrix-dashboard",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "4": {
+            "sender": "service-b",
+            "receiver": "rabbitmq",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "5": {
+            "sender": "service-b",
+            "receiver": "zipkin",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "6": {
+            "sender": "service-a",
+            "receiver": "service-b",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "7": {
+            "sender": "service-a",
+            "receiver": "hystrix-dashboard",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "8": {
+            "sender": "service-a",
+            "receiver": "rabbitmq",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "9": {
+            "sender": "service-a",
+            "receiver": "zipkin",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "10": {
+            "sender": "admin-dashboard",
+            "receiver": "rabbitmq",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "11": {
+            "sender": "admin-dashboard",
+            "receiver": "service-a",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "12": {
+            "sender": "admin-dashboard",
+            "receiver": "service-b",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "13": {
+            "sender": "admin-dashboard",
+            "receiver": "zuul",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "14": {
+            "sender": "admin-dashboard",
+            "receiver": "hystrix-dashboard",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "15": {
+            "sender": "zuul",
+            "receiver": "service-a",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "16": {
+            "sender": "zuul",
+            "receiver": "rabbitmq",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "17": {
+            "sender": "zuul",
+            "receiver": "zipkin",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "18": {
+            "sender": "eureka-server",
+            "receiver": "zuul",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "19": {
+            "sender": "hystrix-dashboard",
+            "receiver": "eureka-server",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "20": {
+            "sender": "admin-dashboard",
+            "receiver": "eureka-server",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "21": {
+            "sender": "service-b",
+            "receiver": "eureka-server",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "25": {
+            "sender": "config-server",
+            "receiver": "eureka-server",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "28": {
+            "sender": "service-a",
+            "receiver": "eureka-server",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "43": {
+            "sender": "user",
+            "receiver": "zuul",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "44": {
+            "sender": "zuul",
+            "receiver": "user",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        }
+    },
+    "external_components": {
+        "0": {
+            "name": "user",
+            "type": "external_component",
+            "stereotype_instances": [
+                "entrypoint",
+                "user_stereotype",
+                "exitpoint"
+            ]
+        }
+    }
+}

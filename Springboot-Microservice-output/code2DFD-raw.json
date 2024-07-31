@@ -1,0 +1,276 @@
+{
+    "microservices": {
+        "0": {
+            "servicename": "API-GATEWAY",
+            "type": "service",
+            "stereotype_instances": [
+                "gateway",
+                "circuit_breaker",
+                "infrastructural"
+            ],
+            "tagged_values": [
+                [
+                    "Circuit Breaker",
+                    "Hystrix"
+                ],
+                [
+                    "Port",
+                    9191
+                ],
+                [
+                    "Gateway",
+                    "Spring Cloud Gateway"
+                ]
+            ]
+        },
+        "1": {
+            "servicename": "DEPARTMENT-SERVICE",
+            "type": "service",
+            "stereotype_instances": [
+                "local_logging",
+                "internal"
+            ],
+            "tagged_values": [
+                [
+                    "Port",
+                    9001
+                ],
+                [
+                    "Endpoints",
+                    "['/departments/{id}', '/departments']"
+                ],
+                [
+                    "Logging Technology",
+                    "Lombok"
+                ]
+            ]
+        },
+        "2": {
+            "servicename": "CONFIG-SERVER",
+            "type": "service",
+            "stereotype_instances": [
+                "configuration_server",
+                "infrastructural"
+            ],
+            "tagged_values": [
+                [
+                    "Port",
+                    9296
+                ],
+                [
+                    "Configuration Server",
+                    "Spring Cloud Config"
+                ]
+            ]
+        },
+        "3": {
+            "servicename": "HYSTRIX-DASHBOARD",
+            "type": "service",
+            "stereotype_instances": [
+                "monitoring_dashboard",
+                "infrastructural"
+            ],
+            "tagged_values": [
+                [
+                    "Port",
+                    9295
+                ],
+                [
+                    "Monitoring Dashboard",
+                    "Hystrix"
+                ]
+            ]
+        },
+        "4": {
+            "servicename": "service-registry",
+            "type": "service",
+            "stereotype_instances": [
+                "service_discovery",
+                "infrastructural"
+            ],
+            "tagged_values": [
+                [
+                    "Port",
+                    8761
+                ],
+                [
+                    "Service Discovery",
+                    "Eureka"
+                ]
+            ]
+        },
+        "5": {
+            "servicename": "USER-SERVICE",
+            "type": "service",
+            "stereotype_instances": [
+                "local_logging",
+                "load_balancer",
+                "internal"
+            ],
+            "tagged_values": [
+                [
+                    "Logging Technology",
+                    "Lombok"
+                ],
+                [
+                    "Port",
+                    9002
+                ],
+                [
+                    "Endpoints",
+                    "['/users', '/users/{id}']"
+                ],
+                [
+                    "Load Balancer",
+                    "Spring Cloud"
+                ]
+            ]
+        },
+        "6": {
+            "servicename": "zipkin-server",
+            "stereotype_instances": [
+                "tracing_server",
+                "infrastructural"
+            ],
+            "tagged_values": [
+                [
+                    "Tracing Server",
+                    "Zipkin"
+                ]
+            ],
+            "type": "service"
+        }
+    },
+    "information_flows": {
+        "0": {
+            "sender": "github-repository",
+            "receiver": "CONFIG-SERVER",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "1": {
+            "sender": "CONFIG-SERVER",
+            "receiver": "API-GATEWAY",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "2": {
+            "sender": "CONFIG-SERVER",
+            "receiver": "DEPARTMENT-SERVICE",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "3": {
+            "sender": "CONFIG-SERVER",
+            "receiver": "HYSTRIX-DASHBOARD",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "4": {
+            "sender": "CONFIG-SERVER",
+            "receiver": "USER-SERVICE",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "5": {
+            "sender": "DEPARTMENT-SERVICE",
+            "receiver": "service-registry",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "6": {
+            "sender": "CONFIG-SERVER",
+            "receiver": "service-registry",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "7": {
+            "sender": "USER-SERVICE",
+            "receiver": "service-registry",
+            "stereotype_instances": [
+                "restful_http",
+                "load_balanced_link"
+            ],
+            "tagged_values": [
+                [
+                    "Load Balancer",
+                    "Spring Cloud"
+                ]
+            ]
+        },
+        "8": {
+            "sender": "service-registry",
+            "receiver": "API-GATEWAY",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "12": {
+            "sender": "HYSTRIX-DASHBOARD",
+            "receiver": "service-registry",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "15": {
+            "sender": "user",
+            "receiver": "API-GATEWAY",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "16": {
+            "sender": "API-GATEWAY",
+            "receiver": "user",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "17": {
+            "sender": "API-GATEWAY",
+            "receiver": "USER-SERVICE",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "18": {
+            "sender": "API-GATEWAY",
+            "receiver": "DEPARTMENT-SERVICE",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        }
+    },
+    "external_components": {
+        "0": {
+            "name": "github-repository",
+            "type": "external_component",
+            "stereotype_instances": [
+                "github_repository",
+                "entrypoint"
+            ],
+            "tagged_values": [
+                [
+                    "URL",
+                    "https://github.com/shabbirdwd53/config-server"
+                ]
+            ]
+        },
+        "1": {
+            "name": "user",
+            "type": "external_component",
+            "stereotype_instances": [
+                "user_stereotype",
+                "exitpoint",
+                "entrypoint"
+            ]
+        }
+    }
+}
