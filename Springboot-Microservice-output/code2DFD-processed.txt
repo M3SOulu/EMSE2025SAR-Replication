@@ -1,0 +1,35 @@
+Components:
+service_registry 
+config_server 
+github_repository 
+zipkin_server
+department_service
+user_service
+hystrix_dashboard
+api_gateway
+user
+
+Connections:
+github_repository -> config_server 
+config_server -> service_registry 
+department_service -> zipkin_server 
+config_server -> department_service 
+department_service -> service_registry 
+user_service -> zipkin_server 
+config_server -> user_service 
+user_service -> service_registry 
+user_service -> department_service 
+config_server -> hystrix_dashboard 
+hystrix_dashboard -> service_registry 
+api_gateway -> user 
+user -> api_gateway 
+service_registry -> api_gateway 
+config_server -> api_gateway 
+api_gateway -> user_service 
+api_gateway -> department_service 
+zipkin_server -> hystrix_dashboard 
+
+Endpoints:
+department_service: "/departments", "/departments/{id}"
+user_service: "/users", "/users/{id}"
+api_gateway: "/userServiceFallBack", "/departmentServiceFallBack"

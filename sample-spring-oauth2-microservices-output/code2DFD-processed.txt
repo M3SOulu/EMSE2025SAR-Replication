@@ -1,0 +1,28 @@
+Components:
+discovery_server 
+gateway_server 
+database_gateway_server
+user
+auth_server
+database_auth_server
+account_service
+customer_service
+
+Connections:
+discovery_server -> gateway_server 
+database_gateway_server -> gateway_server 
+user -> gateway_server 
+gateway_server -> user 
+auth_server -> discovery_server 
+database_auth_server -> auth_server 
+gateway_server -> auth_server
+account_service -> discovery_server 
+auth_server -> account_service 
+gateway_server -> account_service 
+customer_service -> discovery_server 
+customer_service -> account_service 
+auth_server -> customer_service 
+
+Endpoints:
+account_service: "/{id}", "/"
+customer_service: "/{id}"
