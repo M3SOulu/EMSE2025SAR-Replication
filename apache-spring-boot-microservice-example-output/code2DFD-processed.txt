@@ -1,19 +1,22 @@
 Components:
-apache_server 
-user 
-content_service 
-product_service 
-cart_service 
+TP apache_server (apache-server)
+TP user (user)
+TP content_service (content-service)
+TP product_service (product-service)
+TP cart_service (cart-service)
 
 Connections:
-user -> apache_server 
-apache_server -> user 
-cart_service -> product_service 
-apache_server -> cart_service 
-apache_server -> product_service 
-apache_server -> content_service 
+TP user -> apache_server 
+TP apache_server -> user 
+FN cart_service -> product_service 
+TP apache_server -> cart_service 
+TP apache_server -> product_service 
+TP apache_server -> content_service 
 
 Endpoints:
-cart_service: "/", "/count", "/add/{seoName}"
-content_service: "/"
-product_service: "/", "/{seoName}"
+FN cart_service: "/", "/count", "/add/{seoName}"
+FN content_service: "/"
+FN product_service: "/", "/{seoName}"
+
+Annotations (summary):
+
