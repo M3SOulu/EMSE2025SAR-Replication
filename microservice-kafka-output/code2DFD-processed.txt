@@ -1,26 +1,31 @@
 Components:
-zookeeper
-kafka
-shipping
-order
-invoicing
-apache
-user
-postgres
+TP zookeeper (zookeeper)
+TP kafka (kafka)
+TP shipping (shipping)
+TP order (order)
+TP invoicing (invoicing)
+TP apache (apache)
+TP user (user)
+TP postgres (postgres)
 
 Connections:
-zookeeper -> kafka
-order -> kafka
-kafka -> invoicing
-kafka -> shipping
-apache -> order
-apache -> shipping
-apache -> invoicing
-user -> apache
-apache -> user
-postgres -> order
-postgres -> shipping
-postgres -> invoicing
+TP zookeeper -> kafka
+TP order -> kafka
+TP kafka -> invoicing
+TP kafka -> shipping
+TP apache -> order
+TP apache -> shipping
+TP apache -> invoicing
+TP user -> apache
+TP apache -> user
+TP postgres -> order
+TP postgres -> shipping
+TP postgres -> invoicing
 
 Endpoints:
-order: "/order"
+TP(1) order: "/order"
+
+FP:
+order -> order
+shipping -> kafka
+invoicing -> kafka
