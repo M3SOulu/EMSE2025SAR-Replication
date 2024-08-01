@@ -1,59 +1,71 @@
 Components:
-config_server 
-admin 
-eureka_server
-user_service
-kafka 
-mailer 
-reminder
-api_gateway 
-oauth
-proxy 
-user 
-zookeeper
-logstash
-jmx_monitoring 
-todo_infra 
+TP config_server (config-server)
+TP admin (admin)
+TP eureka_server (eureka-server)
+TP user_service (user)
+TP kafka (kafka)
+TP mailer (mailer)
+TP reminder (reminder)
+TP api_gateway (api-gateway)
+TP oauth (oauth)
+TP proxy (proxy)
+FN user 
+TP zookeeper (zookeeper)
+TP logstash (logstash)
+TP jmx_monitoring (jmx-monitoring)
+TP todo_infra (todo-infra)
 
 Connections:
-admin -> config_server  
-config_server -> eureka_server 
-eureka_server -> admin 
-admin -> user_service 
-config_server -> user_service 
-admin -> mailer 
-config_server -> mailer 
-mailer -> eureka_server 
-kafka -> mailer 
-reminder -> eureka_server 
-admin -> reminder 
-config_server -> reminder 
-reminder -> kafka 
-eureka_server -> api_gateway 
-admin -> api_gateway 
-config_server -> api_gateway 
-api_gateway -> user_service 
-config_server -> oauth 
-oauth -> user_service 
-oauth -> eureka_server 
-admin -> oauth 
-user -> proxy 
-proxy -> user 
-proxy -> api_gateway 
-zookeeper -> kafka 
-proxy -> logstash 
-user_service -> logstash 
-reminder -> logstash 
-eureka_server -> logstash 
-api_gateway -> logstash 
-oauth -> logstash 
-admin -> logstash 
-config_server -> logstash 
-mailer -> logstash 
+TP admin -> config_server  
+TP config_server -> eureka_server 
+TP eureka_server -> admin 
+TP admin -> user_service 
+TP config_server -> user_service 
+TP admin -> mailer 
+TP config_server -> mailer 
+TP mailer -> eureka_server 
+TP kafka -> mailer 
+TP reminder -> eureka_server 
+TP admin -> reminder 
+TP config_server -> reminder 
+TP reminder -> kafka 
+TP eureka_server -> api_gateway 
+TP admin -> api_gateway 
+TP config_server -> api_gateway 
+TP api_gateway -> user_service 
+TP config_server -> oauth 
+TP oauth -> user_service 
+TP oauth -> eureka_server 
+FN admin -> oauth 
+FN user -> proxy 
+FN proxy -> user 
+FN proxy -> api_gateway 
+TP zookeeper -> kafka 
+FN proxy -> logstash 
+TP user_service -> logstash 
+TP reminder -> logstash 
+TP eureka_server -> logstash 
+TP api_gateway -> logstash 
+TP oauth -> logstash 
+TP admin -> logstash 
+TP config_server -> logstash 
+TP mailer -> logstash 
 
 Endpoints:
-api_gateway: "/todos", "/todos/search", "/accounts", "/accounts/me", "/accounts/me/todos", "/accounts/search", "/users"
-oauth: "/accounts/search"
-reminder: "/todo-changes", "/todos", "/todos/search", "/todos/{id}", "/todos/{id}/status", "/todo-statistics"
-mailer: "/emails", "/send", "/send/email"
-user_service: "/accounts", "/accounts/{id}", "/accounts/search"
+FN(7) api_gateway: "/todos", "/todos/search", "/accounts", "/accounts/me", "/accounts/me/todos", "/accounts/search", "/users"
+FN(1) oauth: "/accounts/search"
+FN(6) reminder: "/todo-changes", "/todos", "/todos/search", "/todos/{id}", "/todos/{id}/status", "/todo-statistics"
+FN(3) mailer: "/emails", "/send", "/send/email"
+FN(3) user_service: "/accounts", "/accounts/{id}", "/accounts/search"
+
+FP:
+github_repository
+github_repository -> config_server
+user_service -> eureka_server
+zookeeper -> oauth
+zookeeper -> admin
+zookeeper -> api_gateway
+zookeeper -> eureka_server
+zookeeper -> mailer 
+zookeeper -> user_service
+zookeeper -> reminder
