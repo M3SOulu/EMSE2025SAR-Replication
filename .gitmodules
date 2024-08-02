@@ -1,5 +1,5 @@
 [submodule "train-ticket"]
-	path = train-ticket
+	path = analyzed_applications/train-ticket
 	url = https://github.com/M3SOulu/train-ticket.git
 [submodule "microservices-basics-spring-boot"]
 	path = microservices-basics-spring-boot
