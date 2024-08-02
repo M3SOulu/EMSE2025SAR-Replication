@@ -1,63 +1,63 @@
 Components:
-config 
-registry 
-monitoring
-turbine_stream_service
-rabbitmq
-auth_service
-account_service
-notification_service
-mail_server
-statistics_service
-external_website
-auth_mongodb
-account_mongodb 
-statistics_mongodb 
-notification_mongodb 
-gateway
-user
+TP config (config)
+TP registry (registry)
+TP monitoring (monitoring)
+TP turbine_stream_service (turbine-stream-service)
+TP rabbitmq (rabbitmq)
+TP auth_service (auth-service)
+TP account_service (account-service)
+TP notification_service (notification-service)
+TP mail_server (mail-server)
+TP statistics_service (statistics-service)
+TP external_website (external-website)
+TP auth_mongodb (auth-mongodb)
+TP account_mongodb (account-mongodb)
+TP statistics_mongodb (statistics-mongodb)
+TP notification_mongodb (notification-mongodb)
+TP gateway (gateway)
+TP user (user)
 
 Connections:
-config -> registry 
-config -> monitoring 
-turbine_stream_service -> registry 
-config -> turbine_stream_service 
-turbine_stream_service -> monitoring
-rabbitmq -> turbine_stream_service 
-auth_service -> registry 
-config -> auth_service 
-account_service -> registry 
-auth_service -> account_service 
-account_service -> auth_service 
-config -> account_service 
-account_service -> rabbitmq 
-notification_service -> registry 
-auth_service -> notification_service 
-config -> notification_service
-notification_service -> rabbitmq 
-notification_service -> mail_server 
-statistics_service -> registry 
-auth_service -> statistics_service
-config -> statistics_service 
-statistics_service -> rabbitmq 
-external_website -> statistics_service 
-account_service -> statistics_service 
-notification_service -> account_service
-account_mongodb -> account_service 
-notification_mongodb -> notification_service 
-statistics_mongodb -> statistics_service 
-auth_mongodb -> auth_service 
-registry -> gateway 
-user -> gateway 
-gateway -> user 
-config -> gateway 
-gateway -> account_service 
-gateway -> statistics_service 
-gateway -> notification_service 
-gateway -> auth_service 
+TP config -> registry 
+TP config -> monitoring 
+TP turbine_stream_service -> registry 
+TP config -> turbine_stream_service 
+TP turbine_stream_service -> monitoring
+TP rabbitmq -> turbine_stream_service 
+TP auth_service -> registry 
+TP config -> auth_service 
+TP account_service -> registry 
+TP auth_service -> account_service 
+FN account_service -> auth_service 
+TP config -> account_service 
+TP account_service -> rabbitmq 
+TP notification_service -> registry 
+TP auth_service -> notification_service 
+TP config -> notification_service
+TP notification_service -> rabbitmq 
+TP notification_service -> mail_server 
+TP statistics_service -> registry 
+TP auth_service -> statistics_service
+TP config -> statistics_service 
+TP statistics_service -> rabbitmq 
+TP external_website -> statistics_service 
+FN account_service -> statistics_service 
+FN notification_service -> account_service
+TP account_mongodb -> account_service 
+TP notification_mongodb -> notification_service 
+TP statistics_mongodb -> statistics_service 
+TP auth_mongodb -> auth_service 
+TP registry -> gateway 
+TP user -> gateway 
+TP gateway -> user 
+TP config -> gateway 
+TP gateway -> account_service 
+TP gateway -> statistics_service 
+TP gateway -> notification_service 
+TP gateway -> auth_service 
 
 Endpoints:
-auth_service: "/users", "/users/current"
-account_service: "/{name}", "/", "/uaa/users", "/statistics/{accountName}", "/current"
-notification_service: "/accounts/{accountName}", "/recipients/current", "/recipients"
-statistics_service: "/latest", "/current", "/{accountName}"
+TP(2) auth_service: "/users", "/users/current"
+TP(5) account_service: "/{name}", "/", "/uaa/users", "/statistics/{accountName}", "/current"
+TP(3) notification_service: "/accounts/{accountName}", "/recipients/current", "/recipients"
+TP(3) statistics_service: "/latest", "/current", "/{accountName}"
