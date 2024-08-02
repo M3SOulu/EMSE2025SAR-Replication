@@ -1,38 +1,38 @@
 Components:
-config_service 
-github_repository 
-eureka_service
-movie_service
-database_movie_service
-user_service
-database_user_service
-recommendation_service
-database_recommendation_service
-recommendation_client
-user
+TP config_service (config-service)
+TP github_repository (github-repository)
+TP eureka_service (eureka-service)
+TP movie_service (movie-service)
+FN database_movie_service
+TP user_service (user-service)
+TP database_user_service (database-user-service)
+TP recommendation_service (recommendation-service)
+TP database_recommendation_service (database-recommendation-service)
+TP recommendation_client (recommendation-client)
+TP user (user)
 
 Connections:
-github_repository -> config_service 
-config_service -> eureka_service 
-movie_service -> eureka_service 
-config_service -> movie_service 
-database_movie_service -> movie_service 
-user_service -> eureka_service 
-config_service -> user_service 
-database_user_service -> user_service 
-recommendation_service -> eureka_service
-config_service -> recommendation_service 
-database_recommendation_service -> recommendation_service 
-eureka_service -> recommendation_client 
-user -> recommendation_client 
-recommendation_client -> user 
-config_service -> recommendation_client 
-recommendation_client -> recommendation_service 
-recommendation_client -> movie_service 
-recommendation_client -> user_service 
+TP github_repository -> config_service 
+TP config_service -> eureka_service 
+TP movie_service -> eureka_service 
+TP config_service -> movie_service 
+FN database_movie_service -> movie_service 
+TP user_service -> eureka_service 
+TP config_service -> user_service 
+TP database_user_service -> user_service 
+TP recommendation_service -> eureka_service
+TP config_service -> recommendation_service 
+TP database_recommendation_service -> recommendation_service 
+TP eureka_service -> recommendation_client 
+TP user -> recommendation_client 
+TP recommendation_client -> user 
+TP config_service -> recommendation_client 
+TP recommendation_client -> recommendation_service 
+TP recommendation_client -> movie_service 
+TP recommendation_client -> user_service 
 
 Endpoints:
-movie_service: "/movie/dummyData", "/movie/list", "/movie/{movieId}", "/movie"
-user_service: "/user", "/user/{userId}"
-recommendation_service: "/recommendation", "/recommendation/recommend/user/{userId}", "/recommendation/user", "/recommendation/movie/{movieId}", "/recommendation/user/{userId}", "/recommendation/dummyData", "/recommendation/movie"
-recommendation_client: "/user/{userId}", "/api/userDetails/{userId}", "/user", "/api", "/recommendation/dummyData", "/movie/dummyData", "/newuser", "/api/recommendation/user/{userId}", "/movie"
+TP(4) movie_service: "/movie/dummyData", "/movie/list", "/movie/{movieId}", "/movie"
+TP(2) user_service: "/user", "/user/{userId}"
+TP(7) recommendation_service: "/recommendation", "/recommendation/recommend/user/{userId}", "/recommendation/user", "/recommendation/movie/{movieId}", "/recommendation/user/{userId}", "/recommendation/dummyData", "/recommendation/movie"
+TP(9) recommendation_client: "/user/{userId}", "/api/userDetails/{userId}", "/user", "/api", "/recommendation/dummyData", "/movie/dummyData", "/newuser", "/api/recommendation/user/{userId}", "/movie"
