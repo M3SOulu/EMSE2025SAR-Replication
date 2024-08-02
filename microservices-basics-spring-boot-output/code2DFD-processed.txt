@@ -1,50 +1,54 @@
 Components:
-configserver
-github_repository 
-webservice_registry
-zipkin_tracing
-mysqldb
-auth_server
-web_portal 
-user_webservice
-comments_webservice
-task_webservice
-api_gateway
-user 
+TP configserver (configserver)
+TP github_repository (github-repository)
+TP webservice_registry (webservice-registry)
+TP zipkin_tracing (zipkin-tracing)
+TP mysqldb (database-auth-server)
+TP auth_server (auth-server)
+TP web_portal (web-portal)
+TP user_webservice (user-webservice)
+TP comments_webservice (comments-webservice)
+TP task_webservice (task-webservice)
+TP api_gateway (api-gateway)
+TP user (user)
 
 Connections:
-github_repository -> configserver 
-configserver -> webservice_registry 
-configserver -> zipkin_tracing  
-configserver -> auth_server 
-mysqldb -> auth_server 
-auth_server -> webservice_registry 
-web_portal -> webservice_registry 
-configserver -> web_portal 
-user_webservice -> zipkin_tracing 
-configserver -> user_webservice 
-user_webservice -> webservice_registry 
-auth_server -> user_webservice 
-comments_webservice -> zipkin_tracing 
-configserver -> comments_webservice 
-comments_webservice -> webservice_registry 
-task_webservice -> zipkin_tracing 
-configserver -> task_webservice 
-auth_server -> task_webservice 
-task_webservice -> webservice_registry 
-task_webservice -> web_portal 
-task_webservice -> comments_webservice 
-api_gateway -> user 
-user -> api_gateway 
-configserver -> api_gateway 
-webservice_registry -> api_gateway 
-api_gateway -> zipkin_tracing 
-auth_server -> api_gateway 
-api_gateway -> user_webservice 
-api_gateway -> task_webservice 
+TP github_repository -> configserver 
+TP configserver -> webservice_registry 
+TP configserver -> zipkin_tracing  
+TP configserver -> auth_server 
+TP mysqldb -> auth_server 
+TP auth_server -> webservice_registry 
+TP web_portal -> webservice_registry 
+TP configserver -> web_portal 
+FN user_webservice -> zipkin_tracing 
+TP configserver -> user_webservice 
+TP user_webservice -> webservice_registry 
+FN auth_server -> user_webservice 
+FN comments_webservice -> zipkin_tracing 
+TP configserver -> comments_webservice 
+TP comments_webservice -> webservice_registry 
+FN task_webservice -> zipkin_tracing 
+TP configserver -> task_webservice 
+FN auth_server -> task_webservice 
+TP task_webservice -> webservice_registry 
+FN task_webservice -> web_portal 
+TP task_webservice -> comments_webservice 
+TP api_gateway -> user 
+TP user -> api_gateway 
+TP configserver -> api_gateway 
+TP webservice_registry -> api_gateway 
+FN api_gateway -> zipkin_tracing 
+FN auth_server -> api_gateway 
+FN api_gateway -> user_webservice 
+FN api_gateway -> task_webservice 
 
 Endpoints:
-auth_server: "/me"
-user_webservice: "/", "/{userName}"
-comments_webservice: "/comments", "/comments/{taskId}"
-task_webservice: "/", "/{taskId}", "/usertask/{userName}"
+TP(1) auth_server: "/me"
+TP(2) user_webservice: "/", "/{userName}"
+TP(2) comments_webservice: "/comments", "/comments/{taskId}"
+TP(3) task_webservice: "/", "/{taskId}", "/usertask/{userName}"
+
+FP:
+zipkinserver
+mysqldb
