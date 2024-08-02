@@ -1,46 +1,50 @@
 Components:
-configserver 
-github_repository 
-webservice_registry
-auth_server
-database_auth_server
-web_portal
-user_webservice
-comments_webservice
-task_webservice
-api_gateway
-user
+TP configserver (configserver)
+TP github_repository (github-repository)
+TP webservice_registry (webservice-registry)
+TP auth_server (auth-server)
+TP database_auth_server (database-auth-server)
+TP web_portal (web-portal)
+TP user_webservice (user-webservice)
+TP comments_webservice (comments-webservice)
+TP task_webservice (task-webservice)
+TP api_gateway (api-gateway)
+TP user (user)
 
 Connections:
-github_repository -> configserver 
-configserver -> webservice_registry 
-database_auth_server -> auth_server 
-configserver -> auth_server 
-auth_server -> webservice_registry 
-configserver -> web_portal
-web_portal -> webservice_registry 
-configserver -> user_webservice
-user_webservice -> webservice_registry
-auth_server -> user_webservice 
-configserver -> comments_webservice 
-comments_webservice -> webservice_registry 
-auth_server -> comments_webservice 
-task_webservice -> webservice_registry 
-auth_server -> task_webservice 
-configserver -> task_webservice 
-task_webservice -> comments_webservice
-user -> api_gateway
-api_gateway -> user 
-api_gateway -> auth_server 
-database_auth_server -> api_gateway 
-api_gateway -> user_webservice
-api_gateway -> task_webservice
-api_gateway -> web_portal 
-configserver -> api_gateway 
-webservice_registry -> api_gateway 
+TP github_repository -> configserver 
+TP configserver -> webservice_registry 
+TP database_auth_server -> auth_server 
+TP configserver -> auth_server 
+TP auth_server -> webservice_registry 
+TP configserver -> web_portal
+TP web_portal -> webservice_registry 
+TP configserver -> user_webservice
+TP user_webservice -> webservice_registry
+FN auth_server -> user_webservice 
+TP configserver -> comments_webservice 
+TP comments_webservice -> webservice_registry 
+FN auth_server -> comments_webservice 
+TP task_webservice -> webservice_registry 
+FN auth_server -> task_webservice 
+TP configserver -> task_webservice 
+TP task_webservice -> comments_webservice
+TP user -> api_gateway
+TP api_gateway -> user 
+FN api_gateway -> auth_server 
+FN database_auth_server -> api_gateway 
+FN api_gateway -> user_webservice
+FN api_gateway -> task_webservice
+FN api_gateway -> web_portal 
+TP configserver -> api_gateway 
+TP webservice_registry -> api_gateway 
 
 Endpoints:
-auth_server: "/me", "/"
-user_webservice: "/", "/{userName}"
-comments_webservice: "/comments", "/comments/{taskId}"
-task_webservice: "/", "/{taskId}", "/usertask/{userName}"
+TP(2) auth_server: "/me", "/"
+TP(2) user_webservice: "/", "/{userName}"
+TP(2) comments_webservice: "/comments", "/comments/{taskId}"
+TP(3) task_webservice: "/", "/{taskId}", "/usertask/{userName}"
+
+FP:
+database-api-gateway
+database-api-gateway -> api-gateway
