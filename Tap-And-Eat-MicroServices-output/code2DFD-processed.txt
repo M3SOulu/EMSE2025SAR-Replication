@@ -1,36 +1,36 @@
 Components:
-discovery_service 
-config_service 
-github_repository 
-account_service
-customer_service
-store_service
-item_service
-price_service
-foodtray_service
+TP discovery_service (discovery-service)
+TP config_service (config-service)
+TP github_repository (github-repository)
+TP account_service (account-service)
+TP customer_service (customer-service)
+TP store_service (store-service)
+TP item_service (item-service)
+TP price_service (price-service)
+TP foodtray_service (foodtray-service)
 
 Connections:
-github_repository -> config_service 
-config_service -> discovery_service 
-config_service -> account_service 
-account_service -> discovery_service 
-config_service -> customer_service 
-customer_service -> discovery_service 
-config_service -> store_service 
-store_service -> discovery_service 
-config_service -> item_service
-item_service -> discovery_service 
-config_service -> price_service 
-price_service -> discovery_service 
-config_service -> foodtray_service 
-foodtray_service -> discovery_service 
-foodtray_service -> item_service 
-foodtray_service -> price_service 
+TP github_repository -> config_service 
+TP config_service -> discovery_service 
+TP config_service -> account_service 
+TP account_service -> discovery_service 
+TP config_service -> customer_service 
+TP customer_service -> discovery_service 
+TP config_service -> store_service 
+TP store_service -> discovery_service 
+TP config_service -> item_service
+TP item_service -> discovery_service 
+TP config_service -> price_service 
+TP price_service -> discovery_service 
+TP config_service -> foodtray_service 
+TP foodtray_service -> discovery_service 
+TP foodtray_service -> item_service 
+TP foodtray_service -> price_service 
 
 Endpoints:
-account_service: "/accounts"
-customer_service: "/customers"
-store_service: "/stores"
-item_service: "/items"
-price_service: "/prices"
-foodtray_service: "/foodtrays", "/foodtrays/{itemCode}", "/foodtrays/price/{itemCode}", "/foodtrays/item/{itemCode}"
+TP(1) account_service: "/accounts"
+TP(1) customer_service: "/customers"
+TP(1) store_service: "/stores"
+TP(1) item_service: "/items"
+TP(1) price_service: "/prices"
+FN(4) foodtray_service: "/foodtrays", "/foodtrays/{itemCode}", "/foodtrays/price/{itemCode}", "/foodtrays/item/{itemCode}"
