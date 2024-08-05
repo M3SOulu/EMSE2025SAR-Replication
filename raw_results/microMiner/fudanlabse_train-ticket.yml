@@ -1,0 +1,480 @@
+description: Generic application
+imports:
+- {micro: https://di-unipi-socc.github.io/microTOSCA/1.1/microTOSCA.yaml}
+topology_template:
+  groups:
+    edge:
+      members: [ts-auth-service.default.svc, ts-ui-dashboard.default.svc]
+      type: micro.groups.Edge
+  node_templates:
+    ts-admin-basic-info-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-admin-basic-info-service.default.svc:
+      requirements:
+      - {interaction: ts-admin-basic-info-service.default}
+      type: micro.nodes.MessageRouter
+    ts-admin-order-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-admin-order-service.default.svc:
+      requirements:
+      - {interaction: ts-admin-order-service.default}
+      type: micro.nodes.MessageRouter
+    ts-admin-route-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-admin-route-service.default.svc:
+      requirements:
+      - {interaction: ts-admin-route-service.default}
+      type: micro.nodes.MessageRouter
+    ts-admin-travel-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-admin-travel-service.default.svc:
+      requirements:
+      - {interaction: ts-admin-travel-service.default}
+      type: micro.nodes.MessageRouter
+    ts-admin-user-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-admin-user-service.default.svc:
+      requirements:
+      - {interaction: ts-admin-user-service.default}
+      type: micro.nodes.MessageRouter
+    ts-assurance-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-assurance-mongo.default.svc:
+      requirements:
+      - {interaction: ts-assurance-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-assurance-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-assurance-service.default.svc:
+      requirements:
+      - {interaction: ts-assurance-service.default}
+      type: micro.nodes.MessageRouter
+    ts-auth-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-auth-mongo.default.svc:
+      requirements:
+      - {interaction: ts-auth-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-auth-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-auth-service.default.svc:
+      requirements:
+      - {interaction: ts-auth-service.default}
+      type: micro.nodes.MessageRouter
+    ts-avatar-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-avatar-service.default.svc:
+      requirements:
+      - {interaction: ts-avatar-service.default}
+      type: micro.nodes.MessageRouter
+    ts-basic-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-basic-service.default.svc:
+      requirements:
+      - {interaction: ts-basic-service.default}
+      type: micro.nodes.MessageRouter
+    ts-cancel-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-cancel-service.default.svc:
+      requirements:
+      - {interaction: ts-cancel-service.default}
+      type: micro.nodes.MessageRouter
+    ts-config-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-config-mongo.default.svc:
+      requirements:
+      - {interaction: ts-config-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-config-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-config-service.default.svc:
+      requirements:
+      - {interaction: ts-config-service.default}
+      type: micro.nodes.MessageRouter
+    ts-consign-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-consign-mongo.default.svc:
+      requirements:
+      - {interaction: ts-consign-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-consign-price-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-consign-price-mongo.default.svc:
+      requirements:
+      - {interaction: ts-consign-price-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-consign-price-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-consign-price-service.default.svc:
+      requirements:
+      - {interaction: ts-consign-price-service.default}
+      type: micro.nodes.MessageRouter
+    ts-consign-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-consign-service.default.svc:
+      requirements:
+      - {interaction: ts-consign-service.default}
+      type: micro.nodes.MessageRouter
+    ts-contacts-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-contacts-mongo.default.svc:
+      requirements:
+      - {interaction: ts-contacts-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-contacts-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-contacts-service.default.svc:
+      requirements:
+      - {interaction: ts-contacts-service.default}
+      type: micro.nodes.MessageRouter
+    ts-execute-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-execute-service.default.svc:
+      requirements:
+      - {interaction: ts-execute-service.default}
+      type: micro.nodes.MessageRouter
+    ts-food-map-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-food-map-mongo.default.svc:
+      requirements:
+      - {interaction: ts-food-map-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-food-map-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-food-map-service.default.svc:
+      requirements:
+      - {interaction: ts-food-map-service.default}
+      type: micro.nodes.MessageRouter
+    ts-food-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-food-mongo.default.svc:
+      requirements:
+      - {interaction: ts-food-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-food-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-food-service.default.svc:
+      requirements:
+      - {interaction: ts-food-service.default}
+      type: micro.nodes.MessageRouter
+    ts-inside-payment-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-inside-payment-mongo.default.svc:
+      requirements:
+      - {interaction: ts-inside-payment-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-inside-payment-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-inside-payment-service.default.svc:
+      requirements:
+      - {interaction: ts-inside-payment-service.default}
+      type: micro.nodes.MessageRouter
+    ts-news-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-news-service.default.svc:
+      requirements:
+      - {interaction: ts-news-service.default}
+      type: micro.nodes.MessageRouter
+    ts-notification-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-notification-service.default.svc:
+      requirements:
+      - {interaction: ts-notification-service.default}
+      type: micro.nodes.MessageRouter
+    ts-order-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-order-mongo.default.svc:
+      requirements:
+      - {interaction: ts-order-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-order-other-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-order-other-mongo.default.svc:
+      requirements:
+      - {interaction: ts-order-other-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-order-other-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-order-other-service.default.svc:
+      requirements:
+      - {interaction: ts-order-other-service.default}
+      type: micro.nodes.MessageRouter
+    ts-order-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-order-service.default.svc:
+      requirements:
+      - {interaction: ts-order-service.default}
+      type: micro.nodes.MessageRouter
+    ts-payment-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-payment-mongo.default.svc:
+      requirements:
+      - {interaction: ts-payment-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-payment-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-payment-service.default.svc:
+      requirements:
+      - {interaction: ts-payment-service.default}
+      type: micro.nodes.MessageRouter
+    ts-preserve-other-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-preserve-other-service.default.svc:
+      requirements:
+      - {interaction: ts-preserve-other-service.default}
+      type: micro.nodes.MessageRouter
+    ts-preserve-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-preserve-service.default.svc:
+      requirements:
+      - {interaction: ts-preserve-service.default}
+      type: micro.nodes.MessageRouter
+    ts-price-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-price-mongo.default.svc:
+      requirements:
+      - {interaction: ts-price-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-price-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-price-service.default.svc:
+      requirements:
+      - {interaction: ts-price-service.default}
+      type: micro.nodes.MessageRouter
+    ts-rebook-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-rebook-service.default.svc:
+      requirements:
+      - {interaction: ts-rebook-service.default}
+      type: micro.nodes.MessageRouter
+    ts-route-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-route-mongo.default.svc:
+      requirements:
+      - {interaction: ts-route-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-route-plan-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-route-plan-service.default.svc:
+      requirements:
+      - {interaction: ts-route-plan-service.default}
+      type: micro.nodes.MessageRouter
+    ts-route-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-route-service.default.svc:
+      requirements:
+      - {interaction: ts-route-service.default}
+      type: micro.nodes.MessageRouter
+    ts-seat-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-seat-service.default.svc:
+      requirements:
+      - {interaction: ts-seat-service.default}
+      type: micro.nodes.MessageRouter
+    ts-security-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-security-mongo.default.svc:
+      requirements:
+      - {interaction: ts-security-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-security-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-security-service.default.svc:
+      requirements:
+      - {interaction: ts-security-service.default}
+      type: micro.nodes.MessageRouter
+    ts-station-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-station-mongo.default.svc:
+      requirements:
+      - {interaction: ts-station-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-station-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-station-service.default.svc:
+      requirements:
+      - {interaction: ts-station-service.default}
+      type: micro.nodes.MessageRouter
+    ts-ticket-office-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-ticket-office-mongo.default.svc:
+      requirements:
+      - {interaction: ts-ticket-office-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-ticket-office-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-ticket-office-service.default.svc:
+      requirements:
+      - {interaction: ts-ticket-office-service.default}
+      type: micro.nodes.MessageRouter
+    ts-ticketinfo-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-ticketinfo-service.default.svc:
+      requirements:
+      - {interaction: ts-ticketinfo-service.default}
+      type: micro.nodes.MessageRouter
+    ts-train-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-train-mongo.default.svc:
+      requirements:
+      - {interaction: ts-train-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-train-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-train-service.default.svc:
+      requirements:
+      - {interaction: ts-train-service.default}
+      type: micro.nodes.MessageRouter
+    ts-travel-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-travel-mongo.default.svc:
+      requirements:
+      - {interaction: ts-travel-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-travel-plan-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-travel-plan-service.default.svc:
+      requirements:
+      - {interaction: ts-travel-plan-service.default}
+      type: micro.nodes.MessageRouter
+    ts-travel-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-travel-service.default.svc:
+      requirements:
+      - {interaction: ts-travel-service.default}
+      type: micro.nodes.MessageRouter
+    ts-travel2-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-travel2-mongo.default.svc:
+      requirements:
+      - {interaction: ts-travel2-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-travel2-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-travel2-service.default.svc:
+      requirements:
+      - {interaction: ts-travel2-service.default}
+      type: micro.nodes.MessageRouter
+    ts-ui-dashboard.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-ui-dashboard.default.svc:
+      requirements:
+      - {interaction: ts-ui-dashboard.default}
+      type: micro.nodes.MessageRouter
+    ts-user-mongo.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-user-mongo.default.svc:
+      requirements:
+      - {interaction: ts-user-mongo.default}
+      type: micro.nodes.MessageRouter
+    ts-user-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-user-service.default.svc:
+      requirements:
+      - {interaction: ts-user-service.default}
+      type: micro.nodes.MessageRouter
+    ts-verification-code-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-verification-code-service.default.svc:
+      requirements:
+      - {interaction: ts-verification-code-service.default}
+      type: micro.nodes.MessageRouter
+    ts-voucher-mysql.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    ts-voucher-mysql.default.svc:
+      requirements:
+      - {interaction: ts-voucher-mysql.default}
+      type: micro.nodes.MessageRouter
+    ts-voucher-service.default:
+      requirements: []
+      type: micro.nodes.Service
+    ts-voucher-service.default.svc:
+      requirements:
+      - {interaction: ts-voucher-service.default}
+      type: micro.nodes.MessageRouter
+  relationship_templates:
+    c:
+      properties: {circuit_breaker: true}
+      type: micro.relationships.InteractsWith
+    cd:
+      properties: {circuit_breaker: true, dynamic_discovery: true}
+      type: micro.relationships.InteractsWith
+    d:
+      properties: {dynamic_discovery: true}
+      type: micro.relationships.InteractsWith
+    t:
+      properties: {timeout: true}
+      type: micro.relationships.InteractsWith
+    tc:
+      properties: {circuit_breaker: true, timeout: true}
+      type: micro.relationships.InteractsWith
+    tcd:
+      properties: {circuit_breaker: true, dynamic_discovery: true, timeout: true}
+      type: micro.relationships.InteractsWith
+    td:
+      properties: {dynamic_discovery: true, timeout: true}
+      type: micro.relationships.InteractsWith
+tosca_definitions_version: micro_tosca_yaml_1.1
