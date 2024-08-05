@@ -1,0 +1,109 @@
+<svg width="388px" height="347px"
+ viewBox="0.00 0.00 290.71 260.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform=" rotate(0) translate(4 256)">
+<title>%0</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-256 286.7115,-256 286.7115,4 -4,4"/>
+<!-- kafka -->
+<g id="node1" class="node">
+<title>kafka</title>
+<ellipse fill="none" stroke="#000000" cx="107.3018" cy="-90" rx="32.4634" ry="18"/>
+<text text-anchor="middle" x="107.3018" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">kafka</text>
+</g>
+<!-- zookeeper -->
+<g id="node2" class="node">
+<title>zookeeper</title>
+<ellipse fill="none" stroke="#000000" cx="107.3018" cy="-18" rx="50.925" ry="18"/>
+<text text-anchor="middle" x="107.3018" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">zookeeper</text>
+</g>
+<!-- kafka&#45;&gt;zookeeper -->
+<g id="edge1" class="edge">
+<title>kafka&#45;&gt;zookeeper</title>
+<path fill="none" stroke="#0000ff" d="M107.3018,-71.8314C107.3018,-64.131 107.3018,-54.9743 107.3018,-46.4166"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="110.8019,-46.4132 107.3018,-36.4133 103.8019,-46.4133 110.8019,-46.4132"/>
+</g>
+<!-- apache -->
+<g id="node3" class="node">
+<title>apache</title>
+<ellipse fill="none" stroke="#000000" cx="154.3018" cy="-234" rx="37.6813" ry="18"/>
+<text text-anchor="middle" x="154.3018" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">apache</text>
+</g>
+<!-- shipping -->
+<g id="node4" class="node">
+<title>shipping</title>
+<ellipse fill="none" stroke="#000000" cx="44.3018" cy="-162" rx="44.1045" ry="18"/>
+<text text-anchor="middle" x="44.3018" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">shipping</text>
+</g>
+<!-- apache&#45;&gt;shipping -->
+<g id="edge2" class="edge">
+<title>apache&#45;&gt;shipping</title>
+<path fill="none" stroke="#0000ff" d="M132.0416,-219.4297C115.9646,-208.9066 94.0195,-194.5425 76.0987,-182.8125"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="77.9517,-179.8423 67.6678,-177.2941 74.118,-185.6992 77.9517,-179.8423"/>
+</g>
+<!-- invoicing -->
+<g id="node5" class="node">
+<title>invoicing</title>
+<ellipse fill="none" stroke="#000000" cx="154.3018" cy="-162" rx="47.5332" ry="18"/>
+<text text-anchor="middle" x="154.3018" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">invoicing</text>
+</g>
+<!-- apache&#45;&gt;invoicing -->
+<g id="edge3" class="edge">
+<title>apache&#45;&gt;invoicing</title>
+<path fill="none" stroke="#0000ff" d="M154.3018,-215.8314C154.3018,-208.131 154.3018,-198.9743 154.3018,-190.4166"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="157.8019,-190.4132 154.3018,-180.4133 150.8019,-190.4133 157.8019,-190.4132"/>
+</g>
+<!-- order -->
+<g id="node6" class="node">
+<title>order</title>
+<ellipse fill="none" stroke="#000000" cx="251.3018" cy="-162" rx="31.3198" ry="18"/>
+<text text-anchor="middle" x="251.3018" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">order</text>
+</g>
+<!-- apache&#45;&gt;order -->
+<g id="edge4" class="edge">
+<title>apache&#45;&gt;order</title>
+<path fill="none" stroke="#0000ff" d="M174.873,-218.7307C189.1375,-208.1425 208.2916,-193.9251 223.856,-182.3721"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="226.1361,-185.0385 232.0797,-176.2679 221.9639,-179.4177 226.1361,-185.0385"/>
+</g>
+<!-- shipping&#45;&gt;kafka -->
+<g id="edge5" class="edge">
+<title>shipping&#45;&gt;kafka</title>
+<path fill="none" stroke="#0000ff" d="M59.2319,-144.937C67.2711,-135.7494 77.3232,-124.2613 86.154,-114.1689"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="88.9614,-116.2755 92.9125,-106.4449 83.6934,-111.6659 88.9614,-116.2755"/>
+</g>
+<!-- postgres -->
+<g id="node7" class="node">
+<title>postgres</title>
+<ellipse fill="none" stroke="#000000" cx="201.3018" cy="-90" rx="43.4377" ry="18"/>
+<text text-anchor="middle" x="201.3018" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">postgres</text>
+</g>
+<!-- shipping&#45;&gt;postgres -->
+<g id="edge6" class="edge">
+<title>shipping&#45;&gt;postgres</title>
+<path fill="none" stroke="#0000ff" d="M73.8323,-148.4574C99.0204,-136.9061 135.4081,-120.2188 162.8635,-107.6277"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="164.5386,-110.7101 172.1693,-103.3601 161.6206,-104.3473 164.5386,-110.7101"/>
+</g>
+<!-- invoicing&#45;&gt;kafka -->
+<g id="edge7" class="edge">
+<title>invoicing&#45;&gt;kafka</title>
+<path fill="none" stroke="#0000ff" d="M142.6838,-144.2022C137.0806,-135.6186 130.2543,-125.1613 124.0979,-115.7303"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="126.8596,-113.5578 118.4625,-107.0972 120.9979,-117.3842 126.8596,-113.5578"/>
+</g>
+<!-- invoicing&#45;&gt;postgres -->
+<g id="edge8" class="edge">
+<title>invoicing&#45;&gt;postgres</title>
+<path fill="none" stroke="#0000ff" d="M165.9198,-144.2022C171.4406,-135.7448 178.1488,-125.4685 184.2336,-116.147"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="187.282,-117.88 189.8174,-107.593 181.4203,-114.0536 187.282,-117.88"/>
+</g>
+<!-- order&#45;&gt;kafka -->
+<g id="edge9" class="edge">
+<title>order&#45;&gt;kafka</title>
+<path fill="none" stroke="#0000ff" d="M227.5231,-150.1107C203.7991,-138.2487 167.1481,-119.9232 140.5488,-106.6235"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="142.1066,-103.4893 131.5971,-102.1477 138.9761,-109.7503 142.1066,-103.4893"/>
+</g>
+<!-- order&#45;&gt;postgres -->
+<g id="edge10" class="edge">
+<title>order&#45;&gt;postgres</title>
+<path fill="none" stroke="#0000ff" d="M239.4525,-144.937C233.4386,-136.277 226.0053,-125.5731 219.3023,-115.9207"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="221.9922,-113.658 213.4134,-107.4407 216.2426,-117.6508 221.9922,-113.658"/>
+</g>
+</g>
+</svg>
