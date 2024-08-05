@@ -1,0 +1,80 @@
+// Topology Graph
+graph {
+	outside
+	"docker host"
+	"mysql:latest"
+	"anilallewar/basic-config-server:0.0.1"
+	"anilallewar/basic-webservice-registry:0.0.1"
+	"anilallewar/basic-auth-server:0.0.1"
+	"anilallewar/basic-api-gateway:0.0.1"
+	"anilallewar/basic-web-portal:0.0.1"
+	"anilallewar/basic-user-webservice:0.0.1"
+	"anilallewar/basic-task-webservice:0.0.1"
+	"anilallewar/basic-comments-webservice:0.0.1"
+	"anilallewar/basic-zipkin-server:0.0.1"
+	outside -- mysql:latest [contstraint=false]
+	outside -- "anilallewar/basic-config-server":"0.0.1" [contstraint=false]
+	outside -- "anilallewar/basic-webservice-registry":"0.0.1" [contstraint=false]
+	outside -- "anilallewar/basic-auth-server":"0.0.1" [contstraint=false]
+	outside -- "anilallewar/basic-api-gateway":"0.0.1" [contstraint=false]
+	outside -- "anilallewar/basic-web-portal":"0.0.1" [contstraint=false]
+	outside -- "anilallewar/basic-user-webservice":"0.0.1" [contstraint=false]
+	outside -- "anilallewar/basic-task-webservice":"0.0.1" [contstraint=false]
+	outside -- "anilallewar/basic-comments-webservice":"0.0.1" [contstraint=false]
+	outside -- "anilallewar/basic-zipkin-server":"0.0.1" [contstraint=false]
+	"docker host" -- mysql:latest [contstraint=false]
+	"docker host" -- "anilallewar/basic-config-server":"0.0.1" [contstraint=false]
+	"docker host" -- "anilallewar/basic-webservice-registry":"0.0.1" [contstraint=false]
+	"docker host" -- "anilallewar/basic-auth-server":"0.0.1" [contstraint=false]
+	"docker host" -- "anilallewar/basic-api-gateway":"0.0.1" [contstraint=false]
+	"docker host" -- "anilallewar/basic-web-portal":"0.0.1" [contstraint=false]
+	"docker host" -- "anilallewar/basic-user-webservice":"0.0.1" [contstraint=false]
+	"docker host" -- "anilallewar/basic-task-webservice":"0.0.1" [contstraint=false]
+	"docker host" -- "anilallewar/basic-comments-webservice":"0.0.1" [contstraint=false]
+	"docker host" -- "anilallewar/basic-zipkin-server":"0.0.1" [contstraint=false]
+	mysql:latest -- "anilallewar/basic-config-server":"0.0.1" [contstraint=false]
+	mysql:latest -- "anilallewar/basic-webservice-registry":"0.0.1" [contstraint=false]
+	mysql:latest -- "anilallewar/basic-auth-server":"0.0.1" [contstraint=false]
+	mysql:latest -- "anilallewar/basic-api-gateway":"0.0.1" [contstraint=false]
+	mysql:latest -- "anilallewar/basic-web-portal":"0.0.1" [contstraint=false]
+	mysql:latest -- "anilallewar/basic-user-webservice":"0.0.1" [contstraint=false]
+	mysql:latest -- "anilallewar/basic-task-webservice":"0.0.1" [contstraint=false]
+	mysql:latest -- "anilallewar/basic-comments-webservice":"0.0.1" [contstraint=false]
+	mysql:latest -- "anilallewar/basic-zipkin-server":"0.0.1" [contstraint=false]
+	"anilallewar/basic-config-server":"0.0.1" -- "anilallewar/basic-webservice-registry":"0.0.1" [contstraint=false]
+	"anilallewar/basic-config-server":"0.0.1" -- "anilallewar/basic-auth-server":"0.0.1" [contstraint=false]
+	"anilallewar/basic-config-server":"0.0.1" -- "anilallewar/basic-api-gateway":"0.0.1" [contstraint=false]
+	"anilallewar/basic-config-server":"0.0.1" -- "anilallewar/basic-web-portal":"0.0.1" [contstraint=false]
+	"anilallewar/basic-config-server":"0.0.1" -- "anilallewar/basic-user-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-config-server":"0.0.1" -- "anilallewar/basic-task-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-config-server":"0.0.1" -- "anilallewar/basic-comments-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-config-server":"0.0.1" -- "anilallewar/basic-zipkin-server":"0.0.1" [contstraint=false]
+	"anilallewar/basic-webservice-registry":"0.0.1" -- "anilallewar/basic-auth-server":"0.0.1" [contstraint=false]
+	"anilallewar/basic-webservice-registry":"0.0.1" -- "anilallewar/basic-api-gateway":"0.0.1" [contstraint=false]
+	"anilallewar/basic-webservice-registry":"0.0.1" -- "anilallewar/basic-web-portal":"0.0.1" [contstraint=false]
+	"anilallewar/basic-webservice-registry":"0.0.1" -- "anilallewar/basic-user-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-webservice-registry":"0.0.1" -- "anilallewar/basic-task-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-webservice-registry":"0.0.1" -- "anilallewar/basic-comments-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-webservice-registry":"0.0.1" -- "anilallewar/basic-zipkin-server":"0.0.1" [contstraint=false]
+	"anilallewar/basic-auth-server":"0.0.1" -- "anilallewar/basic-api-gateway":"0.0.1" [contstraint=false]
+	"anilallewar/basic-auth-server":"0.0.1" -- "anilallewar/basic-web-portal":"0.0.1" [contstraint=false]
+	"anilallewar/basic-auth-server":"0.0.1" -- "anilallewar/basic-user-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-auth-server":"0.0.1" -- "anilallewar/basic-task-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-auth-server":"0.0.1" -- "anilallewar/basic-comments-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-auth-server":"0.0.1" -- "anilallewar/basic-zipkin-server":"0.0.1" [contstraint=false]
+	"anilallewar/basic-api-gateway":"0.0.1" -- "anilallewar/basic-web-portal":"0.0.1" [contstraint=false]
+	"anilallewar/basic-api-gateway":"0.0.1" -- "anilallewar/basic-user-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-api-gateway":"0.0.1" -- "anilallewar/basic-task-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-api-gateway":"0.0.1" -- "anilallewar/basic-comments-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-api-gateway":"0.0.1" -- "anilallewar/basic-zipkin-server":"0.0.1" [contstraint=false]
+	"anilallewar/basic-web-portal":"0.0.1" -- "anilallewar/basic-user-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-web-portal":"0.0.1" -- "anilallewar/basic-task-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-web-portal":"0.0.1" -- "anilallewar/basic-comments-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-web-portal":"0.0.1" -- "anilallewar/basic-zipkin-server":"0.0.1" [contstraint=false]
+	"anilallewar/basic-user-webservice":"0.0.1" -- "anilallewar/basic-task-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-user-webservice":"0.0.1" -- "anilallewar/basic-comments-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-user-webservice":"0.0.1" -- "anilallewar/basic-zipkin-server":"0.0.1" [contstraint=false]
+	"anilallewar/basic-task-webservice":"0.0.1" -- "anilallewar/basic-comments-webservice":"0.0.1" [contstraint=false]
+	"anilallewar/basic-task-webservice":"0.0.1" -- "anilallewar/basic-zipkin-server":"0.0.1" [contstraint=false]
+	"anilallewar/basic-comments-webservice":"0.0.1" -- "anilallewar/basic-zipkin-server":"0.0.1" [contstraint=false]
+}
