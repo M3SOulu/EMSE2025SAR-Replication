@@ -28,9 +28,6 @@ foodtray_service -> item_service
 foodtray_service -> price_service 
 
 Endpoints:
-account_service: "/accounts"
-customer_service: "/customers"
-store_service: "/stores"
-item_service: "/items"
-price_service: "/prices"
+item_service: "/items/search/findByItemCode?itemCode={itemCode}"
+price_service: "/prices/search/findByItemCode?itemCode={itemCode}"
 foodtray_service: "/foodtrays", "/foodtrays/{itemCode}", "/foodtrays/price/{itemCode}", "/foodtrays/item/{itemCode}"

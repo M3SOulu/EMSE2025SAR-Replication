@@ -33,6 +33,6 @@ recommendation_client -> user_service
 
 Endpoints:
 movie_service: "/movie/dummyData", "/movie/list", "/movie/{movieId}", "/movie"
-user_service: "/user", "/user/{userId}"
+user_service: "/user", "/user/{userId}", "/newuser"
 recommendation_service: "/recommendation", "/recommendation/recommend/user/{userId}", "/recommendation/user", "/recommendation/movie/{movieId}", "/recommendation/user/{userId}", "/recommendation/dummyData", "/recommendation/movie"
-recommendation_client: "/user/{userId}", "/api/userDetails/{userId}", "/user", "/api", "/recommendation/dummyData", "/movie/dummyData", "/newuser", "/api/recommendation/user/{userId}", "/movie"
+recommendation_client: "/api", "/api/recommendation/user/{userId}", "/api/userDetails/{userId}"

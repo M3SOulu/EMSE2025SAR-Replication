@@ -52,8 +52,7 @@ config_server -> logstash
 mailer -> logstash 
 
 Endpoints:
-api_gateway: "/todos", "/todos/search", "/accounts", "/accounts/me", "/accounts/me/todos", "/accounts/search", "/users"
-oauth: "/accounts/search"
+api_gateway: "/todos", "/accounts", "/accounts/me", "/accounts/me/todos"
 reminder: "/todo-changes", "/todos", "/todos/search", "/todos/{id}", "/todos/{id}/status", "/todo-statistics"
 mailer: "/emails", "/send", "/send/email"
-user_service: "/accounts", "/accounts/{id}", "/accounts/search"
+user_service: "/accounts", "/accounts/{id}", "/accounts/search", "/users"

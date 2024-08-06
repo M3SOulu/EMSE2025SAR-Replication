@@ -40,7 +40,7 @@ configserver -> api_gateway
 webservice_registry -> api_gateway 
 
 Endpoints:
-auth_server: "/me", "/"
+auth_server: "/me"
 user_webservice: "/", "/{userName}"
 comments_webservice: "/comments", "/comments/{taskId}"
 task_webservice: "/", "/{taskId}", "/usertask/{userName}"

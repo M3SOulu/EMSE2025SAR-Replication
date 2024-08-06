@@ -43,6 +43,7 @@ api_gateway -> customers_service
 api_gateway -> tracing_server 
 
 Endpoints:
-api_gateway: "/api/gatewayowners/{ownerId}", "/api/gateway"
-customers_service: "/owners", "/owners/{ownerId}"
+api_gateway: "/api/gateway/owners/{ownerId}", "/api/gateway"
+customers_service: "/petTypes", "/owners/{ownerId}/pets", "/owners/*/pets/{petId}", "/owners", "/owners/{ownerId}"
+visits_service: "/owners/*/pets/{petId}/visits", "/pets/visits"
 vets_service: "/vets"

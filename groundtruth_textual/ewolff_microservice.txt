@@ -23,6 +23,6 @@ zuul -> catalog
 zuul -> order 
 
 Endpoints:
-catalog: "/catalog", "/{id}.html", "/list.html", "/form.html", "/searchForm.html", "/searchByName.html"
-customer: "/form.html", "/list.html", "/{id}.html", "/customer"
-order: "/", "/form.html", "/{id}", "/line", "/order"
+catalog: "/{id}.html", "/list.html", "/form.html", "/searchForm.html", "/searchByName.html"
+customer: "/form.html", "/list.html", "/{id}.html"
+order: "/", "/form.html", "/{id}", "/line"
