@@ -57,7 +57,10 @@ gateway -> notification_service
 gateway -> auth_service 
 
 Endpoints:
-auth_service: "/users", "/users/current"
-account_service: "/{name}", "/", "/uaa/users", "/statistics/{accountName}", "/current"
-notification_service: "/accounts/{accountName}", "/recipients/current", "/recipients"
-statistics_service: "/latest", "/current", "/{accountName}"
+TP(2) auth_service: "/users", "/users/current"
+TP(3) account_service: "/{name}", "/", "/current"
+FN(2) account_service: "/uaa/users", "/statistics/{accountName}"
+TP(1) notification_service: "/recipients/current"
+FN(2) notification_service: "/accounts/{accountName}", "/recipients"
+TP(2) statistics_service: "/current", "/{accountName}"
+FN(1) statistics_service: "/latest"

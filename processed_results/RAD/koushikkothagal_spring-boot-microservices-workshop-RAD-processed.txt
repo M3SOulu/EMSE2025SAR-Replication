@@ -14,6 +14,9 @@ movie_catalog_service -> ratings_data_service
 movie_catalog_service -> movie_info_service 
 
 Endpoints:
-ratings_data_service: "/ratingsdata", "/ratingsdata/movies/{movieId}", "/ratingsdata/user/{userId}"
-movie_info_service: "/movies", "/movies/{movieId}"
-movie_catalog_service: "/catalog", "/catalog/{userId}"
+TP(1) ratings_data_service: "/ratingsdata/movies/{movieId}", "/ratingsdata/user/{userId}"
+FN(1) ratings_data_service: "/ratingsdata"
+TP(1) movie_info_service: "/movies/{movieId}"
+FN(1) movie_info_service: "/movies"
+TP(1) movie_catalog_service: "/catalog/{userId}"
+FN(1) movie_catalog_service: "/catalog"

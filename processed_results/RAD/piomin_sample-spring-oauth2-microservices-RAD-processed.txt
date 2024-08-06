@@ -24,5 +24,7 @@ customer_service -> account_service
 auth_server -> customer_service 
 
 Endpoints:
-account_service: "/{id}", "/"
-customer_service: "/{id}"
+TP(1) account_service: "/"
+FN(1) account_service: "/{id}"
+FN(1) customer_service: "/{id}"
+TP(1) auth_server: "/user"

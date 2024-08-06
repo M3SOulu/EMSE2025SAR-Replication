@@ -14,6 +14,6 @@ apache_server -> product_service
 apache_server -> content_service 
 
 Endpoints:
-cart_service: "/", "/count", "/add/{seoName}"
-content_service: "/"
-product_service: "/", "/{seoName}"
+TP(3) cart_service: "/", "/count", "/add/{seoName}"
+TP(1) content_service: "/"
+TP(2) product_service: "/", "/{seoName}"

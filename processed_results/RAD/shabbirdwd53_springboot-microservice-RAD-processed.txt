@@ -30,6 +30,6 @@ api_gateway -> department_service
 zipkin_server -> hystrix_dashboard 
 
 Endpoints:
-department_service: "/departments", "/departments/{id}"
-user_service: "/users", "/users/{id}"
-api_gateway: "/userServiceFallBack", "/departmentServiceFallBack"
+TP(2) department_service: "/departments", "/departments/{id}"
+TP(3) user_service: "/users", "/users/{id}", "/"
+TP(2) api_gateway: "/userServiceFallBack", "/departmentServiceFallBack"

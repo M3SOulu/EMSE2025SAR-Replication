@@ -32,7 +32,9 @@ recommendation_client -> movie_service
 recommendation_client -> user_service 
 
 Endpoints:
-movie_service: "/movie/dummyData", "/movie/list", "/movie/{movieId}", "/movie"
-user_service: "/user", "/user/{userId}"
-recommendation_service: "/recommendation", "/recommendation/recommend/user/{userId}", "/recommendation/user", "/recommendation/movie/{movieId}", "/recommendation/user/{userId}", "/recommendation/dummyData", "/recommendation/movie"
-recommendation_client: "/user/{userId}", "/api/userDetails/{userId}", "/user", "/api", "/recommendation/dummyData", "/movie/dummyData", "/newuser", "/api/recommendation/user/{userId}", "/movie"
+TP(4) movie_service: "/movie/dummyData", "/movie/list", "/movie/{movieId}", "/movie"
+TP(2) user_service: "/user", "/user/{userId}"
+TP(5) recommendation_service: "/recommendation/recommend/user/{userId}", "/recommendation/dummyData", "/recommendation/movie", "/recommendation/movie/{movieId}", "/recommendation/user"
+FN(2) recommendation_service: "/recommendation", "/recommendation/user/{userId}", 
+TP(2) recommendation_client: "/api/userDetails/{userId}", "/api/recommendation/user/{userId}"
+FN(7) recommendation_client: "/user/{userId}", "/user", "/api", "/recommendation/dummyData", "/movie/dummyData", "/newuser", "/movie"
