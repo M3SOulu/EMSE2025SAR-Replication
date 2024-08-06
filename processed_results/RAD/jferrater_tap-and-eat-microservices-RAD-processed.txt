@@ -1,0 +1,36 @@
+Components:
+discovery_service 
+config_service 
+github_repository 
+account_service
+customer_service
+store_service
+item_service
+price_service
+foodtray_service
+
+Connections:
+github_repository -> config_service 
+config_service -> discovery_service 
+config_service -> account_service 
+account_service -> discovery_service 
+config_service -> customer_service 
+customer_service -> discovery_service 
+config_service -> store_service 
+store_service -> discovery_service 
+config_service -> item_service
+item_service -> discovery_service 
+config_service -> price_service 
+price_service -> discovery_service 
+config_service -> foodtray_service 
+foodtray_service -> discovery_service 
+foodtray_service -> item_service 
+foodtray_service -> price_service 
+
+Endpoints:
+account_service: "/accounts"
+customer_service: "/customers"
+store_service: "/stores"
+item_service: "/items"
+price_service: "/prices"
+foodtray_service: "/foodtrays", "/foodtrays/{itemCode}", "/foodtrays/price/{itemCode}", "/foodtrays/item/{itemCode}"
