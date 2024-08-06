@@ -23,7 +23,10 @@ TP postgres -> shipping
 TP postgres -> invoicing
 
 Endpoints:
-TP(1) order: "/order"
+FP(1) order: "/order"
+FN(4) order: "/", "/form.html", "/line", "/{id}"
+FN(2) shipping: "/", "/{id}"
+FN(2) invoicing: "/", "/{id}"
 
 FP:
 order -> order

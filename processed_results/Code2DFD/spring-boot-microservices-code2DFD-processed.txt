@@ -40,7 +40,8 @@ TP configserver -> api_gateway
 TP webservice_registry -> api_gateway 
 
 Endpoints:
-TP(2) auth_server: "/me", "/"
+TP(1) auth_server: "/me"
+FP(1) auth_server: "/"
 TP(2) user_webservice: "/", "/{userName}"
 TP(2) comments_webservice: "/comments", "/comments/{taskId}"
 TP(3) task_webservice: "/", "/{taskId}", "/usertask/{userName}"

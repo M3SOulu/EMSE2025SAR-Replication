@@ -23,9 +23,12 @@ TP zuul -> catalog
 TP zuul -> order 
 
 Endpoints:
-TP(6) catalog: "/catalog", "/{id}.html", "/list.html", "/form.html", "/searchForm.html", "/searchByName.html"
-TP(4) customer: "/form.html", "/list.html", "/{id}.html", "/customer"
-TP(5) order: "/", "/form.html", "/{id}", "/line", "/order"
+TP(5) catalog: "/{id}.html", "/list.html", "/form.html", "/searchForm.html", "/searchByName.html"
+FP(1) catalog: "/catalog"
+TP(3) customer: "/form.html", "/list.html", "/{id}.html"
+FP(1) customer: "/customer"
+TP(4) order: "/", "/form.html", "/{id}", "/line"
+FP(1) order: "/order"
 
 FP:
 order -> order

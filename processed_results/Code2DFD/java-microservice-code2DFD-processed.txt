@@ -52,11 +52,10 @@ TP config_server -> logstash
 TP mailer -> logstash 
 
 Endpoints:
-FN(7) api_gateway: "/todos", "/todos/search", "/accounts", "/accounts/me", "/accounts/me/todos", "/accounts/search", "/users"
-FN(1) oauth: "/accounts/search"
+FN(4) api_gateway: "/todos", "/accounts", "/accounts/me", "/accounts/me/todos"
 FN(6) reminder: "/todo-changes", "/todos", "/todos/search", "/todos/{id}", "/todos/{id}/status", "/todo-statistics"
 FN(3) mailer: "/emails", "/send", "/send/email"
-FN(3) user_service: "/accounts", "/accounts/{id}", "/accounts/search"
+FN(4) user_service: "/accounts", "/accounts/{id}", "/accounts/search", "/users"
 
 FP:
 github_repository

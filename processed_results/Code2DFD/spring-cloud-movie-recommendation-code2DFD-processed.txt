@@ -34,5 +34,7 @@ TP recommendation_client -> user_service
 Endpoints:
 TP(4) movie_service: "/movie/dummyData", "/movie/list", "/movie/{movieId}", "/movie"
 TP(2) user_service: "/user", "/user/{userId}"
+FN(1) user_service: "/newuser"
 TP(7) recommendation_service: "/recommendation", "/recommendation/recommend/user/{userId}", "/recommendation/user", "/recommendation/movie/{movieId}", "/recommendation/user/{userId}", "/recommendation/dummyData", "/recommendation/movie"
-TP(9) recommendation_client: "/user/{userId}", "/api/userDetails/{userId}", "/user", "/api", "/recommendation/dummyData", "/movie/dummyData", "/newuser", "/api/recommendation/user/{userId}", "/movie"
+TP(3) recommendation_client: "/api", "/api/recommendation/user/{userId}", "/api/userDetails/{userId}"
+FP(6) recommendation_client: "/user/{userId}", "/user", "/recommendation/dummyData", "/movie/dummyData" "/newuser", "/movie"

@@ -43,8 +43,10 @@ TP api_gateway -> customers_service
 TP api_gateway -> tracing_server 
 
 Endpoints:
-TP(2) api_gateway: "/api/gatewayowners/{ownerId}", "/api/gateway"
+TP(2) api_gateway: "/api/gateway/owners/{ownerId}", "/api/gateway"
 TP(2) customers_service: "/owners", "/owners/{ownerId}"
+FN(3) customers_service: "/petTypes", "/owners/{ownerId}/pets", "/owners/*/pets/{petId}"
+FN(2) visits_service: "/owners/*/pets/{petId}/visits", "/pets/visits"
 TP(1) vets_service: "/vets"
 
 FP:
