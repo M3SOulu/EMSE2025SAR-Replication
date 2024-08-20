@@ -38,7 +38,10 @@ edge_server -> statement_service
 edge_server -> card_statement_composite 
 
 Endpoints:
-card_service: "/api", "/api/cards", "/api/card/{cardId}", "/api/new-card"
-statement_service: "/api", "api/statement/{statementId}", "/api/statement", "/api/statements"
-card_statement_composite: "/api", "/api/cards", "/api/card/{cardId}", "/api/new-card", "/api/statement-by-card", "/api/statement/{statementId}", "/api/statement", "/api/statements"
-monitor_dashboard: "/"
+TP(3) card_service: "/api/cards", "/api/card/{cardId}", "/api/new-card"
+FN(1) card_service: "/api"
+FN(1) statement_service: "/api" 
+TP(3) statement_service: "api/statement/{statementId}", "/api/statement", "/api/statements"
+TP(1) card_statement_composite: "/api/statement-by-card"
+FN(7) card_statement_composite: "/api", "/api/cards", "/api/card/{cardId}", "/api/new-card", "/api/statement/{statementId}", "/api/statement", "/api/statements"
+FN(1) monitor_dashboard: "/"

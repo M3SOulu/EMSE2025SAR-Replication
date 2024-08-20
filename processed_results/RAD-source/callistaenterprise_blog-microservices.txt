@@ -62,9 +62,9 @@ edge_server -> logstash
 zipkin_server -> logstash 
 
 Endpoints:
-auth_server: "/user"
-product_service: "/product/{productId}", "/set-processing-time"
-recommendation_service: "/recommendation", "/set-processing-time"
-review_service: "/review", "/set-processing-time"
-composite_service: "/", "/{productId}"
-monitor_dashboard: "/"
+TP(1) auth_server: "/user"
+TP(2) product_service: "/product/{productId}", "/set-processing-time"
+TP(2) recommendation_service: "/recommendation", "/set-processing-time"
+TP(2) review_service: "/review", "/set-processing-time"
+TP(2) composite_service: "/", "/{productId}"
+TP(1) monitor_dashboard: "/"

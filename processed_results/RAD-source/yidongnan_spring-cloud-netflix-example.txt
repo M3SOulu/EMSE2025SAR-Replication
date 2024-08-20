@@ -42,5 +42,5 @@ zuul -> zipkin
 zuul -> config_server 
 
 Endpoints:
-service_a: "/"
-service_b: "/"
+TP(1) service_a: "/"
+TP(1) service_b: "/"
