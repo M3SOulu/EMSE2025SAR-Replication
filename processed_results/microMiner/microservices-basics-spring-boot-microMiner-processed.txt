@@ -1,3 +1,4 @@
+Components:
 TP configserver (config-server.default)
 FN github_repository 
 TP webservice_registry (anilallewar-eurekaregistry.default)
@@ -11,6 +12,7 @@ FN task_webservice
 TP api_gateway (apigateway.default.svc)
 FN user 
 
+Connections:
 FN github_repository -> configserver 
 FN configserver -> webservice_registry 
 FN configserver -> zipkin_tracing  

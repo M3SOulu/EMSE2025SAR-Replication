@@ -1,3 +1,4 @@
+Components:
 TP configserver (configserver)
 FN github_repository 
 TP webservice_registry (eurekaregistry)
@@ -10,6 +11,7 @@ TP task_webservice (taskwebservice)
 TP api_gateway (apigateway)
 FN user
 
+Connections:
 FN github_repository -> configserver 
 TP configserver -> webservice_registry 
 FN database_auth_server -> auth_server 

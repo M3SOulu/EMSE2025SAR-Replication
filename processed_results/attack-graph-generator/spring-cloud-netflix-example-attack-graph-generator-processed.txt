@@ -1,3 +1,4 @@
+Components:
 TP admin_dashboard (spring-cloud-netflix-example/admin-dashboard)
 TP eureka_server (spring-cloud-netflix-example/eureka-server)
 TP rabbitmq (rabbitmq)
@@ -9,6 +10,7 @@ TP zuul (spring-cloud-netflix-example/zuul)
 TP user (outside)
 TP zipkin (openzipkin/zipkin)
 
+Connections:
 TP admin_dashboard -> config_server 
 TP config_server -> eureka_server 
 TP config_server -> rabbitmq 

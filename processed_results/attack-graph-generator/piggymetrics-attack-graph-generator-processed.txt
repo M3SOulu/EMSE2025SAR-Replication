@@ -1,3 +1,4 @@
+Components:
 TP config (sqshq/piggymetrics-config)
 TP registry (sqshq/piggymetrics-registry)
 TP monitoring (sqshq/piggymetrics-monitoring)
@@ -16,6 +17,7 @@ FN notification_mongodb
 TP gateway (sqshq/piggymetrics-gateway)
 TP user (outside)
 
+Connections:
 TP config -> registry 
 TP config -> monitoring 
 TP turbine_stream_service -> registry 

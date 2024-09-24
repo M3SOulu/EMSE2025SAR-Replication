@@ -1,3 +1,4 @@
+Components:
 TP eureka (eureka.default)
 TP zuul (zuul.default)
 FN user
@@ -6,6 +7,7 @@ TP catalog (catalog.default)
 TP customer (customer.default)
 TP order (order.default)
 
+Connections:
 FN eureka -> zuul  
 FN user -> zuul 
 FN zuul -> user 

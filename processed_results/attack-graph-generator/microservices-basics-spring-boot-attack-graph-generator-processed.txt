@@ -1,3 +1,4 @@
+Components:
 TP configserver (anilallewar/basic-config-server)
 FN github_repository 
 TP webservice_registry (anilallewar/basic-webservice-registry)
@@ -11,6 +12,7 @@ TP task_webservice (anilallewar/basic-task-webservice)
 TP api_gateway (anilallewar/basic-api-gateway)
 TP user (outside)
 
+Connections:
 FN github_repository -> configserver 
 TP configserver -> webservice_registry 
 TP configserver -> zipkin_tracing  

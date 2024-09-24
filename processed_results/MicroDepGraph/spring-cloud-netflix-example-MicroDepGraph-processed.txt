@@ -1,3 +1,4 @@
+Components:
 TP admin_dashboard (admin_dashboard)
 TP eureka_server (eureka_server)
 TP rabbitmq (rabbitmq)
@@ -9,6 +10,7 @@ TP zuul (zuul)
 FN user
 TP zipkin (zipkin)
 
+Connections:
 TP admin_dashboard -> config_server 
 TP config_server -> eureka_server 
 TP config_server -> rabbitmq 

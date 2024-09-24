@@ -69,6 +69,5 @@ TP(2) review_service: "/review", "/set-processing-time"
 TP(2) composite_service: "/", "/{productId}"
 TP(1) monitor_dashboard: "/"
 
-
 FP:
 zipkin

@@ -1,3 +1,4 @@
+Components:
 TP eureka (_eureka)
 TP zuul (_zuul)
 TP user (outside)
@@ -6,6 +7,7 @@ TP catalog (_catalog)
 TP customer (_customer)
 TP order (_order)
 
+Connections:
 TP eureka -> zuul  
 TP user -> zuul 
 TP zuul -> user 

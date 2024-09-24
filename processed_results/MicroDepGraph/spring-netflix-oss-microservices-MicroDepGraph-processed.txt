@@ -1,3 +1,4 @@
+Components:
 TP config_server (config_server)
 FN github_repository 
 TP discovery_service (discovery-service)
@@ -10,6 +11,7 @@ TP card_statement_composite (card_statement)
 TP edge_server (edge_server)
 FN user 
 
+Connections:
 FN github_repository -> config_server 
 TP config_server -> discovery_service 
 TP monitor_dashboard -> discovery_service 

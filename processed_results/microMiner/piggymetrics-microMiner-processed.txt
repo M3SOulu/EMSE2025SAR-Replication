@@ -1,3 +1,4 @@
+Components:
 TP config (config.default)
 TP registry (registry.default)
 TP monitoring (monitoring-service.default)
@@ -16,6 +17,7 @@ TP notification_mongodb (notification-mongodb.default)
 TP gateway (gateway.default)
 FN FN user
 
+Connections:
 FN config -> registry 
 FN config -> monitoring 
 FN turbine_stream_service -> registry 

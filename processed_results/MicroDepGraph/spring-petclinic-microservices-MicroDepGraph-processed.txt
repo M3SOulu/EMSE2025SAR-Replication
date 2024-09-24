@@ -1,3 +1,4 @@
+Components:
 TP config_server (config_server)
 FN github_repository 
 TP discovery_server (discovery_server)
@@ -11,6 +12,7 @@ TP visits_service (visits_service)
 TP api_gateway (api_gateway)
 FN user
 
+Connections:
 FN github_repository -> config_server 
 TP config_server -> discovery_server 
 FN tracing_server -> discovery_server 

@@ -1,3 +1,4 @@
+Components:
 TP configserver (anilallewar/config-server)
 FN github_repository 
 TP webservice_registry (anilallewar/webservice-registry)
@@ -10,6 +11,7 @@ TP task_webservice (anilallewar/task-webservice)
 TP api_gateway (anilallewar/api-gateway)
 TP user (outside)
 
+Connections:
 FN github_repository -> configserver 
 TP configserver -> webservice_registry 
 TP database_auth_server -> auth_server 

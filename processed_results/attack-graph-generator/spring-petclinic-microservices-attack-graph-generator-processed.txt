@@ -1,3 +1,4 @@
+Components:
 TP config_server (springcommunity/spring-petclinic-config-server)
 FN github_repository 
 TP discovery_server (springcommunity/spring-petclinic-discovery-server)
@@ -11,6 +12,7 @@ TP visits_service (springcommunity/spring-petclinic-visits-service)
 TP api_gateway (springcommunity/spring-petclinic-api-gateway)
 TP user (outside)
 
+Connections:
 FN github_repository -> config_server 
 TP config_server -> discovery_server 
 TP tracing_server -> discovery_server 

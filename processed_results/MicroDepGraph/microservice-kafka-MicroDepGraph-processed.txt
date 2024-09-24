@@ -1,3 +1,4 @@
+Components:
 TP zookeeper (zookeeper)
 TP kafka (kafka)
 TP shipping (shipping)
@@ -7,6 +8,7 @@ TP apache (apache)
 FN user
 TP postgres (postgres)
 
+Connections:
 TP zookeeper -> kafka
 TP order -> kafka
 TP kafka -> invoicing

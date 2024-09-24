@@ -1,3 +1,4 @@
+Components:
 TP elasticsearch (docker.elastic.co/elasticsearch/elasticsearch)
 TP kibana  (docker.elastic.co/kibana/kibana)
 TP logstash (docker.elastic.co/logstash/logstash)
@@ -16,6 +17,7 @@ TP composite_service (_composite)
 TP edge_server (_edge)
 TP user (outside)
 
+Connections:
 TP elasticsearch -> kibana  
 TP logstash -> elasticsearch 
 FN github_repository -> config_server 

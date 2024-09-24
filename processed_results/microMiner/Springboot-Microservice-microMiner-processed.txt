@@ -1,3 +1,4 @@
+Components:
 TP service_registry (eureka.default)
 TP config_server (cloud-config-server-app.default)
 FN github_repository 
@@ -8,6 +9,7 @@ TP hystrix_dashboard (hystrix-dashboard-app.default)
 TP api_gateway (cloud-gateway-app.default)
 FN user
 
+Connections:
 FN github_repository -> config_server 
 FN config_server -> service_registry 
 FN department_service -> zipkin_server 
