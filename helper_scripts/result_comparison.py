@@ -75,23 +75,26 @@ def main():
     # Extract results per application
     for application in applications:
         combined_results = list()
-        combined_results.append(parse_groundtruth(application))
+        combined_results.append(["Groundtruth"] + parse_groundtruth(application))
         num_components = len(combined_results[0])
         
     
         for tool in tools:
-            tool_results = parse_tool_result_file(application, tool)
-            if not tool_results:
-                tool_results = ["/"] * num_components
+            tool_results = [tool] + parse_tool_result_file(application, tool)
+            if len(tool_results) == 1:
+                tool_results += ["/"] * num_components
             combined_results.append(tool_results[:num_components])
 
         print("\n")
         for c in combined_results:
             print(c)
-        # output_path = os.path.join("..", "merged_results", f"{application}.csv")
-        # with open(output_path, "w") as output_file:
-
-        #     output_file.write()
+        output_path = os.path.join("..", "merged_results", f"{application}.csv")
+        with open(output_path, "w") as output_file:
+            for i, component in enumerate(combined_results[0]):
+                output_file.write(component)
+                for tool in combined_results[1:]:
+                    output_file.write(f", {tool[i]}")
+                output_file.write("\n")
 
 
 
