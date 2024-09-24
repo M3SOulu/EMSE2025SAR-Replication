@@ -1,0 +1,50 @@
+Groundtruth, attack-graph-generator, code2DFD, Contextmap, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
+config_server, TP, TP, /, TP, /, /, /, /
+admin, TP, TP, /, TP, /, /, /, /
+eureka_server, TP, TP, /, TP, /, /, /, /
+user_service, TP, TP, /, TP, /, /, /, /
+kafka, TP, TP, /, TP, /, /, /, /
+mailer, TP, TP, /, TP, /, /, /, /
+reminder, TP, TP, /, TP, /, /, /, /
+api_gateway, TP, TP, /, TP, /, /, /, /
+oauth, TP, TP, /, TP, /, /, /, /
+proxy, TP, TP, /, TP, /, /, /, /
+user, TP, FN, /, FN, /, /, /, /
+zookeeper, TP, TP, /, TP, /, /, /, /
+logstash, FN, TP, /, FN, /, /, /, /
+jmx_monitoring, FN, TP, /, FN, /, /, /, /
+todo_infra, FN, TP, /, FN, /, /, /, /
+admin -> config_server, TP, TP, /, FN, /, /, /, /
+config_server -> eureka_server, TP, TP, /, TP, /, /, /, /
+eureka_server -> admin, TP, TP, /, TP, /, /, /, /
+admin -> user_service, TP, TP, /, TP, /, /, /, /
+config_server -> user_service, TP, TP, /, FN, /, /, /, /
+admin -> mailer, TP, TP, /, TP, /, /, /, /
+config_server -> mailer, TP, TP, /, FN, /, /, /, /
+mailer -> eureka_server, TP, TP, /, TP, /, /, /, /
+kafka -> mailer, TP, TP, /, FN, /, /, /, /
+reminder -> eureka_server, TP, TP, /, TP, /, /, /, /
+admin -> reminder, TP, TP, /, TP, /, /, /, /
+config_server -> reminder, TP, TP, /, FN, /, /, /, /
+reminder -> kafka, TP, TP, /, FN, /, /, /, /
+eureka_server -> api_gateway, TP, TP, /, TP, /, /, /, /
+admin -> api_gateway, TP, TP, /, TP, /, /, /, /
+config_server -> api_gateway, TP, TP, /, FN, /, /, /, /
+api_gateway -> user_service, TP, TP, /, FN, /, /, /, /
+config_server -> oauth, TP, TP, /, FN, /, /, /, /
+oauth -> user_service, TP, TP, /, TP, /, /, /, /
+oauth -> eureka_server, TP, TP, /, TP, /, /, /, /
+admin -> oauth, TP, FN, /, TP, /, /, /, /
+user -> proxy, TP, FN, /, FN, /, /, /, /
+proxy -> user, TP, FN, /, FN, /, /, /, /
+proxy -> api_gateway, TP, FN, /, TP, /, /, /, /
+zookeeper -> kafka, TP, TP, /, TP, /, /, /, /
+proxy -> logstash, FN, FN, /, FN, /, /, /, /
+user_service -> logstash, FN, TP, /, FN, /, /, /, /
+reminder -> logstash, FN, TP, /, FN, /, /, /, /
+eureka_server -> logstash, FN, TP, /, FN, /, /, /, /
+api_gateway -> logstash, FN, TP, /, FN, /, /, /, /
+oauth -> logstash, FN, TP, /, FN, /, /, /, /
+admin -> logstash, FN, TP, /, FN, /, /, /, /
+config_server -> logstash, FN, TP, /, FN, /, /, /, /
+mailer -> logstash, FN, TP, /, FN, /, /, /, /

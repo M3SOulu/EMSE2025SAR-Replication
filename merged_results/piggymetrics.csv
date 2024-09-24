@@ -1,0 +1,55 @@
+Groundtruth, attack-graph-generator, code2DFD, Contextmap, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
+config, TP, TP, /, /, TP, /, /, /
+registry, TP, TP, /, /, TP, /, /, /
+monitoring, TP, TP, /, /, TP, /, /, /
+turbine_stream_service, TP, TP, /, /, TP, /, /, /
+rabbitmq, TP, TP, /, /, TP, /, /, /
+auth_service, TP, TP, /, /, TP, /, /, /
+account_service, TP, TP, /, /, TP, /, /, /
+notification_service, TP, TP, /, /, TP, /, /, /
+mail_server, FN, TP, /, /, FN, /, /, /
+statistics_service, TP, TP, /, /, TP, /, /, /
+external_website, FN, TP, /, /, FN, /, /, /
+auth_mongodb, TP, TP, /, /, TP, /, /, /
+account_mongodb, FN, TP, /, /, TP, /, /, /
+statistics_mongodb, FN, TP, /, /, TP, /, /, /
+notification_mongodb, FN, TP, /, /, TP, /, /, /
+gateway, TP, TP, /, /, TP, /, /, /
+user, TP, TP, /, /, FN, /, /, /
+config -> registry, TP, TP, /, /, FN, /, /, /
+config -> monitoring, TP, TP, /, /, FN, /, /, /
+turbine_stream_service -> registry, TP, TP, /, /, FN, /, /, /
+config -> turbine_stream_service, TP, TP, /, /, FN, /, /, /
+turbine_stream_service -> monitoring, TP, TP, /, /, FN, /, /, /
+rabbitmq -> turbine_stream_service, TP, TP, /, /, FN, /, /, /
+auth_service -> registry, TP, TP, /, /, FN, /, /, /
+config -> auth_service, TP, TP, /, /, FN, /, /, /
+account_service -> registry, TP, TP, /, /, FN, /, /, /
+auth_service -> account_service, TP, TP, /, /, FN, /, /, /
+account_service -> auth_service, TP, FN, /, /, FN, /, /, /
+config -> account_service, TP, TP, /, /, FN, /, /, /
+account_service -> rabbitmq, TP, TP, /, /, FN, /, /, /
+notification_service -> registry, TP, TP, /, /, FN, /, /, /
+auth_service -> notification_service, TP, TP, /, /, FN, /, /, /
+config -> notification_service, TP, TP, /, /, FN, /, /, /
+notification_service -> rabbitmq, TP, TP, /, /, FN, /, /, /
+notification_service -> mail_server, FN, TP, /, /, FN, /, /, /
+statistics_service -> registry, TP, TP, /, /, FN, /, /, /
+auth_service -> statistics_service, TP, TP, /, /, FN, /, /, /
+config -> statistics_service, TP, TP, /, /, FN, /, /, /
+statistics_service -> rabbitmq, TP, TP, /, /, FN, /, /, /
+external_website -> statistics_service, FN, TP, /, /, FN, /, /, /
+account_service -> statistics_service, TP, FN, /, /, FN, /, /, /
+notification_service -> account_service, TP, FN, /, /, FN, /, /, /
+account_mongodb -> account_service, FN, TP, /, /, FN, /, /, /
+notification_mongodb -> notification_service, FN, TP, /, /, FN, /, /, /
+statistics_mongodb -> statistics_service, FN, TP, /, /, FN, /, /, /
+auth_mongodb -> auth_service, TP, TP, /, /, FN, /, /, /
+registry -> gateway, TP, TP, /, /, FN, /, /, /
+user -> gateway, TP, TP, /, /, FN, /, /, /
+gateway -> user, TP, TP, /, /, FN, /, /, /
+config -> gateway, TP, TP, /, /, FN, /, /, /
+gateway -> account_service, TP, TP, /, /, FN, /, /, /
+gateway -> statistics_service, TP, TP, /, /, FN, /, /, /
+gateway -> notification_service, TP, TP, /, /, FN, /, /, /
+gateway -> auth_service, TP, TP, /, /, FN, /, /, /

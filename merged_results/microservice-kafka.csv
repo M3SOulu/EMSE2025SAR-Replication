@@ -1,0 +1,21 @@
+Groundtruth, attack-graph-generator, code2DFD, Contextmap, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
+zookeeper, TP, TP, /, TP, /, /, /, /
+kafka, TP, TP, /, TP, /, /, /, /
+shipping, TP, TP, /, TP, /, /, /, /
+order, TP, TP, /, TP, /, /, /, /
+invoicing, TP, TP, /, TP, /, /, /, /
+apache, TP, TP, /, TP, /, /, /, /
+user, TP, TP, /, FN, /, /, /, /
+postgres, TP, TP, /, TP, /, /, /, /
+zookeeper -> kafka, TP, TP, /, TP, /, /, /, /
+order -> kafka, TP, TP, /, TP, /, /, /, /
+kafka -> invoicing, TP, TP, /, TP, /, /, /, /
+kafka -> shipping, TP, TP, /, TP, /, /, /, /
+apache -> order, TP, TP, /, TP, /, /, /, /
+apache -> shipping, TP, TP, /, TP, /, /, /, /
+apache -> invoicing, TP, TP, /, TP, /, /, /, /
+user -> apache, TP, TP, /, FN, /, /, /, /
+apache -> user, TP, TP, /, FN, /, /, /, /
+postgres -> order, TP, TP, /, TP, /, /, /, /
+postgres -> shipping, TP, TP, /, TP, /, /, /, /
+postgres -> invoicing, TP, TP, /, TP, /, /, /, /

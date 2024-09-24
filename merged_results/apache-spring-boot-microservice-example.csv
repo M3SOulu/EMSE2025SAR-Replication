@@ -1,0 +1,12 @@
+Groundtruth, attack-graph-generator, code2DFD, Contextmap, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
+apache_server, /, TP, /, /, /, /, /, /
+user, /, TP, /, /, /, /, /, /
+content_service, /, TP, /, /, /, /, /, /
+product_service, /, TP, /, /, /, /, /, /
+cart_service, /, TP, /, /, /, /, /, /
+user -> apache_server, /, TP, /, /, /, /, /, /
+apache_server -> user, /, TP, /, /, /, /, /, /
+cart_service -> product_service, /, FN, /, /, /, /, /, /
+apache_server -> cart_service, /, TP, /, /, /, /, /, /
+apache_server -> product_service, /, TP, /, /, /, /, /, /
+apache_server -> content_service, /, TP, /, /, /, /, /, /

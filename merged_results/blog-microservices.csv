@@ -1,0 +1,60 @@
+Groundtruth, attack-graph-generator, code2DFD, Contextmap, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
+elasticsearch, TP, TP, /, /, /, /, /, /
+kibana, TP, TP, /, /, /, /, /, /
+logstash, TP, TP, /, /, /, /, /, /
+rabbitmq, TP, TP, /, /, /, /, /, /
+config_server, TP, TP, /, /, /, /, /, /
+discovery_server, TP, TP, /, /, /, /, /, /
+github_repository, FN, FN, /, /, /, /, /, /
+auth_server, TP, TP, /, /, /, /, /, /
+monitor_dashboard, TP, TP, /, /, /, /, /, /
+turbine_server, FN, TP, /, /, /, /, /, /
+zipkin_server, TP, TP, /, /, /, /, /, /
+product_service, TP, TP, /, /, /, /, /, /
+recommendation_service, TP, TP, /, /, /, /, /, /
+review_service, TP, TP, /, /, /, /, /, /
+composite_service, TP, TP, /, /, /, /, /, /
+edge_server, TP, TP, /, /, /, /, /, /
+user, TP, TP, /, /, /, /, /, /
+elasticsearch -> kibana, TP, TP, /, /, /, /, /, /
+logstash -> elasticsearch, TP, TP, /, /, /, /, /, /
+github_repository -> config_server, FN, FN, /, /, /, /, /, /
+config_server -> discovery_server, TP, TP, /, /, /, /, /, /
+config_server -> rabbitmq, TP, FN, /, /, /, /, /, /
+config_server -> auth_server, TP, TP, /, /, /, /, /, /
+config_server -> monitor_dashboard, TP, TP, /, /, /, /, /, /
+monitor_dashboard -> discovery_server, TP, FN, /, /, /, /, /, /
+rabbitmq -> turbine_server, FN, FN, /, /, /, /, /, /
+turbine_server -> discovery_server, FN, TP, /, /, /, /, /, /
+config_server -> turbine_server, FN, TP, /, /, /, /, /, /
+turbine_server -> monitor_dashboard, FN, TP, /, /, /, /, /, /
+rabbitmq -> zipkin_server, TP, FN, /, /, /, /, /, /
+config_server -> product_service, TP, TP, /, /, /, /, /, /
+product_service -> discovery_server, TP, TP, /, /, /, /, /, /
+config_server -> recommendation_service, TP, TP, /, /, /, /, /, /
+recommendation_service -> discovery_server, TP, TP, /, /, /, /, /, /
+config_server -> review_service, TP, TP, /, /, /, /, /, /
+review_service -> discovery_server, TP, TP, /, /, /, /, /, /
+config_server -> composite_service, TP, TP, /, /, /, /, /, /
+auth_server -> composite_service, TP, FN, /, /, /, /, /, /
+composite_service -> discovery_server, TP, TP, /, /, /, /, /, /
+composite_service -> rabbitmq, TP, FN, /, /, /, /, /, /
+composite_service -> product_service, TP, FN, /, /, /, /, /, /
+composite_service -> recommendation_service, TP, FN, /, /, /, /, /, /
+composite_service -> review_service, TP, FN, /, /, /, /, /, /
+edge_server -> user, TP, TP, /, /, /, /, /, /
+user -> edge_server, TP, TP, /, /, /, /, /, /
+edge_server -> composite_service, TP, FN, /, /, /, /, /, /
+discovery_server -> edge_server, TP, FN, /, /, /, /, /, /
+config_server -> edge_server, TP, TP, /, /, /, /, /, /
+edge_server -> auth_server, TP, FN, /, /, /, /, /, /
+discovery_server -> logstash, TP, FN, /, /, /, /, /, /
+config_server -> logstash, TP, FN, /, /, /, /, /, /
+auth_server -> logstash, TP, FN, /, /, /, /, /, /
+product_service -> logstash, TP, FN, /, /, /, /, /, /
+recommendation_service -> logstash, TP, FN, /, /, /, /, /, /
+review_service -> logstash, TP, FN, /, /, /, /, /, /
+composite_service -> logstash, TP, FN, /, /, /, /, /, /
+monitor_dashboard -> logstash, TP, FN, /, /, /, /, /, /
+edge_server -> logstash, TP, FN, /, /, /, /, /, /
+zipkin_server -> logstash, TP, FN, /, /, /, /, /, /

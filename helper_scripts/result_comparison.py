@@ -85,9 +85,8 @@ def main():
                 tool_results += ["/"] * num_components
             combined_results.append(tool_results[:num_components])
 
-        print("\n")
-        for c in combined_results:
-            print(c)
+
+        # Looks and is very hacky, but works (opposed to csv library)
         output_path = os.path.join("..", "merged_results", f"{application}.csv")
         with open(output_path, "w") as output_file:
             for i, component in enumerate(combined_results[0]):

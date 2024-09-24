@@ -1,0 +1,40 @@
+Groundtruth, attack-graph-generator, code2DFD, Contextmap, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
+admin_dashboard, TP, TP, /, TP, /, /, /, /
+eureka_server, TP, TP, /, TP, /, /, /, /
+rabbitmq, TP, TP, /, TP, /, /, /, /
+config_server, TP, TP, /, TP, /, /, /, /
+hystrix_dashboard, TP, TP, /, TP, /, /, /, /
+service_a, TP, TP, /, TP, /, /, /, /
+service_b, TP, TP, /, TP, /, /, /, /
+zuul, TP, TP, /, TP, /, /, /, /
+user, TP, TP, /, FN, /, /, /, /
+zipkin, TP, TP, /, TP, /, /, /, /
+admin_dashboard -> config_server, TP, FN, /, TP, /, /, /, /
+config_server -> eureka_server, TP, TP, /, TP, /, /, /, /
+config_server -> rabbitmq, TP, TP, /, TP, /, /, /, /
+admin_dashboard -> eureka_server, TP, TP, /, TP, /, /, /, /
+admin_dashboard -> hystrix_dashboard, TP, TP, /, TP, /, /, /, /
+hystrix_dashboard -> eureka_server, TP, TP, /, TP, /, /, /, /
+admin_dashboard -> service_a, TP, TP, /, TP, /, /, /, /
+service_a -> rabbitmq, TP, TP, /, TP, /, /, /, /
+config_server -> service_a, TP, TP, /, TP, /, /, /, /
+service_a -> eureka_server, TP, TP, /, TP, /, /, /, /
+service_a -> hystrix_dashboard, TP, TP, /, TP, /, /, /, /
+admin_dashboard -> service_b, TP, TP, /, TP, /, /, /, /
+service_b -> rabbitmq, TP, TP, /, TP, /, /, /, /
+config_server -> service_b, TP, TP, /, TP, /, /, /, /
+service_b -> eureka_server, TP, TP, /, TP, /, /, /, /
+service_a -> service_b, TP, TP, /, TP, /, /, /, /
+zuul -> user, TP, TP, /, FN, /, /, /, /
+user -> zuul, TP, TP, /, FN, /, /, /, /
+zuul -> service_a, TP, TP, /, TP, /, /, /, /
+eureka_server -> zuul, TP, TP, /, TP, /, /, /, /
+rabbitmq -> zipkin, TP, FN, /, FN, /, /, /, /
+service_b -> zipkin, TP, TP, /, TP, /, /, /, /
+service_b -> hystrix_dashboard, TP, TP, /, TP, /, /, /, /
+service_a -> zipkin, TP, TP, /, TP, /, /, /, /
+admin_dashboard -> rabbitmq, TP, TP, /, TP, /, /, /, /
+admin_dashboard -> zuul, TP, TP, /, TP, /, /, /, /
+zuul -> rabbitmq, TP, TP, /, TP, /, /, /, /
+zuul -> zipkin, TP, TP, /, TP, /, /, /, /
+zuul -> config_server, TP, FN, /, TP, /, /, /, /

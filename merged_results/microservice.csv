@@ -1,0 +1,21 @@
+Groundtruth, attack-graph-generator, code2DFD, Contextmap, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
+eureka, TP, TP, /, TP, TP, /, /, /
+zuul, TP, TP, /, TP, TP, /, /, /
+user, TP, TP, /, FN, FN, /, /, /
+turbine, TP, TP, /, TP, TP, /, /, /
+catalog, TP, TP, /, TP, TP, /, /, /
+customer, TP, TP, /, TP, TP, /, /, /
+order, TP, TP, /, TP, TP, /, /, /
+eureka -> zuul, TP, TP, /, TP, FN, /, /, /
+user -> zuul, TP, TP, /, FN, FN, /, /, /
+zuul -> user, TP, TP, /, FN, FN, /, /, /
+turbine -> eureka, TP, TP, /, TP, FN, /, /, /
+catalog -> eureka, TP, TP, /, TP, FN, /, /, /
+customer -> eureka, TP, TP, /, TP, FN, /, /, /
+order -> eureka, TP, TP, /, TP, FN, /, /, /
+order -> catalog, TP, TP, /, FN, FN, /, /, /
+order -> customer, TP, TP, /, FN, FN, /, /, /
+order -> turbine, TP, FN, /, FN, FN, /, /, /
+zuul -> customer, TP, TP, /, FN, FN, /, /, /
+zuul -> catalog, TP, TP, /, FN, FN, /, /, /
+zuul -> order, TP, TP, /, FN, FN, /, /, /
