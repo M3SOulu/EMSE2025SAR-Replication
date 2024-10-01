@@ -20,6 +20,5 @@ for PROJECT in $PROJECTS; do
         --url http://localhost:8080/ \
         --header 'content-type: application/json' \
         --data "$json_payload" > "$OUTPUT_PATH/rad-source-raw.json"
-    jq -r '.restFlows[] | "\(.client.msRoot) --> \(.endpoint.msRoot)  \(.endpoint.path)"' "$OUTPUT_PATH/rad-source-raw.json" > $OUTPUT_PATH/rad-source-processed.json
 done
 
