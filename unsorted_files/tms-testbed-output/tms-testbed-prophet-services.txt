@@ -1,4 +1,0 @@
-tms-cms
-tms-ums
-tms-qms
-tms-ems

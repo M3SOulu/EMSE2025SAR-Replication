@@ -1,0 +1,28 @@
+Components:
+zookeeper
+kafka
+shipping
+order
+invoicing
+apache
+user
+postgres
+
+Connections:
+zookeeper -> kafka
+order -> kafka
+kafka -> invoicing
+kafka -> shipping
+apache -> order
+apache -> shipping
+apache -> invoicing
+user -> apache
+apache -> user
+postgres -> order
+postgres -> shipping
+postgres -> invoicing
+
+Endpoints:
+order: "/", "/form.html", "/line", "/{id}"
+shipping: "/", "/{id}"
+invoicing: "/", "/{id}"

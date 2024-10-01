@@ -1,8 +1,0 @@
-AccountService
-PriceService
-StoreService
-CustomerService
-ItemService
-Docker
-tap-and-eat-ui
-.settings
