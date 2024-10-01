@@ -1,55 +1,38 @@
-Components:
-config_server 
-admin 
-eureka_server
-user_service
-kafka 
-mailer 
-reminder
-api_gateway 
-oauth
-proxy 
-user 
-zookeeper
-logstash
-jmx_monitoring 
-todo_infra 
-
 Connections:
-admin -> config_server  
-config_server -> eureka_server 
-eureka_server -> admin 
-admin -> user_service 
-config_server -> user_service 
-admin -> mailer 
-config_server -> mailer 
-mailer -> eureka_server 
-kafka -> mailer 
-reminder -> eureka_server 
-admin -> reminder 
-config_server -> reminder 
-reminder -> kafka 
-eureka_server -> api_gateway 
-admin -> api_gateway 
-config_server -> api_gateway 
-api_gateway -> user_service 
-config_server -> oauth 
-oauth -> user_service 
-oauth -> eureka_server 
-admin -> oauth 
-user -> proxy 
-proxy -> user 
-proxy -> api_gateway 
-zookeeper -> kafka 
-proxy -> logstash 
-user_service -> logstash 
-reminder -> logstash 
-eureka_server -> logstash 
-api_gateway -> logstash 
-oauth -> logstash 
-admin -> logstash 
-config_server -> logstash 
-mailer -> logstash 
+FN admin -> config_server  
+FN config_server -> eureka_server 
+FN eureka_server -> admin 
+FN admin -> user_service 
+FN config_server -> user_service 
+FN admin -> mailer 
+FN config_server -> mailer 
+FN mailer -> eureka_server 
+FN kafka -> mailer 
+FN reminder -> eureka_server 
+FN admin -> reminder 
+FN config_server -> reminder 
+FN reminder -> kafka 
+FN eureka_server -> api_gateway 
+FN admin -> api_gateway 
+FN config_server -> api_gateway 
+FN api_gateway -> user_service 
+FN config_server -> oauth 
+FN oauth -> user_service 
+FN oauth -> eureka_server 
+FN admin -> oauth 
+FN user -> proxy 
+FN proxy -> user 
+FN proxy -> api_gateway 
+FN zookeeper -> kafka 
+FN proxy -> logstash 
+FN user_service -> logstash 
+FN reminder -> logstash 
+FN eureka_server -> logstash 
+FN api_gateway -> logstash 
+FN oauth -> logstash 
+FN admin -> logstash 
+FN config_server -> logstash 
+FN mailer -> logstash 
 
 Endpoints:
 TP(4) api_gateway: "/todos", "/accounts", "/accounts/me", "/accounts/me/todos"

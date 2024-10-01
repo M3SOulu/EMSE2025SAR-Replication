@@ -1,22 +1,14 @@
-Components:
-discovery_server 
-ratings_data_service 
-movie_info_service
-external_website
-movie_catalog_service
-
 Connections:
-ratings_data_service -> discovery_server 
-movie_info_service -> discovery_server 
-external_website -> movie_info_service 
-movie_catalog_service -> discovery_server 
-movie_catalog_service -> ratings_data_service 
-movie_catalog_service -> movie_info_service 
+FN ratings_data_service -> discovery_server 
+FN movie_info_service -> discovery_server 
+FN external_website -> movie_info_service 
+FN movie_catalog_service -> discovery_server 
+TP movie_catalog_service -> ratings_data_service 
+TP movie_catalog_service -> movie_info_service 
 
 Endpoints:
 FN(1) ratings_data_service: "/ratingsdata"
 TP(2) ratings_data_service: "/ratingsdata/movies/{movieId}", "/ratingsdata/user/{userId}"
-FP(1) ratings_data_service: "/movies/{movieId}"
 FN(1) movie_info_service: "/movies"
 TP(1) movie_info_service: "/movies/{movieId}"
 FN(1) movie_catalog_service: "/catalog"
