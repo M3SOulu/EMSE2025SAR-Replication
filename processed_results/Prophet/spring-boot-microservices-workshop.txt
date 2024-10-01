@@ -1,19 +1,15 @@
 Components:
-discovery_server 
-ratings_data_service 
-movie_info_service
-external_website
-movie_catalog_service
+FN discovery_server 
+TP ratings_data_service 
+TP movie_info_service
+FN external_website
+TP movie_catalog_service
+FP .idea
 
 Connections:
-ratings_data_service -> discovery_server 
-movie_info_service -> discovery_server 
-external_website -> movie_info_service 
-movie_catalog_service -> discovery_server 
-movie_catalog_service -> ratings_data_service 
-movie_catalog_service -> movie_info_service 
-
-Endpoints:
-ratings_data_service: "/ratingsdata", "/ratingsdata/movies/{movieId}", "/ratingsdata/user/{userId}"
-movie_info_service: "/movies", "/movies/{movieId}"
-movie_catalog_service: "/catalog", "/catalog/{userId}"
+FN ratings_data_service -> discovery_server 
+FN movie_info_service -> discovery_server 
+FN external_website -> movie_info_service 
+FN movie_catalog_service -> discovery_server 
+TP movie_catalog_service -> ratings_data_service 
+TP movie_catalog_service -> movie_info_service 

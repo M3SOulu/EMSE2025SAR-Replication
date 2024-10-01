@@ -1,28 +1,25 @@
 Components:
-zookeeper
-kafka
-shipping
-order
-invoicing
-apache
-user
-postgres
+FN zookeeper
+FN kafka
+FN shipping
+FN order
+FN invoicing
+FN apache
+FN user
+FN postgres
+FP docker
+FP microservice-kafka
 
 Connections:
-zookeeper -> kafka
-order -> kafka
-kafka -> invoicing
-kafka -> shipping
-apache -> order
-apache -> shipping
-apache -> invoicing
-user -> apache
-apache -> user
-postgres -> order
-postgres -> shipping
-postgres -> invoicing
-
-Endpoints:
-order: "/", "/form.html", "/line", "/{id}"
-shipping: "/", "/{id}"
-invoicing: "/", "/{id}"
+FN zookeeper -> kafka
+FN order -> kafka
+FN kafka -> invoicing
+FN kafka -> shipping
+FN apache -> order
+FN apache -> shipping
+FN apache -> invoicing
+FN user -> apache
+FN apache -> user
+FN postgres -> order
+FN postgres -> shipping
+FN postgres -> invoicing

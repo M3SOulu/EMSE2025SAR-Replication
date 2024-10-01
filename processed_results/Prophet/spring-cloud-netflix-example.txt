@@ -1,46 +1,44 @@
 Components:
-admin_dashboard 
-eureka_server 
-rabbitmq 
-config_server 
-hystrix_dashboard
-service_a
-service_b
-zuul 
-user
-zipkin
+FN admin_dashboard 
+FN eureka_server 
+FN rabbitmq 
+FN config_server 
+FN hystrix_dashboard
+FN service_a
+FN service_b
+FN zuul 
+FN user
+FN zipkin
+FP screenshots
+FP gradle
 
 Connections:
-admin_dashboard -> config_server 
-config_server -> eureka_server 
-config_server -> rabbitmq 
-admin_dashboard -> eureka_server 
-admin_dashboard -> hystrix_dashboard 
-hystrix_dashboard -> eureka_server
-admin_dashboard -> service_a 
-service_a -> rabbitmq 
-config_server -> service_a 
-service_a -> eureka_server 
-service_a -> hystrix_dashboard 
-admin_dashboard -> service_b 
-service_b -> rabbitmq 
-config_server -> service_b 
-service_b -> eureka_server 
-service_a -> service_b 
-zuul -> user 
-user -> zuul 
-zuul -> service_a 
-eureka_server -> zuul 
-rabbitmq -> zipkin 
-service_b -> zipkin 
-service_b -> hystrix_dashboard 
-service_a -> zipkin 
-admin_dashboard -> rabbitmq 
-admin_dashboard -> zuul 
-zuul -> rabbitmq 
-zuul -> zipkin 
-zuul -> config_server 
-
-Endpoints:
-service_a: "/"
-service_b: "/"
+FN admin_dashboard -> config_server 
+FN config_server -> eureka_server 
+FN config_server -> rabbitmq 
+FN admin_dashboard -> eureka_server 
+FN admin_dashboard -> hystrix_dashboard 
+FN hystrix_dashboard -> eureka_server
+FN admin_dashboard -> service_a 
+FN service_a -> rabbitmq 
+FN config_server -> service_a 
+FN service_a -> eureka_server 
+FN service_a -> hystrix_dashboard 
+FN admin_dashboard -> service_b 
+FN service_b -> rabbitmq 
+FN config_server -> service_b 
+FN service_b -> eureka_server 
+FN service_a -> service_b 
+FN zuul -> user 
+FN user -> zuul 
+FN zuul -> service_a 
+FN eureka_server -> zuul 
+FN rabbitmq -> zipkin 
+FN service_b -> zipkin 
+FN service_b -> hystrix_dashboard 
+FN service_a -> zipkin 
+FN admin_dashboard -> rabbitmq 
+FN admin_dashboard -> zuul 
+FN zuul -> rabbitmq 
+FN zuul -> zipkin 
+FN zuul -> config_server 

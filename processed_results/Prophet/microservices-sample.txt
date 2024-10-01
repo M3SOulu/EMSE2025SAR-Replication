@@ -1,57 +1,55 @@
 Components:
-consul 
-consul2 
-consul3 
-elasticsearch
-logstash
-kibana
-rabbit
-service_one
-service_two
-service_one_db
-service_two_db
-api_gateway
-web_application
-user
-scope
+FN consul 
+FN consul2 
+FN consul3 
+FN elasticsearch
+FN logstash
+FN kibana
+FN rabbit
+TP service_one
+TP service_two
+FN service_one_db
+FN service_two_db
+FN api_gateway
+TP web_application
+FN user
+FN scope
+FP about
+FP documents
+FP build
 
 Connections:
-consul2 -> consul 
-consul3 -> consul 
-consul3 -> consul2 
-logstash -> elasticsearch 
-elasticsearch -> kibana 
-consul -> service_one 
-service_one -> logstash 
-service_one -> rabbit 
-rabbit -> service_one 
-consul -> service_two 
-service_two -> logstash 
-service_two -> rabbit 
-rabbit -> service_two 
-service_one_db -> service_one 
-service_two_db -> service_two 
-api_gateway -> service_one 
-api_gateway -> service_two 
-consul -> api_gateway 
-user -> web_application 
-web_application -> user 
-web_application -> api_gateway 
-api_gateway -> scope 
-service_one -> scope 
-service_one_db -> scope 
-service_two -> scope 
-service_two_db -> scope 
-web_application -> scope 
-rabbit -> scope 
-consul -> scope 
-consul2 -> scope 
-consul3 -> scope 
-kibana -> scope 
-elasticsearch -> scope 
-logstash -> scope 
-
-Endpoints:
-service_one: "/"
-service_two: "/"
-api_gateway: "/"
+FN consul2 -> consul 
+FN consul3 -> consul 
+FN consul3 -> consul2 
+FN logstash -> elasticsearch 
+FN elasticsearch -> kibana 
+FN consul -> service_one 
+FN service_one -> logstash 
+FN service_one -> rabbit 
+FN rabbit -> service_one 
+FN consul -> service_two 
+FN service_two -> logstash 
+FN service_two -> rabbit 
+FN rabbit -> service_two 
+FN service_one_db -> service_one 
+FN service_two_db -> service_two 
+FN api_gateway -> service_one 
+FN api_gateway -> service_two 
+FN consul -> api_gateway 
+FN user -> web_application 
+FN web_application -> user 
+FN web_application -> api_gateway 
+FN api_gateway -> scope 
+FN service_one -> scope 
+FN service_one_db -> scope 
+FN service_two -> scope 
+FN service_two_db -> scope 
+FN web_application -> scope 
+FN rabbit -> scope 
+FN consul -> scope 
+FN consul2 -> scope 
+FN consul3 -> scope 
+FN kibana -> scope 
+FN elasticsearch -> scope 
+FN logstash -> scope 

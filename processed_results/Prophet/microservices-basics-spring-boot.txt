@@ -1,50 +1,46 @@
 Components:
-configserver
-github_repository 
-webservice_registry
-zipkin_tracing
-mysqldb
-auth_server
-web_portal 
-user_webservice
-comments_webservice
-task_webservice
-api_gateway
-user 
+FN configserver
+FN github_repository 
+FN webservice_registry
+FN zipkin_tracing
+FN mysqldb
+FN auth_server
+FN web_portal 
+FN user_webservice
+FN comments_webservice
+FN task_webservice
+FN api_gateway
+FN user 
+FP images
+FP docker-orchestration
 
 Connections:
-github_repository -> configserver 
-configserver -> webservice_registry 
-configserver -> zipkin_tracing  
-configserver -> auth_server 
-mysqldb -> auth_server 
-auth_server -> webservice_registry 
-web_portal -> webservice_registry 
-configserver -> web_portal 
-user_webservice -> zipkin_tracing 
-configserver -> user_webservice 
-user_webservice -> webservice_registry 
-auth_server -> user_webservice 
-comments_webservice -> zipkin_tracing 
-configserver -> comments_webservice 
-comments_webservice -> webservice_registry 
-task_webservice -> zipkin_tracing 
-configserver -> task_webservice 
-auth_server -> task_webservice 
-task_webservice -> webservice_registry 
-task_webservice -> web_portal 
-task_webservice -> comments_webservice 
-api_gateway -> user 
-user -> api_gateway 
-configserver -> api_gateway 
-webservice_registry -> api_gateway 
-api_gateway -> zipkin_tracing 
-auth_server -> api_gateway 
-api_gateway -> user_webservice 
-api_gateway -> task_webservice 
-
-Endpoints:
-auth_server: "/me"
-user_webservice: "/", "/{userName}"
-comments_webservice: "/comments", "/comments/{taskId}"
-task_webservice: "/", "/{taskId}", "/usertask/{userName}"
+FN github_repository -> configserver 
+FN configserver -> webservice_registry 
+FN configserver -> zipkin_tracing  
+FN configserver -> auth_server 
+FN mysqldb -> auth_server 
+FN auth_server -> webservice_registry 
+FN web_portal -> webservice_registry 
+FN configserver -> web_portal 
+FN user_webservice -> zipkin_tracing 
+FN configserver -> user_webservice 
+FN user_webservice -> webservice_registry 
+FN auth_server -> user_webservice 
+FN comments_webservice -> zipkin_tracing 
+FN configserver -> comments_webservice 
+FN comments_webservice -> webservice_registry 
+FN task_webservice -> zipkin_tracing 
+FN configserver -> task_webservice 
+FN auth_server -> task_webservice 
+FN task_webservice -> webservice_registry 
+FN task_webservice -> web_portal 
+FN task_webservice -> comments_webservice 
+FN api_gateway -> user 
+FN user -> api_gateway 
+FN configserver -> api_gateway 
+FN webservice_registry -> api_gateway 
+FN api_gateway -> zipkin_tracing 
+FN auth_server -> api_gateway 
+FN api_gateway -> user_webservice 
+FN api_gateway -> task_webservice 

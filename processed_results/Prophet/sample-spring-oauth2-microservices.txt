@@ -1,28 +1,24 @@
 Components:
-discovery_server 
-gateway_server 
-database_gateway_server
-user
-auth_server
-database_auth_server
-account_service
-customer_service
+FN discovery_server 
+FN gateway_server 
+FN database_gateway_server
+FN user
+FN auth_server
+FN database_auth_server
+FN account_service
+FN customer_service
 
 Connections:
-discovery_server -> gateway_server 
-database_gateway_server -> gateway_server 
-user -> gateway_server 
-gateway_server -> user 
-auth_server -> discovery_server 
-database_auth_server -> auth_server 
-gateway_server -> auth_server
-account_service -> discovery_server 
-auth_server -> account_service 
-gateway_server -> account_service 
-customer_service -> discovery_server 
-customer_service -> account_service 
-auth_server -> customer_service 
-
-Endpoints:
-account_service: "/"
-auth_server: "/user"
+FN discovery_server -> gateway_server 
+FN database_gateway_server -> gateway_server 
+FN user -> gateway_server 
+FN gateway_server -> user 
+FN auth_server -> discovery_server 
+FN database_auth_server -> auth_server 
+FN gateway_server -> auth_server
+FN account_service -> discovery_server 
+FN auth_server -> account_service 
+FN gateway_server -> account_service 
+FN customer_service -> discovery_server 
+FN customer_service -> account_service 
+FN auth_server -> customer_service 
