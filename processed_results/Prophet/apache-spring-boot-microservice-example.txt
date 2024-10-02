@@ -1,9 +1,9 @@
 Components:
 TP apache_server (apache-configuration)
-user 
-content_service 
-product_service 
-cart_service 
+FN user 
+FN content_service 
+FN product_service 
+FN cart_service 
 
 Connections:
 FN user -> apache_server 
