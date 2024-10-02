@@ -1,3 +1,13 @@
+Components:
+/ discovery_server 
+/ gateway_server 
+/ database_gateway_server
+/ user
+/ auth_server
+/ database_auth_server
+/ account_service
+/ customer_service
+
 Connections:
 FN discovery_server -> gateway_server 
 FN database_gateway_server -> gateway_server 

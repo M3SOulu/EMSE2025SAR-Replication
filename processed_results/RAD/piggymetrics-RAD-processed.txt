@@ -1,3 +1,22 @@
+Components:
+/ config 
+/ registry 
+/ monitoring
+/ turbine_stream_service
+/ rabbitmq
+/ auth_service
+/ account_service
+/ notification_service
+/ mail_server
+/ statistics_service
+/ external_website
+/ auth_mongodb
+/ account_mongodb 
+/ statistics_mongodb 
+/ notification_mongodb 
+/ gateway
+/ user
+
 Connections:
 FN config -> registry 
 FN config -> monitoring 

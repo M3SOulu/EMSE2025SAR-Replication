@@ -1,3 +1,10 @@
+Components:
+/ discovery_server 
+/ ratings_data_service 
+/ movie_info_service
+/ external_website
+/ movie_catalog_service
+
 Connections:
 FN ratings_data_service -> discovery_server 
 FN movie_info_service -> discovery_server 

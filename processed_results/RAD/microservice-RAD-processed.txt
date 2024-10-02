@@ -1,3 +1,12 @@
+Components:
+/ eureka 
+/ zuul 
+/ user
+/ turbine
+/ catalog
+/ customer
+/ order
+
 Connections:
 FN eureka -> zuul  
 FN user -> zuul 

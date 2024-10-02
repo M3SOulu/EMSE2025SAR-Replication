@@ -1,3 +1,20 @@
+Components:
+/ config_server 
+/ admin 
+/ eureka_server
+/ user_service
+/ kafka 
+/ mailer 
+/ reminder
+/ api_gateway 
+/ oauth
+/ proxy 
+/ user 
+/ zookeeper
+/ logstash
+/ jmx_monitoring 
+/ todo_infra 
+
 Connections:
 FN admin -> config_server  
 FN config_server -> eureka_server 

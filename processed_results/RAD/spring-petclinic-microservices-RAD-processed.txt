@@ -1,3 +1,17 @@
+Components:
+/ config_server 
+/ github_repository 
+/ discovery_server
+/ tracing_server
+/ admin_server
+/ prometheus_server
+/ grafana_server
+/ customers_service
+/ vets_service
+/ visits_service
+/ api_gateway
+/ user
+
 Connections:
 FN github_repository -> config_server 
 FN config_server -> discovery_server 
