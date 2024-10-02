@@ -1,13 +1,12 @@
 import os
 
-tools = ["attack-graph-generator",
-         "code2DFD",
-         "Contextmap",
-         "MicroDepGraph",
-         "microMiner",
-         "Prophet",
-         "RAD",
-         "RAD-source"
+tools = [("attack-graph-generator", 12),
+         ("code2DFD", 17),
+         ("MicroDepGraph", 10),
+         ("microMiner", 5),
+         ("Prophet", 17),
+         ("RAD", 13),
+         ("RAD-source", 17)
          ]
 
 applications = ["apache-spring-boot-microservice-example",
@@ -40,7 +39,7 @@ def parse_tool_result_file(application: str, tool: str) -> list:
             groundtruth = [line.strip().split(" ")[0] for line in results_file.readlines() if not line.strip() in ["Components:", "Connections:", "Endpoints:", ""]]
         return groundtruth
     except Exception as e:
-        #print(e)
+        # print(e)
         return list()
 
 
@@ -66,11 +65,24 @@ def parse_groundtruth(application: str) -> list:
 
 def main():
 
-    # Check that all tool directories exist under correct name
-    for tool in tools:
+    # Check that all tool directories exist under correct name and that files can be read
+    for tool_tuple in tools:
+        tool = tool_tuple[0]
         tool_dir_path = os.path.join("..", "processed_results", tool)
         if not os.path.exists(tool_dir_path):
             print(f"Folder for {tool} does not exist at {tool_dir_path}")
+
+        file_count = 0
+        for application in applications:
+            try:
+                results_file_path = os.path.join("..", "processed_results", tool, f"{application}-{tool}-processed.txt")
+                with open(results_file_path, "r") as results_file:
+                    file_count += 1
+            except Exception as e:
+                #print(e)
+                pass
+        if not file_count == tool_tuple[1]:
+            print(f"Number of successfully opened files not as expected for tool {tool}")
 
     # Extract results per application
     for application in applications:
@@ -79,7 +91,8 @@ def main():
         num_components = len(combined_results[0])
         
     
-        for tool in tools:
+        for tool_tuple in tools:
+            tool = tool_tuple[0]
             tool_results = [tool] + parse_tool_result_file(application, tool)
             if len(tool_results) == 1:
                 tool_results += ["/"] * num_components
@@ -92,6 +105,8 @@ def main():
             for i, component in enumerate(combined_results[0]):
                 output_file.write(component)
                 for tool in combined_results[1:]:
+                    #print(application)
+                    #print(tool)
                     output_file.write(f", {tool[i]}")
                 output_file.write("\n")
 
