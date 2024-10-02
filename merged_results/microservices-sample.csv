@@ -1,50 +1,50 @@
-Groundtruth, attack-graph-generator, code2DFD, Contextmap, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
-consul, TP, TP, /, TP, /, /, /, /
-consul2, FN, TP, /, TP, /, /, /, /
-consul3, FN, TP, /, TP, /, /, /, /
-elasticsearch, TP, TP, /, TP, /, /, /, /
-logstash, TP, TP, /, TP, /, /, /, /
-kibana, TP, TP, /, TP, /, /, /, /
-rabbit, TP, TP, /, TP, /, /, /, /
-service_one, TP, TP, /, TP, /, /, /, /
-service_two, TP, TP, /, TP, /, /, /, /
-service_one_db, TP, TP, /, TP, /, /, /, /
-service_two_db, TP, TP, /, TP, /, /, /, /
-api_gateway, TP, TP, /, TP, /, /, /, /
-web_application, TP, TP, /, FN, /, /, /, /
-user, TP, TP, /, FN, /, /, /, /
-scope, TP, TP, /, FN, /, /, /, /
-consul2 -> consul, FN, TP, /, TP, /, /, /, /
-consul3 -> consul, FN, TP, /, TP, /, /, /, /
-consul3 -> consul2, FN, TP, /, TP, /, /, /, /
-logstash -> elasticsearch, TP, TP, /, TP, /, /, /, /
-elasticsearch -> kibana, TP, TP, /, TP, /, /, /, /
-consul -> service_one, TP, TP, /, TP, /, /, /, /
-service_one -> logstash, TP, TP, /, TP, /, /, /, /
-service_one -> rabbit, TP, TP, /, TP, /, /, /, /
-rabbit -> service_one, TP, TP, /, FN, /, /, /, /
-consul -> service_two, TP, TP, /, TP, /, /, /, /
-service_two -> logstash, TP, TP, /, TP, /, /, /, /
-service_two -> rabbit, TP, TP, /, TP, /, /, /, /
-rabbit -> service_two, TP, TP, /, FN, /, /, /, /
-service_one_db -> service_one, TP, TP, /, TP, /, /, /, /
-service_two_db -> service_two, TP, TP, /, TP, /, /, /, /
-api_gateway -> service_one, TP, TP, /, FN, /, /, /, /
-api_gateway -> service_two, TP, TP, /, FN, /, /, /, /
-consul -> api_gateway, TP, TP, /, TP, /, /, /, /
-user -> web_application, TP, TP, /, FN, /, /, /, /
-web_application -> user, TP, TP, /, FN, /, /, /, /
-web_application -> api_gateway, FN, TP, /, FN, /, /, /, /
-api_gateway -> scope, TP, TP, /, FN, /, /, /, /
-service_one -> scope, TP, TP, /, FN, /, /, /, /
-service_one_db -> scope, TP, TP, /, FN, /, /, /, /
-service_two -> scope, TP, TP, /, FN, /, /, /, /
-service_two_db -> scope, TP, TP, /, FN, /, /, /, /
-web_application -> scope, FN, TP, /, FN, /, /, /, /
-rabbit -> scope, TP, TP, /, FN, /, /, /, /
-consul -> scope, TP, TP, /, FN, /, /, /, /
-consul2 -> scope, FN, TP, /, FN, /, /, /, /
-consul3 -> scope, FN, TP, /, FN, /, /, /, /
-kibana -> scope, TP, TP, /, FN, /, /, /, /
-elasticsearch -> scope, TP, TP, /, FN, /, /, /, /
-logstash -> scope, TP, TP, /, FN, /, /, /, /
+Groundtruth, attack-graph-generator, code2DFD, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
+consul, TP, TP, TP, /, FN, /, /
+consul2, FN, TP, TP, /, FN, /, /
+consul3, FN, TP, TP, /, FN, /, /
+elasticsearch, TP, TP, TP, /, FN, /, /
+logstash, TP, TP, TP, /, FN, /, /
+kibana, TP, TP, TP, /, FN, /, /
+rabbit, TP, TP, TP, /, FN, /, /
+service_one, TP, TP, TP, /, TP, /, /
+service_two, TP, TP, TP, /, TP, /, /
+service_one_db, TP, TP, TP, /, FN, /, /
+service_two_db, TP, TP, TP, /, FN, /, /
+api_gateway, TP, TP, TP, /, FN, /, /
+web_application, TP, TP, FN, /, TP, /, /
+user, TP, TP, FN, /, FN, /, /
+scope, TP, TP, FN, /, FN, /, /
+consul2 -> consul, FN, TP, TP, /, FP, FN, FN
+consul3 -> consul, FN, TP, TP, /, FP, FN, FN
+consul3 -> consul2, FN, TP, TP, /, FP, FN, FN
+logstash -> elasticsearch, TP, TP, TP, /, FN, FN, FN
+elasticsearch -> kibana, TP, TP, TP, /, FN, FN, FN
+consul -> service_one, TP, TP, TP, /, FN, FN, FN
+service_one -> logstash, TP, TP, TP, /, FN, FN, FN
+service_one -> rabbit, TP, TP, TP, /, FN, FN, FN
+rabbit -> service_one, TP, TP, FN, /, FN, FN, FN
+consul -> service_two, TP, TP, TP, /, FN, FN, FN
+service_two -> logstash, TP, TP, TP, /, FN, FN, FN
+service_two -> rabbit, TP, TP, TP, /, FN, FN, FN
+rabbit -> service_two, TP, TP, FN, /, FN, FN, FN
+service_one_db -> service_one, TP, TP, TP, /, FN, FN, FN
+service_two_db -> service_two, TP, TP, TP, /, FN, FN, FN
+api_gateway -> service_one, TP, TP, FN, /, FN, FN, FN
+api_gateway -> service_two, TP, TP, FN, /, FN, FN, FN
+consul -> api_gateway, TP, TP, TP, /, FN, FN, FN
+user -> web_application, TP, TP, FN, /, FN, FN, FN
+web_application -> user, TP, TP, FN, /, FN, FN, FN
+web_application -> api_gateway, FN, TP, FN, /, FN, FN, FN
+api_gateway -> scope, TP, TP, FN, /, FN, FN, FN
+service_one -> scope, TP, TP, FN, /, FN, FN, FN
+service_one_db -> scope, TP, TP, FN, /, FN, FN, FN
+service_two -> scope, TP, TP, FN, /, FN, FN, FN
+service_two_db -> scope, TP, TP, FN, /, FN, FN, FN
+web_application -> scope, FN, TP, FN, /, FN, FN, FN
+rabbit -> scope, TP, TP, FN, /, FN, FN, FN
+consul -> scope, TP, TP, FN, /, FN, FN, FN
+consul2 -> scope, FN, TP, FN, /, FN, FN, FN
+consul3 -> scope, FN, TP, FN, /, FN, FN, FN
+kibana -> scope, TP, TP, FN, /, FN, FN, FN
+elasticsearch -> scope, TP, TP, FN, /, FN, FN, FN
+logstash -> scope, TP, TP, FN, /, FN, FN, FN

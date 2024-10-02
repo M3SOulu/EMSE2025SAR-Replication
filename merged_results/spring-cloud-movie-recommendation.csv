@@ -1,30 +1,30 @@
-Groundtruth, attack-graph-generator, code2DFD, Contextmap, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
-config_service, /, TP, /, /, /, /, /, /
-github_repository, /, TP, /, /, /, /, /, /
-eureka_service, /, TP, /, /, /, /, /, /
-movie_service, /, TP, /, /, /, /, /, /
-database_movie_service, /, FN, /, /, /, /, /, /
-user_service, /, TP, /, /, /, /, /, /
-database_user_service, /, TP, /, /, /, /, /, /
-recommendation_service, /, TP, /, /, /, /, /, /
-database_recommendation_service, /, TP, /, /, /, /, /, /
-recommendation_client, /, TP, /, /, /, /, /, /
-user, /, TP, /, /, /, /, /, /
-github_repository -> config_service, /, TP, /, /, /, /, /, /
-config_service -> eureka_service, /, TP, /, /, /, /, /, /
-movie_service -> eureka_service, /, TP, /, /, /, /, /, /
-config_service -> movie_service, /, TP, /, /, /, /, /, /
-database_movie_service -> movie_service, /, FN, /, /, /, /, /, /
-user_service -> eureka_service, /, TP, /, /, /, /, /, /
-config_service -> user_service, /, TP, /, /, /, /, /, /
-database_user_service -> user_service, /, TP, /, /, /, /, /, /
-recommendation_service -> eureka_service, /, TP, /, /, /, /, /, /
-config_service -> recommendation_service, /, TP, /, /, /, /, /, /
-database_recommendation_service -> recommendation_service, /, TP, /, /, /, /, /, /
-eureka_service -> recommendation_client, /, TP, /, /, /, /, /, /
-user -> recommendation_client, /, TP, /, /, /, /, /, /
-recommendation_client -> user, /, TP, /, /, /, /, /, /
-config_service -> recommendation_client, /, TP, /, /, /, /, /, /
-recommendation_client -> recommendation_service, /, TP, /, /, /, /, /, /
-recommendation_client -> movie_service, /, TP, /, /, /, /, /, /
-recommendation_client -> user_service, /, TP, /, /, /, /, /, /
+Groundtruth, attack-graph-generator, code2DFD, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
+config_service, /, TP, /, /, FN, /, /
+github_repository, /, TP, /, /, FN, /, /
+eureka_service, /, TP, /, /, FN, /, /
+movie_service, /, TP, /, /, TP, /, /
+database_movie_service, /, FN, /, /, FN, /, /
+user_service, /, TP, /, /, TP, /, /
+database_user_service, /, TP, /, /, FN, /, /
+recommendation_service, /, TP, /, /, FN, /, /
+database_recommendation_service, /, TP, /, /, FN, /, /
+recommendation_client, /, TP, /, /, TP, /, /
+user, /, TP, /, /, FN, /, /
+github_repository -> config_service, /, TP, /, /, FN, FN, FN
+config_service -> eureka_service, /, TP, /, /, FN, FN, FN
+movie_service -> eureka_service, /, TP, /, /, FN, FN, FN
+config_service -> movie_service, /, TP, /, /, FN, FN, FN
+database_movie_service -> movie_service, /, FN, /, /, FN, FN, FN
+user_service -> eureka_service, /, TP, /, /, FN, FN, FN
+config_service -> user_service, /, TP, /, /, FN, FN, FN
+database_user_service -> user_service, /, TP, /, /, FN, FN, FN
+recommendation_service -> eureka_service, /, TP, /, /, FN, FN, FN
+config_service -> recommendation_service, /, TP, /, /, FN, FN, FN
+database_recommendation_service -> recommendation_service, /, TP, /, /, FN, FN, FN
+eureka_service -> recommendation_client, /, TP, /, /, FN, FN, FN
+user -> recommendation_client, /, TP, /, /, FN, FN, FN
+recommendation_client -> user, /, TP, /, /, FN, FN, FN
+config_service -> recommendation_client, /, TP, /, /, FN, FN, FN
+recommendation_client -> recommendation_service, /, TP, /, /, FN, FN, TP
+recommendation_client -> movie_service, /, TP, /, /, FN, FN, TP
+recommendation_client -> user_service, /, TP, /, /, TP, FN, TP

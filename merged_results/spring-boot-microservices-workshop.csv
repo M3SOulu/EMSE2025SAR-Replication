@@ -1,12 +1,12 @@
-Groundtruth, attack-graph-generator, code2DFD, Contextmap, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
-discovery_server, /, TP, /, /, /, /, /, /
-ratings_data_service, /, TP, /, /, /, /, /, /
-movie_info_service, /, TP, /, /, /, /, /, /
-external_website, /, FN, /, /, /, /, /, /
-movie_catalog_service, /, TP, /, /, /, /, /, /
-ratings_data_service -> discovery_server, /, TP, /, /, /, /, /, /
-movie_info_service -> discovery_server, /, TP, /, /, /, /, /, /
-external_website -> movie_info_service, /, FN, /, /, /, /, /, /
-movie_catalog_service -> discovery_server, /, TP, /, /, /, /, /, /
-movie_catalog_service -> ratings_data_service, /, TP, /, /, /, /, /, /
-movie_catalog_service -> movie_info_service, /, TP, /, /, /, /, /, /
+Groundtruth, attack-graph-generator, code2DFD, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
+discovery_server, /, TP, /, /, FN, /, /
+ratings_data_service, /, TP, /, /, TP, /, /
+movie_info_service, /, TP, /, /, TP, /, /
+external_website, /, FN, /, /, FN, /, /
+movie_catalog_service, /, TP, /, /, TP, /, /
+ratings_data_service -> discovery_server, /, TP, /, /, FP, FN, FN
+movie_info_service -> discovery_server, /, TP, /, /, FN, FN, FN
+external_website -> movie_info_service, /, FN, /, /, FN, FN, FN
+movie_catalog_service -> discovery_server, /, TP, /, /, FN, FN, FN
+movie_catalog_service -> ratings_data_service, /, TP, /, /, FN, FN, TP
+movie_catalog_service -> movie_info_service, /, TP, /, /, TP, FN, TP

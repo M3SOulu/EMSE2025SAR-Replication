@@ -1,36 +1,36 @@
-Groundtruth, attack-graph-generator, code2DFD, Contextmap, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
-config_server, TP, TP, /, TP, /, /, /, /
-github_repository, FN, TP, /, FN, /, /, /, /
-discovery_service, TP, TP, /, TP, /, /, /, /
-rabbitmq, TP, TP, /, TP, /, /, /, /
-monitor_dashboard, TP, TP, /, TP, /, /, /, /
-turbine, TP, TP, /, TP, /, /, /, /
-statement_service, TP, TP, /, TP, /, /, /, /
-card_service, TP, TP, /, TP, /, /, /, /
-card_statement_composite, TP, TP, /, TP, /, /, /, /
-edge_server, TP, TP, /, TP, /, /, /, /
-user, TP, TP, /, FN, /, /, /, /
-github_repository -> config_server, FN, TP, /, FN, /, /, /, /
-config_server -> discovery_service, TP, TP, /, TP, /, /, /, /
-monitor_dashboard -> discovery_service, TP, TP, /, TP, /, /, /, /
-config_server -> monitor_dashboard, TP, TP, /, TP, /, /, /, /
-turbine -> discovery_service, TP, TP, /, TP, /, /, /, /
-rabbitmq -> turbine, TP, TP, /, TP, /, /, /, /
-config_server -> turbine, TP, TP, /, TP, /, /, /, /
-turbine -> monitor_dashboard, TP, TP, /, FN, /, /, /, /
-statement_service -> discovery_service, TP, TP, /, TP, /, /, /, /
-config_server -> statement_service, TP, TP, /, TP, /, /, /, /
-card_service -> discovery_service, TP, TP, /, TP, /, /, /, /
-config_server -> card_service, TP, TP, /, TP, /, /, /, /
-card_statement_composite -> discovery_service, TP, TP, /, TP, /, /, /, /
-card_statement_composite -> card_service, TP, FN, /, TP, /, /, /, /
-card_statement_composite -> statement_service, TP, FN, /, TP, /, /, /, /
-config_server -> card_statement_composite, TP, TP, /, TP, /, /, /, /
-card_statement_composite -> rabbitmq, TP, FN, /, FN, /, /, /, /
-discovery_service -> edge_server, TP, TP, /, TP, /, /, /, /
-user -> edge_server, TP, TP, /, FN, /, /, /, /
-edge_server -> user, TP, TP, /, FN, /, /, /, /
-config_server -> edge_server, TP, TP, /, TP, /, /, /, /
-edge_server -> card_service, TP, TP, /, FN, /, /, /, /
-edge_server -> statement_service, TP, TP, /, FN, /, /, /, /
-edge_server -> card_statement_composite, TP, TP, /, FN, /, /, /, /
+Groundtruth, attack-graph-generator, code2DFD, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
+config_server, TP, TP, TP, /, TP, /, /
+github_repository, FN, TP, FN, /, FN, /, /
+discovery_service, TP, TP, TP, /, FN, /, /
+rabbitmq, TP, TP, TP, /, TP, /, /
+monitor_dashboard, TP, TP, TP, /, FN, /, /
+turbine, TP, TP, TP, /, FN, /, /
+statement_service, TP, TP, TP, /, FN, /, /
+card_service, TP, TP, TP, /, FN, /, /
+card_statement_composite, TP, TP, TP, /, FN, /, /
+edge_server, TP, TP, TP, /, FN, /, /
+user, TP, TP, FN, /, FN, /, /
+github_repository -> config_server, FN, TP, FN, /, FN, FN, FN
+config_server -> discovery_service, TP, TP, TP, /, FN, FN, FN
+monitor_dashboard -> discovery_service, TP, TP, TP, /, FN, FN, FN
+config_server -> monitor_dashboard, TP, TP, TP, /, FN, FN, FN
+turbine -> discovery_service, TP, TP, TP, /, FN, FN, FN
+rabbitmq -> turbine, TP, TP, TP, /, FN, FN, FN
+config_server -> turbine, TP, TP, TP, /, FN, FN, FN
+turbine -> monitor_dashboard, TP, TP, FN, /, FN, FN, FN
+statement_service -> discovery_service, TP, TP, TP, /, FN, FN, FN
+config_server -> statement_service, TP, TP, TP, /, FN, FN, FN
+card_service -> discovery_service, TP, TP, TP, /, FN, FN, FN
+config_server -> card_service, TP, TP, TP, /, FN, FN, FN
+card_statement_composite -> discovery_service, TP, TP, TP, /, FN, FN, FN
+card_statement_composite -> card_service, TP, FN, TP, /, FN, FN, FN
+card_statement_composite -> statement_service, TP, FN, TP, /, FN, FN, FN
+config_server -> card_statement_composite, TP, TP, TP, /, FN, FN, FN
+card_statement_composite -> rabbitmq, TP, FN, FN, /, FN, FN, FN
+discovery_service -> edge_server, TP, TP, TP, /, FN, FN, FN
+user -> edge_server, TP, TP, FN, /, FN, FN, FN
+edge_server -> user, TP, TP, FN, /, FN, FN, FN
+config_server -> edge_server, TP, TP, TP, /, FN, FN, FN
+edge_server -> card_service, TP, TP, FN, /, FN, FN, FN
+edge_server -> statement_service, TP, TP, FN, /, FN, FN, FN
+edge_server -> card_statement_composite, TP, TP, FN, /, FN, FN, FN

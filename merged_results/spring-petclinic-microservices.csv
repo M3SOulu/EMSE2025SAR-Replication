@@ -1,41 +1,41 @@
-Groundtruth, attack-graph-generator, code2DFD, Contextmap, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
-config_server, TP, TP, /, TP, FN, /, /, /
-github_repository, FN, TP, /, FN, FN, /, /, /
-discovery_server, TP, TP, /, TP, FN, /, /, /
-tracing_server, TP, TP, /, FN, FN, /, /, /
-admin_server, TP, TP, /, TP, FN, /, /, /
-prometheus_server, TP, TP, /, FN, FN, /, /, /
-grafana_server, TP, TP, /, FN, FN, /, /, /
-customers_service, TP, TP, /, TP, FN, /, /, /
-vets_service, TP, TP, /, TP, FN, /, /, /
-visits_service, TP, TP, /, TP, FN, /, /, /
-api_gateway, TP, TP, /, TP, FN, /, /, /
-user, TP, TP, /, FN, FN, /, /, /
-github_repository -> config_server, FN, TP, /, FN, FN, /, /, /
-config_server -> discovery_server, TP, TP, /, TP, FN, /, /, /
-tracing_server -> discovery_server, TP, TP, /, FN, FN, /, /, /
-config_server -> tracing_server, TP, TP, /, FN, FN, /, /, /
-admin_server -> discovery_server, TP, TP, /, TP, FN, /, /, /
-config_server -> admin_server, TP, TP, /, TP, FN, /, /, /
-prometheus_server -> grafana_server, TP, FN, /, FN, FN, /, /, /
-customers_service -> discovery_server, TP, TP, /, TP, FN, /, /, /
-config_server -> customers_service, TP, TP, /, TP, FN, /, /, /
-customers_service -> tracing_server, TP, TP, /, FN, FN, /, /, /
-customers_service -> prometheus_server, TP, TP, /, FN, FN, /, /, /
-vets_service -> discovery_server, TP, TP, /, TP, FN, /, /, /
-config_server -> vets_service, TP, TP, /, TP, FN, /, /, /
-vets_service -> tracing_server, TP, TP, /, FN, FN, /, /, /
-vets_service -> prometheus_server, TP, TP, /, FN, FN, /, /, /
-visits_service -> discovery_server, TP, TP, /, TP, FN, /, /, /
-config_server -> visits_service, TP, TP, /, TP, FN, /, /, /
-visits_service -> tracing_server, TP, TP, /, FN, FN, /, /, /
-visits_service -> prometheus_server, TP, TP, /, FN, FN, /, /, /
-discovery_server -> api_gateway, TP, TP, /, TP, FN, /, /, /
-user -> api_gateway, TP, TP, /, FN, FN, /, /, /
-api_gateway -> user, TP, TP, /, FN, FN, /, /, /
-config_server -> api_gateway, TP, TP, /, TP, FN, /, /, /
-api_gateway -> prometheus_server, TP, TP, /, FN, FN, /, /, /
-api_gateway -> vets_service, TP, TP, /, FN, FN, /, /, /
-api_gateway -> visits_service, TP, TP, /, FN, FN, /, /, /
-api_gateway -> customers_service, TP, TP, /, FN, FN, /, /, /
-api_gateway -> tracing_server, TP, TP, /, FN, FN, /, /, /
+Groundtruth, attack-graph-generator, code2DFD, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
+config_server, TP, TP, TP, FN, FN, /, /
+github_repository, FN, TP, FN, FN, FN, /, /
+discovery_server, TP, TP, TP, FN, FN, /, /
+tracing_server, TP, TP, FN, FN, FN, /, /
+admin_server, TP, TP, TP, FN, FN, /, /
+prometheus_server, TP, TP, FN, FN, FN, /, /
+grafana_server, TP, TP, FN, FN, FN, /, /
+customers_service, TP, TP, TP, FN, FN, /, /
+vets_service, TP, TP, TP, FN, FN, /, /
+visits_service, TP, TP, TP, FN, FN, /, /
+api_gateway, TP, TP, TP, FN, FN, /, /
+user, TP, TP, FN, FN, FN, /, /
+github_repository -> config_server, FN, TP, FN, FN, FN, FN, FN
+config_server -> discovery_server, TP, TP, TP, FN, FN, FN, FN
+tracing_server -> discovery_server, TP, TP, FN, FN, FN, FN, FN
+config_server -> tracing_server, TP, TP, FN, FN, FN, FN, FN
+admin_server -> discovery_server, TP, TP, TP, FN, FN, FN, FN
+config_server -> admin_server, TP, TP, TP, FN, FN, FN, FN
+prometheus_server -> grafana_server, TP, FN, FN, FN, FN, FN, FN
+customers_service -> discovery_server, TP, TP, TP, FN, FN, FN, FN
+config_server -> customers_service, TP, TP, TP, FN, FN, FN, FN
+customers_service -> tracing_server, TP, TP, FN, FN, FN, FN, FN
+customers_service -> prometheus_server, TP, TP, FN, FN, FN, FN, FN
+vets_service -> discovery_server, TP, TP, TP, FN, FN, FN, FN
+config_server -> vets_service, TP, TP, TP, FN, FN, FN, FN
+vets_service -> tracing_server, TP, TP, FN, FN, FN, FN, FN
+vets_service -> prometheus_server, TP, TP, FN, FN, FN, FN, FN
+visits_service -> discovery_server, TP, TP, TP, FN, FN, FN, FN
+config_server -> visits_service, TP, TP, TP, FN, FN, FN, FN
+visits_service -> tracing_server, TP, TP, FN, FN, FN, FN, FN
+visits_service -> prometheus_server, TP, TP, FN, FN, FN, FN, FN
+discovery_server -> api_gateway, TP, TP, TP, FN, FN, FN, FN
+user -> api_gateway, TP, TP, FN, FN, FN, FN, FN
+api_gateway -> user, TP, TP, FN, FN, FN, FN, FN
+config_server -> api_gateway, TP, TP, TP, FN, FN, FN, FN
+api_gateway -> prometheus_server, TP, TP, FN, FN, FN, FN, FN
+api_gateway -> vets_service, TP, TP, FN, FN, FN, FN, FN
+api_gateway -> visits_service, TP, TP, FN, FN, FN, FN, FN
+api_gateway -> customers_service, TP, TP, FN, FN, FN, FN, FN
+api_gateway -> tracing_server, TP, TP, FN, FN, FN, FN, FN
