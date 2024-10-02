@@ -1,3 +1,22 @@
+Components:
+/ elasticsearch 
+/ kibana 
+/ logstash
+/ rabbitmq
+/ config_server
+/ discovery_server 
+/ github_repository 
+/ auth_server
+/ monitor_dashboard
+/ turbine_server
+/ zipkin_server
+/ product_service
+/ recommendation_service
+/ review_service
+/ composite_service
+/ edge_server 
+/ user
+
 Connections:
 FN elasticsearch -> kibana  
 FN logstash -> elasticsearch 

@@ -1,3 +1,14 @@
+Components:
+/ service_registry 
+/ config_server 
+/ github_repository 
+/ zipkin_server
+/ department_service
+/ user_service
+/ hystrix_dashboard
+/ api_gateway
+/ user
+
 Connections:
 FN github_repository -> config_server 
 FN config_server -> service_registry 

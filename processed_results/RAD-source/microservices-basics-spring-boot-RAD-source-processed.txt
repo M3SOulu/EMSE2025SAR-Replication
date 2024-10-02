@@ -1,3 +1,17 @@
+Components:
+/ configserver
+/ github_repository 
+/ webservice_registry
+/ zipkin_tracing
+/ mysqldb
+/ auth_server
+/ web_portal 
+/ user_webservice
+/ comments_webservice
+/ task_webservice
+/ api_gateway
+/ user 
+
 Connections:
 FN github_repository -> configserver 
 FN configserver -> webservice_registry 

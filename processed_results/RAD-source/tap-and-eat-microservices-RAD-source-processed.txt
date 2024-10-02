@@ -1,3 +1,14 @@
+Components:
+/ discovery_service 
+/ config_service 
+/ github_repository 
+/ account_service
+/ customer_service
+/ store_service
+/ item_service
+/ price_service
+/ foodtray_service
+
 Connections:
 FN github_repository -> config_service 
 FN config_service -> discovery_service 

@@ -1,3 +1,20 @@
+Components:
+/ consul 
+/ consul2 
+/ consul3 
+/ elasticsearch
+/ logstash
+/ kibana
+/ rabbit
+/ service_one
+/ service_two
+/ service_one_db
+/ service_two_db
+/ api_gateway
+/ web_application
+/ user
+/ scope
+
 Connections:
 FN consul2 -> consul 
 FN consul3 -> consul 

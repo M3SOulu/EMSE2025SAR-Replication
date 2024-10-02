@@ -1,3 +1,15 @@
+Components:
+/ admin_dashboard 
+/ eureka_server 
+/ rabbitmq 
+/ config_server 
+/ hystrix_dashboard
+/ service_a
+/ service_b
+/ zuul 
+/ user
+/ zipkin
+
 Connections:
 FN admin_dashboard -> config_server 
 FN config_server -> eureka_server 

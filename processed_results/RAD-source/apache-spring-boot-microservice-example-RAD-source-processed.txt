@@ -1,3 +1,10 @@
+Components:
+/ apache_server 
+/ user 
+/ content_service 
+/ product_service 
+/ cart_service 
+
 Connections:
 FN user -> apache_server 
 FN apache_server -> user 
