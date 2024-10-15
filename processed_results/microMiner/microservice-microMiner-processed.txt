@@ -8,16 +8,16 @@ TP customer (customer.default)
 TP order (order.default)
 
 Connections:
-FN eureka -> zuul  
-FN user -> zuul 
-FN zuul -> user 
-FN turbine -> eureka 
-FN catalog -> eureka 
-FN customer -> eureka 
-FN order -> eureka 
-FN order -> catalog 
-FN order -> customer 
-FN order -> turbine 
-FN zuul -> customer 
-FN zuul -> catalog 
-FN zuul -> order 
+/ eureka -> zuul  
+/ user -> zuul 
+/ zuul -> user 
+/ turbine -> eureka 
+/ catalog -> eureka 
+/ customer -> eureka 
+/ order -> eureka 
+/ order -> catalog 
+/ order -> customer 
+/ order -> turbine 
+/ zuul -> customer 
+/ zuul -> catalog 
+/ zuul -> order 
