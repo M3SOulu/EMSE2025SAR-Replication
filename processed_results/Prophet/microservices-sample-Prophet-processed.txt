@@ -14,9 +14,6 @@ FN api_gateway
 TP web_application
 FN user
 FN scope
-FP about
-FP documents
-FP build
 
 Connections:
 FN consul2 -> consul 
@@ -53,3 +50,8 @@ FN consul3 -> scope
 FN kibana -> scope 
 FN elasticsearch -> scope 
 FN logstash -> scope 
+
+FP:
+about
+documents
+build

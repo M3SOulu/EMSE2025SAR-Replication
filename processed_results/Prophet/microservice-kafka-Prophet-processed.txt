@@ -7,8 +7,6 @@ FN invoicing
 FN apache
 FN user
 FN postgres
-FP docker
-FP microservice-kafka
 
 Connections:
 FN zookeeper -> kafka
@@ -23,3 +21,7 @@ FN apache -> user
 FN postgres -> order
 FN postgres -> shipping
 FN postgres -> invoicing
+
+FP:
+docker
+microservice-kafka

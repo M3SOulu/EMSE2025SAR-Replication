@@ -11,8 +11,6 @@ FN comments_webservice
 FN task_webservice
 FN api_gateway
 FN user 
-FP images
-FP docker-orchestration
 
 Connections:
 FN github_repository -> configserver 
@@ -44,3 +42,7 @@ FN api_gateway -> zipkin_tracing
 FN auth_server -> api_gateway 
 FN api_gateway -> user_webservice 
 FN api_gateway -> task_webservice 
+
+FP:
+images
+docker-orchestration

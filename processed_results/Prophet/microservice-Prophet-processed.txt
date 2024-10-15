@@ -6,10 +6,7 @@ FN turbine
 FN catalog
 FN customer
 FN order
-FP microservice-demo
-FP docker
-FP scripts
-FP docker-vagrant
+
 
 Connections:
 FN eureka -> zuul  
@@ -25,4 +22,10 @@ FN order -> turbine
 FN zuul -> customer 
 FN zuul -> catalog 
 FN zuul -> order 
-FP microservice-demo -> microservice-demo
+
+FP:
+microservice-demo
+docker
+scripts
+docker-vagrant
+microservice-demo -> microservice-demo

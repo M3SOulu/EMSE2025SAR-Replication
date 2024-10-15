@@ -16,7 +16,6 @@ FN statistics_mongodb
 FN notification_mongodb 
 FN gateway
 FN user
-FP mongodb
 
 Connections:
 FN config -> registry 
@@ -56,3 +55,6 @@ FN gateway -> account_service
 FN gateway -> statistics_service 
 FN gateway -> notification_service 
 FN gateway -> auth_service 
+
+FP:
+mongodb

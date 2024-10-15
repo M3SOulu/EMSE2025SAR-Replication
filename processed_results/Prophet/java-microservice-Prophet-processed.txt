@@ -14,7 +14,6 @@ FN zookeeper
 FN logstash
 FN jmx_monitoring 
 FN todo_infra 
-FP assets
 
 Connections:
 FN admin -> config_server  
@@ -51,3 +50,6 @@ FN oauth -> logstash
 FN admin -> logstash 
 FN config_server -> logstash 
 FN mailer -> logstash 
+
+FP:
+assets

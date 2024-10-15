@@ -10,7 +10,6 @@ FN recommendation_service
 FN database_recommendation_service
 TP recommendation_client
 FN user
-FN dump
 
 Connections:
 FN github_repository -> config_service 
@@ -31,3 +30,6 @@ FN config_service -> recommendation_client
 FN recommendation_client -> recommendation_service 
 TP recommendation_client -> movie_service 
 FN recommendation_client -> user_service 
+
+FP:
+dump

@@ -9,8 +9,6 @@ FN service_b
 FN zuul 
 FN user
 FN zipkin
-FP screenshots
-FP gradle
 
 Connections:
 FN admin_dashboard -> config_server 
@@ -42,3 +40,7 @@ FN admin_dashboard -> zuul
 FN zuul -> rabbitmq 
 FN zuul -> zipkin 
 FN zuul -> config_server 
+
+FP:
+screenshots
+gradle

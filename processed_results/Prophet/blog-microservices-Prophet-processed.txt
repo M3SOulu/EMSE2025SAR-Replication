@@ -16,7 +16,6 @@ FN review_service
 FN composite_service
 FN edge_server 
 FN user 
-FP elk-config
 
 Connections:
 FN elasticsearch -> kibana  
@@ -61,3 +60,6 @@ FN composite_service -> logstash
 FN monitor_dashboard -> logstash 
 FN edge_server -> logstash 
 FN zipkin_server -> logstash 
+
+FP:
+elk-config
