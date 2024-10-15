@@ -72,6 +72,7 @@ def main():
         if not os.path.exists(tool_dir_path):
             print(f"Folder for {tool} does not exist at {tool_dir_path}")
 
+        # check for each tool that expected number of result files is parsed successfully
         file_count = 0
         for application in applications:
             try:
