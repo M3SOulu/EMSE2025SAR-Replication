@@ -14,6 +14,6 @@ FN apache_server -> product_service
 FN apache_server -> content_service 
 
 Endpoints:
-FN(2) cart_service: "/", "/count", "/add/{seoName}"
+FN(3) cart_service: "/", "/count", "/add/{seoName}"
 FN(1) content_service: "/"
 FN(2) product_service: "/", "/{seoName}"
