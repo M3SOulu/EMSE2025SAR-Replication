@@ -40,7 +40,7 @@ TP edge_server -> card_statement_composite
 Endpoints:
 FN(4) card_service: "/api", "/api/cards", "/api/card/{cardId}", "/api/new-card"
 FN(4) statement_service: "/api", "api/statement/{statementId}", "api/statement", "api/statements"
-FN(7) card_statement_composite: "api", "/api/cards", "/api/card/{cardId}", "/api/new-card", "api/statement/{statementId}", "api/statement", "api/statements"
+FN(8) card_statement_composite: "api", "/api/cards", "/api/card/{cardId}", "/api/new-card", "api/statement/{statementId}", "api/statement", "api/statements", "/api/statement-by-card"
 FN(1) monitor_dashboard: "/"
 
 FP:
