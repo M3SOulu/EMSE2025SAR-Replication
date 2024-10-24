@@ -23,6 +23,6 @@ postgres -> shipping
 postgres -> invoicing
 
 Endpoints:
-order: "/", "/form.html", "/line", "/{id}"
+order: "/", "/form.html", "/line", "/{id}", "/order", "/customer", "/item"
 shipping: "/", "/{id}"
 invoicing: "/", "/{id}"
