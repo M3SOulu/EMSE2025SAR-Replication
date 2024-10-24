@@ -28,11 +28,11 @@ TP foodtray_service -> item_service
 TP foodtray_service -> price_service 
 
 Endpoints:
-FP(1) account_service: "/accounts"
-FP(1) customer_service: "/customers"
-FP(1) store_service: "/stores"
-FP(1) item_service: "/items"
-FP(1) price_service: "/prices"
+TP(1) account_service: "/accounts"
+TP(1) customer_service: "/customers"
+TP(1) store_service: "/stores"
+TP(1) item_service: "/items"
 FN(1) item_service: "/items/search/findByItemCode?itemCode={itemCode}"
+TP(1) price_service: "/prices"
 FN(1) price_service: "/prices/search/findByItemCode?itemCode={itemCode}"
 FN(4) foodtray_service: "/foodtrays", "/foodtrays/{itemCode}", "/foodtrays/price/{itemCode}", "/foodtrays/item/{itemCode}"

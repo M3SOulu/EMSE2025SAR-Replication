@@ -23,6 +23,6 @@ FN postgres -> shipping
 FN postgres -> invoicing
 
 Endpoints:
-FN(4) order: "/", "/form.html", "/line", "/{id}"
+FN(7) order: "/", "/form.html", "/line", "/{id}", "/order", "/customer", "/item"
 FN(2) shipping: "/", "/{id}"
 FN(2) invoicing: "/", "/{id}"

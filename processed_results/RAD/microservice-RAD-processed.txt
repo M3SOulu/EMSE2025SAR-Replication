@@ -24,5 +24,8 @@ FN zuul -> order
 
 Endpoints:
 TP(5) catalog: "/{id}.html", "/list.html", "/form.html", "/searchForm.html", "/searchByName.html"
+FN(1) catalog: "/catalog"
 TP(3) customer: "/form.html", "/list.html", "/{id}.html"
+FN(1) customer: "/customer"
 TP(4) order: "/", "/form.html", "/{id}", "/line"
+FN(1) order: "/order"
