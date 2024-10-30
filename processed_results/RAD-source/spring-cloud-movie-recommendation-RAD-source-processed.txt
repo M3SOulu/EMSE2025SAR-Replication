@@ -35,7 +35,7 @@ Endpoints:
 TP(4) movie_service: "/movie/dummyData", "/movie/list", "/movie/{movieId}", "/movie"
 TP(2) user_service: "/user", "/user/{userId}"
 FN(1) user_service: "/newuser"
-FP(3) user_service: "/user/{userId}"
+FP(1) user_service: "/user/{userId}"
 FN(1) recommendation_service: "/recommendation"
 TP(6) recommendation_service: "/recommendation/movie", "/recommendation/user/{userId}", "/recommendation/recommend/user/{userId}", "/recommendation/movie/{movieId}", "/recommendation/dummyData", "/recommendation/user"
 FN(1) recommendation_client: "/api" 
