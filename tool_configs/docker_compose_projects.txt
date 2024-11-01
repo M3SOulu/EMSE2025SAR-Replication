@@ -1,0 +1,12 @@
+microservices-basics-spring-boot
+java-microservice
+blog-microservices
+microservice
+microservice-kafka
+spring-netflix-oss-microservices
+Tap-And-Eat-MicroServices
+microservices-sample
+spring-boot-microservices
+spring-petclinic-microservices
+piggymetrics
+spring-cloud-netflix-example
