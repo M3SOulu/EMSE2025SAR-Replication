@@ -7,7 +7,6 @@ BASE_PATH="${2:-$(pwd)}"    # specified path to root of SARbenchmarks if provide
 DOCKER_COMPOSE_PATHS="$BASE_PATH"/tool_configs/docker_compose_paths.txt
 
 pushd "$TOOL_PATH"
-echo "$BASE_PATH"
 while IFS= read -r docker_compose_path; do
     printf "\n ---------------- \nanalyzing $docker_compose_path \n"
     sudo python3 main.py "$BASE_PATH"/"$docker_compose_path"
