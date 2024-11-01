@@ -4,10 +4,9 @@
 
 TOOL_PATH="$1"
 BASE_PATH="${2:-$(pwd)}"    # specified path to root of SARbenchmarks if provided as second argument, otherwise current working dir
-#APPLICATIONS_BASE="$BASE_PATH"/analyzed_applications
 DOCKER_COMPOSE_PATHS="$BASE_PATH"/tool_configs/docker_compose_paths.txt
 
-pushd "$TOOL_PATH" #> /dev/null
+pushd "$TOOL_PATH"
 echo "$BASE_PATH"
 while IFS= read -r docker_compose_path; do
     printf "\n ---------------- \nanalyzing $docker_compose_path \n"
@@ -15,6 +14,6 @@ while IFS= read -r docker_compose_path; do
 
 done < "$DOCKER_COMPOSE_PATHS"
 
-popd #> /dev/null
+popd
 
 printf "\n All done.\n"
