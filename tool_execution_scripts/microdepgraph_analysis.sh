@@ -8,7 +8,7 @@ DOCKER_COMPOSE_PROJECTS="$BASE_PATH"/tool_configs/docker_compose_projects.txt
 
 pushd "$TOOL_PATH"
 while IFS= read -r docker_compose_project; do
-    printf "\n ---------------- \nanalyzing $docker_compose_path \n"
+    printf "\n---------------- \nAnalyzing $docker_compose_project \n\n"
     java -jar microservices.comm.pattern.check-1.0-SNAPSHOT-jar-with-dependencies.jar "$BASE_PATH"/analyzed_applications/"$docker_compose_project" "$docker_compose_project"
 done < "$DOCKER_COMPOSE_PROJECTS"
 
