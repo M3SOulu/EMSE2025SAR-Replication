@@ -12,7 +12,7 @@ while IFS=, read -r PROJECT ORG_PATH; do
             --url http://localhost:8080/ \
             --header 'content-type: application/json' \
             --data "{
-              \"pathToCompiledMicroservices\": \"${PROJECT_PATH}\", \"organizationPath\":\"${ORG_PATH}\", \"outputPath\":\"${OUTPUT_PATH}/${PROJECT}-rad-graph.json\"
-          }" > "$OUTPUT_PATH/${PROJECT}-rad-response.json"
+              \"pathToCompiledMicroservices\": \"${PROJECT_PATH}\", \"organizationPath\":\"${ORG_PATH}\", \"outputPath\":\"${OUTPUT_PATH}/${PROJECT}-rad-raw-graph.json\"
+          }" > "$OUTPUT_PATH/${PROJECT}-rad-raw-response.json"
 done < "$PROJECT_FILE"
 
