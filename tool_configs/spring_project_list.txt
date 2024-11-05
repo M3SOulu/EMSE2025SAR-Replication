@@ -15,5 +15,3 @@ spring-netflix-oss-microservices
 spring-petclinic-microservices
 Springboot-Microservice
 Tap-And-Eat-MicroServices
-train-ticket
-tms-testbed

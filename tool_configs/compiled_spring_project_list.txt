@@ -11,5 +11,3 @@ spring-netflix-oss-microservices,com/spring/netflix/oss/microservices
 spring-petclinic-microservices,org/springframework/samples/petclinic
 Springboot-Microservice,com/dailycodebuffer
 Tap-And-Eat-MicroServices,com/github/joffryferrater
-train-ticket,fdse/microservice
-tms-testbed,edu/baylor/ecs
