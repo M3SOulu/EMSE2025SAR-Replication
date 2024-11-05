@@ -3,10 +3,10 @@
 PROJECTS=$(<tool_configs/spring_project_list.txt)
 
 for PROJECT in $PROJECTS; do
-    PROJECT_PATH="analyzed_applications/${PROJECT}"
+    PROJECT_PATH="${PWD}/analyzed_applications/${PROJECT}"
     OUTPUT_PATH="${PWD}/raw_results/Prophet"
-    RAW_PATH="${OUTPUT_PATH}/${PROPHET}-prophet-raw.json"
-    GRAPH_PATH="${OUTPUT_PATH}/${PROPHET}-prophet-graph.mmd"
+    RAW_PATH="${OUTPUT_PATH}/${PROJECT}-prophet-raw.json"
+    GRAPH_PATH="${OUTPUT_PATH}/${PROJECT}-prophet-graph.mmd"
     mkdir -p $OUTPUT_PATH
 
     echo "Analyzing project $PROJECT"
