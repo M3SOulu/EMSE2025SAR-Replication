@@ -1,1 +1,0 @@
-{"global":{"projectName":"apache-spring-boot-microservice-example","noCommunication":true,"communication":"graph TD\nN/A\n","noContextMap":true,"contextMap":"classDiagram\n","cannotClone":false},"ms":[{"name":"apache-configuration","noBoundedContext":true,"notJava":true,"boundedContext":null}]}

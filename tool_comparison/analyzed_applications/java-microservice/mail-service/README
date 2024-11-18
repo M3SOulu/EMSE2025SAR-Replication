@@ -1,0 +1,7 @@
+# Mail service
+
+This is a service responsible for sending emails.
+
+On this services we are using the concept of event centric.  We show how to use
+Command-Query Responsibility Separation (CQRS), eventsourcing, ditributed events with 
+Kafka and more.

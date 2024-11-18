@@ -1,5 +1,0 @@
-analyzed_applications/piggymetrics/kubernetes
-analyzed_applications/spring-petclinic-microservices/kubernetes
-analyzed_applications/Springboot-Microservice/kubernetes
-analyzed_applications/microservice/kubernetes
-analyzed_applications/microservices-basics-spring-boot/docker-orchestration/k8s/all_k8

@@ -1,0 +1,13 @@
+.vscode
+.idea
+bazel-*
+node_modules
+*.lsif
+*.scip
+*.log
+external
+compile_commands.json
+.cache
+target
+*.output
+*.cypherl

@@ -1,0 +1,42 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: statistics-mongodb-svc
+  labels:
+    app: statistics-mongodb
+spec:
+  selector:
+    app:  statistics-mongodb
+  ports:
+  - port: 27017
+    # protocol: TCP
+    targetPort: 27017
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: statistics-mongodb
+  labels: 
+    app: statistics-mongodb
+spec:
+  selector:
+    matchLabels:
+      app: statistics-mongodb
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: statistics-mongodb
+    spec:
+      containers:
+      - name: statistics-mongodb
+        image: clintoncao/ms_pgm_statistics_mongodb
+        env:
+        - name: MONGODB_PASSWORD
+          valueFrom: 
+            secretKeyRef:
+              name: piggymetrics
+              key: statistics_mongodb_password
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 27017

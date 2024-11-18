@@ -1,6 +1,0 @@
-cloud-config-server
-cloud-gateway
-department-service
-hystrix-dashboard
-service-registry
-user-service

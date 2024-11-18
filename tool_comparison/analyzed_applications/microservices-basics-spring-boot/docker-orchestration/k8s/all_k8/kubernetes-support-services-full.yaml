@@ -1,0 +1,334 @@
+---
+# Source: microservices-support-project/templates/helper-service-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysqldb
+spec:
+  selector:
+    app: anilallewar-mysql
+  ports:
+  - name: http
+    protocol: TCP
+    port: 3306
+---
+# Source: microservices-support-project/templates/helper-service-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: configserver
+spec:
+  selector:
+    app: anilallewar-config-server
+  ports:
+  - name: http
+    protocol: TCP
+    # Not exposing the service to external endpoints
+    port: 8888
+  type: ClusterIP
+---
+# Source: microservices-support-project/templates/helper-service-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: eurekaregistry
+spec:
+  selector:
+    app: anilallewar-eurekaregistry
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8761
+    targetPort: 8761
+  type: LoadBalancer
+---
+# Source: microservices-support-project/templates/helper-service-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: zipkinserver
+spec:
+  selector:
+    app: anilallewar-zipkin-server
+  ports:
+  - name: http
+    protocol: TCP
+    port: 9411
+    targetPort: 9411
+  type: LoadBalancer
+---
+# Source: microservices-support-project/templates/helper-service-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: authserver
+spec:
+  selector:
+    app: anilallewar-auth-server
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8899
+  type: ClusterIP
+---
+# Source: microservices-support-project/templates/helper-service-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: apigateway
+spec:
+  selector:
+    app: anilallewar-api-gateway
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8765
+  type: LoadBalancer
+---
+# Source: microservices-support-project/templates/helper-service-deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anilallewar-mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anilallewar-mysql
+  template:
+    metadata:
+      labels:
+        app: anilallewar-mysql
+    spec:
+      containers:
+      - name: anilallewar-mysql
+        image: mysql:latest
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: 256Mi
+          limits:
+            memory: 1Gi
+        ports:
+        - containerPort: 3306
+          name: "tcp"
+        env:
+        - name: MYSQL_DATABASE
+          value: auth
+        - name: MYSQL_ROOT_PASSWORD
+          value: password
+        readinessProbe:
+          exec:
+            # Check we can ping TCP
+            command: ["mysqladmin", "ping"]
+          initialDelaySeconds: 20
+          periodSeconds: 2
+          timeoutSeconds: 1
+---
+# Source: microservices-support-project/templates/helper-service-deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anilallewar-config-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anilallewar-config-server
+  template:
+    metadata:
+      labels:
+        app: anilallewar-config-server
+    spec:
+      containers:
+      - name: anilallewar-config-server
+        image: anilallewar/basic-config-server:0.0.1
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: 256Mi
+          limits:
+            memory: 512Mi
+        ports:
+        - containerPort: 8888
+          name: "http"
+        env:
+        - name: JAVA_OPTIONS
+          value: -Xms256M -Xmx512M  
+        command: ["/bin/bash"]
+        args: ["-c", 'until nslookup mysqldb; do echo Waiting for mySql database to start; sleep 5; done; /app/run.sh']
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8888
+          initialDelaySeconds: 45
+          periodSeconds: 10
+          timeoutSeconds: 5
+---
+# Source: microservices-support-project/templates/helper-service-deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anilallewar-eurekaregistry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anilallewar-eurekaregistry
+  template:
+    metadata:
+      labels:
+        app: anilallewar-eurekaregistry
+    spec:
+      containers:
+      - name: anilallewar-eurekaregistry
+        image: anilallewar/basic-webservice-registry:0.0.1
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: 256Mi
+          limits:
+            memory: 512Mi
+        ports:
+        - containerPort: 8761
+          name: "http"
+        env:
+        - name: SPRING_ACTIVE_PROFILE
+          value: docker
+        - name: JAVA_OPTIONS
+          value: -Xms256M -Xmx512M
+        command: ["/bin/bash"]
+        args: ["-c", 'while ! curl -s http://configserver:8888/health > /dev/null; do echo Waiting for Config Service to start; sleep 5; done; /app/run.sh']
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8761
+          initialDelaySeconds: 45
+          periodSeconds: 10
+          timeoutSeconds: 2
+---
+# Source: microservices-support-project/templates/helper-service-deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anilallewar-zipkin-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anilallewar-zipkin-server
+  template:
+    metadata:
+      labels:
+        app: anilallewar-zipkin-server
+    spec:
+      containers:
+      - name: anilallewar-zipkin-server
+        image: anilallewar/basic-zipkin-server:0.0.1
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: 256Mi
+          limits:
+            memory: 1Gi
+        ports:
+        - containerPort: 9411
+          name: "http"
+        env:
+        - name: SPRING_ACTIVE_PROFILE
+          value: docker
+        - name: JAVA_OPTIONS
+          value: -Xms256M -Xmx1G
+        command: ["/bin/bash"]
+        args: ["-c", 'while ! curl -s http://configserver:8888/health > /dev/null; do echo Waiting for Config Service to start; sleep 5; done; /app/run.sh']
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 9411
+          initialDelaySeconds: 45
+          periodSeconds: 10
+          timeoutSeconds: 2
+---
+# Source: microservices-support-project/templates/helper-service-deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anilallewar-auth-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anilallewar-auth-server
+  template:
+    metadata:
+      labels:
+        app: anilallewar-auth-server
+    spec:
+      containers:
+      - name: anilallewar-auth-server
+        image: anilallewar/basic-auth-server:0.0.1
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: 256Mi
+          limits:
+            memory: 1Gi
+        ports:
+        - containerPort: 8899
+          name: "http"
+        env:
+        - name: SPRING_ACTIVE_PROFILE
+          value: docker
+        - name: JAVA_OPTIONS
+          value: -Xms256M -Xmx1G
+        command: ["/bin/bash"]
+        args: ["-c", 'while ! curl -s http://eurekaregistry:8761/health > /dev/null; do echo Waiting for Eureka Registry Service to start; sleep 5; done; /app/run.sh']
+        startupProbe:
+          httpGet:
+            path: /swagger-ui.html
+            port: 8899
+          # total of 30 x 10 = 300 seconds for startup to finish, have not set the liveness probe since it was failing for some unknown reason
+          failureThreshold: 30
+          periodSeconds: 10
+---
+# Source: microservices-support-project/templates/helper-service-deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anilallewar-api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anilallewar-api-gateway
+  template:
+    metadata:
+      labels:
+        app: anilallewar-api-gateway
+    spec:
+      containers:
+      - name: anilallewar-api-gateway
+        image: anilallewar/basic-api-gateway:0.0.1
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: 256Mi
+          limits:
+            memory: 2Gi
+        ports:
+        - containerPort: 8765
+          name: "http"
+        env:
+        - name: SPRING_ACTIVE_PROFILE
+          value: docker
+        - name: JAVA_OPTIONS
+          value: -Xms256M -Xmx2G
+        command: ["/bin/bash"]
+        args: ["-c", 'while ! curl -s http://authserver:8899/health > /dev/null; do echo Waiting for OAuth2 server to start; sleep 5; done; /app/run.sh']
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8765
+          initialDelaySeconds: 120
+          periodSeconds: 20
+          timeoutSeconds: 5

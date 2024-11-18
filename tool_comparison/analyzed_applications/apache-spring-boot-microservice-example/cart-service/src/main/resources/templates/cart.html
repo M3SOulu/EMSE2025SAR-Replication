@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Cart Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="contentRoute" data-th-content="${contentRoute}">
+  <meta name="productRoute" data-th-content="${productRoute}">
+  <meta name="cartRoute" data-th-content="${cartRoute}">
+  <link data-th-href="${contentRoute + '/css/content-styles.css'}" rel="stylesheet">
+  <link data-th-href="${productRoute + '/css/product-styles.css'}" rel="stylesheet">
+  <link data-th-href="${cartRoute + '/css/cart-styles.css'}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--#include virtual="[[${contentRoute}]]/fragments/default-header.html" -->
+
+  <h1>Cart Page</h1>
+  <p>This page is delivered by the cart service.</p>
+
+  <table class="line-items-table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-th-each="lineItem : ${cart.lineItems}">
+        <td data-th-text="${lineItem.productName}">Product Name</td>
+        <td data-th-text="${#numbers.formatCurrency(lineItem.productPrice)}">Price</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><a href="#" data-th-href="${productRoute}">Back to products list</a></p>
+
+  <!--#include virtual="[[${contentRoute}]]/fragments/default-footer.html" -->
+
+  <!-- Load jQuery required by the cart scripts. -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+  <script data-th-src="${cartRoute + '/js/cart-scripts.js'}"></script>
+</body>
+
+</html>

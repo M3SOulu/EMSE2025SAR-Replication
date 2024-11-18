@@ -1,4 +1,0 @@
-ts-wait-order-service,waitorder.controller.WaitListOrderController,waitorder.controller.WaitListOrderController.getWaitListOrders,@RequestHeader_HttpHeaders_headers,/api/v1/waitorderservice/waitlistorders,GET,class org.springframework.http.HttpEntity,false
-ts-wait-order-service,waitorder.controller.WaitListOrderController,waitorder.controller.WaitListOrderController.home,,/api/v1/waitorderservice/welcome,GET,class java.lang.String,false
-ts-wait-order-service,waitorder.controller.WaitListOrderController,waitorder.controller.WaitListOrderController.getAllOrders,@RequestHeader_HttpHeaders_headers,/api/v1/waitorderservice/orders,GET,class org.springframework.http.HttpEntity,false
-ts-wait-order-service,waitorder.controller.WaitListOrderController,waitorder.controller.WaitListOrderController.createNewOrder,@RequestBody_WaitListOrderVO_createOrder&@RequestHeader_HttpHeaders_headers,/api/v1/waitorderservice/order,POST,class org.springframework.http.HttpEntity,false

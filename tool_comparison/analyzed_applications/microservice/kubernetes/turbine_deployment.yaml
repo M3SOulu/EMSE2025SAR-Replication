@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: turbine
+  labels: 
+    app: turbine
+spec:
+  selector:
+    matchLabels:
+      app: turbine
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: turbine
+    spec:
+      containers:
+      - name: turbine
+        image: clintoncao/ms_turbine
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8989
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: turbine-svc-np
+spec:
+  type: NodePort
+  selector:
+    app:  turbine
+  ports:
+  - port: 8989
+    # protocol: TCP
+    targetPort: 8989
+    nodePort: 31301

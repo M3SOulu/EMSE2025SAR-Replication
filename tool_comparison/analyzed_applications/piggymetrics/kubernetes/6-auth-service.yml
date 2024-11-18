@@ -1,0 +1,62 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: auth-service-svc
+  labels:
+    app: auth-svc
+spec:
+  selector:
+    app:  auth-svc
+  ports:
+  - port: 5000
+    # protocol: TCP
+    targetPort: 5000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-svc
+  labels: 
+    app: auth-svc
+spec:
+  selector:
+    matchLabels:
+      app: auth-svc
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: auth-svc
+    spec:
+      containers:
+      - name: auth-svc
+        image: clintoncao/ms_pgm_auth_svc
+        env:
+          - name: ACCOUNT_SERVICE_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: piggymetrics
+                key: account_service_password
+          - name: CONFIG_SERVICE_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: piggymetrics
+                key: config_service_password
+          - name: MONGODB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: piggymetrics
+                key: auth_mongodb_password
+          - name: NOTIFICATION_SERVICE_PASSWORD
+            valueFrom: 
+              secretKeyRef:
+                name: piggymetrics
+                key: notification_service_password
+          - name: STATISTICS_SERVICE_PASSWORD
+            valueFrom: 
+              secretKeyRef:
+                name: piggymetrics
+                key: statistics_service_password
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 5000

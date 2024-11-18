@@ -1,3 +1,0 @@
-ts-execute-service,execute.controller.ExecuteControlller,execute.controller.ExecuteControlller.home,@RequestHeader_HttpHeaders_headers,/api/v1/executeservice/welcome,GET,class java.lang.String,false
-ts-execute-service,execute.controller.ExecuteControlller,execute.controller.ExecuteControlller.executeTicket,@PathVariable_String_orderId&@RequestHeader_HttpHeaders_headers,/api/v1/executeservice/execute/execute/{orderId},GET,class org.springframework.http.HttpEntity,false
-ts-execute-service,execute.controller.ExecuteControlller,execute.controller.ExecuteControlller.collectTicket,@PathVariable_String_orderId&@RequestHeader_HttpHeaders_headers,/api/v1/executeservice/execute/collected/{orderId},GET,class org.springframework.http.HttpEntity,false

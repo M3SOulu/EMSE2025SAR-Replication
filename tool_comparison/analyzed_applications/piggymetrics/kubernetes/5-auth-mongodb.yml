@@ -1,0 +1,42 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: auth-mongodb-svc
+  labels:
+    app: auth-mongodb
+spec:
+  selector:
+    app:  auth-mongodb
+  ports:
+  - port: 27017
+    # protocol: TCP
+    targetPort: 27017
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-mongodb
+  labels: 
+    app: auth-mongodb
+spec:
+  selector:
+    matchLabels:
+      app: auth-mongodb
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: auth-mongodb
+    spec:
+      containers:
+      - name: auth-mongodb
+        image: clintoncao/ms_pgm_auth_mongodb
+        env:
+          - name: MONGODB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: piggymetrics
+                key: auth_mongodb_password
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 27017

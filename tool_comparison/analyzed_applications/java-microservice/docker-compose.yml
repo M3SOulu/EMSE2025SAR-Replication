@@ -1,0 +1,173 @@
+version: '2'
+
+services:
+  config:
+    image: todo/config-server
+    ports:
+      - 8888:8888
+    networks:
+      - net
+    hostname: config
+    container_name: config 
+    external_links:
+      - elk
+      - kafka
+
+  eureka:
+    image: todo/eureka-server
+    ports:
+      - 8010:8010
+    networks:
+      - net
+    depends_on:
+      - config
+    hostname: eureka
+    container_name: eureka  
+    command: ["./wait-for-it.sh","config:8888","--timeout=100","--","/usr/local/bin/start.sh"]
+    external_links:
+      - elk
+
+  reminder:
+    image: todo/reminder-service
+    ports:
+      - 8015:8015
+    networks:
+      - net
+    depends_on:
+      - eureka
+      - admin
+    hostname: reminder
+    command: ["./wait-for-it.sh","eureka:8010","--timeout=150","--","/usr/local/bin/start.sh"]
+    external_links:
+      - elk
+      - kafka
+      
+  user:
+    image: todo/user-service
+    ports:
+      - 8016:8016
+    networks:
+      - net
+    depends_on:
+      - eureka
+      - admin
+    hostname: user
+    container_name: user
+    command: ["./wait-for-it.sh","eureka:8010","--timeout=150","--","/usr/local/bin/start.sh"]
+    external_links:
+      - elk
+      - kafka
+
+  oauth:
+    image: todo/oauth-server
+    ports:
+      - 8017:8017
+    networks:
+      - net
+    depends_on:
+      - eureka
+      - user
+      - admin
+    hostname: oauth
+    container_name: oauth
+    command: ["./wait-for-it.sh","eureka:8010","--timeout=150","--","/usr/local/bin/start.sh"]
+    external_links:
+      - elk
+    
+
+  gateway:
+    image: todo/api-gateway
+    ports:
+      - 8018:8018
+    networks:
+      - net
+    depends_on:
+      - eureka
+      - admin
+    hostname: gateway
+    command: ["./wait-for-it.sh","eureka:8010","--timeout=150","--","/usr/local/bin/start.sh"]
+    external_links:
+      - elk
+
+  mail:
+    image: todo/mail-service
+    ports:
+      - 8020:8020
+    networks:
+      - net
+    depends_on:
+      - eureka
+      - admin
+    hostname: mail
+    container_name: mail
+    command: ["./wait-for-it.sh","eureka:8010","--timeout=150","--","/usr/local/bin/start.sh"]
+    external_links:
+      - elk
+      - kafka
+
+  admin:
+    image: todo/admin-server
+    depends_on:
+      - eureka
+    container_name: admin
+    ports:
+      - 8026:8026
+    networks:
+      - net
+    environment:
+      - EUREKA_SERVICE_URL=http://eureka:8010
+      - EUREKA_INSTANCE_PREFER_IP_ADDRESS=true
+      - LOGGING_FILE=/tmp/admin.log
+    command: ["./wait-for-it.sh","eureka:8010","--timeout=150","--","/usr/local/bin/start.sh"]
+    external_links:
+      - elk
+      
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - 2181:2181
+    networks:
+      - net
+    mem_limit: 925288000  
+    cpu_shares: 100
+  
+  kafka:
+    image: wurstmeister/kafka
+    ports:
+      - 9092
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 172.19.0.1
+      KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
+      KAFKA_CREATE_TOPICS: "todo-mail:1:1"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    hostname: kafka
+    container_name: kafka
+    networks:
+      - net
+    mem_limit: 925288000  
+    cpu_shares: 100
+
+  proxy:
+     build: proxy/
+     ports:
+       - 8055:80
+     networks:
+       - net
+     depends_on:
+       - gateway
+     hostname: proxy
+     container_name: proxy  
+     command: ["./wait-for-it.sh","gateway:8018","--timeout=50","--","/usr/local/bin/start.sh"]
+     
+volumes:
+  todo_data:
+    external: true
+  todo_elk:
+    external: true
+
+networks:
+  net:
+    driver: bridge

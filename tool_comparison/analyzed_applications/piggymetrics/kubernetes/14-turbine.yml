@@ -1,0 +1,44 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: turbine-service-svc
+  labels:
+    app: turbine-service
+spec:
+  type: NodePort
+  selector:
+    app:  turbine-service
+  ports:
+  - port: 8989
+    # protocol: TCP
+    targetPort: 8080
+    nodePort: 31301
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: turbine-service
+  labels: 
+    app: turbine-service
+spec:
+  selector:
+    matchLabels:
+      app: turbine-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: turbine-service
+    spec:
+      containers:
+      - name: turbine-service
+        image: clintoncao/ms_pgm_turbine_svc
+        env:
+        - name: CONFIG_SERVICE_PASSWORD
+          valueFrom: 
+            secretKeyRef:
+              name: piggymetrics
+              key: config_service_password
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8989

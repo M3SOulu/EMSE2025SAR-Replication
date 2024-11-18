@@ -1,0 +1,22 @@
+{
+  "devDependencies": {
+    "grpc_tools_node_protoc_ts": "^5.3.3",
+    "grpc-tools": "^1.12.4"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.8.17",
+    "google-protobuf": "^3.21.2",
+    "typescript": "^5.1.6",
+    "protobufjs": "^7.2.3",
+    "@changesets/cli": "^2.26.1",
+    "mkdirp": "^3.0.0",
+    "rimraf": "^5.0.0",
+    "ts-proto": "^1.145.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "tsa": "ts-node Ts_A/server.ts",
+    "tsb": "ts-node Ts_B/server.ts",
+    "tsc": "ts-node Ts_C/server.ts"
+  }
+}

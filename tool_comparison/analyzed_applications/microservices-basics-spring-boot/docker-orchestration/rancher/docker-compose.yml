@@ -1,0 +1,149 @@
+version: '2'
+services:
+  mysqldb:
+    image: mysql:latest
+    mem_limit: 1073741824
+    restart: unless-stopped
+    ports:
+      - "3306/tcp"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: auth
+    labels:
+      io.rancher.scheduler.affinity:host_label_soft: name=av
+      io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+
+  configserver:
+    image: anilallewar/basic-config-server:0.0.1
+    mem_limit: 1073741824
+    restart: unless-stopped
+    ports:
+      - "8888/tcp"
+    command:
+      - while ! mysqladmin ping -h"mysqldb" -u"root" -p"password" --silent; do echo Waiting for mySql database to start; sleep 5; done; /app/run.sh
+    depends_on:
+      - mysqldb
+    labels:
+      io.rancher.scheduler.affinity:host_label_soft: name=sd
+      io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+      io.rancher.container.pull_image: always
+
+  eurekaregistry:
+    image: anilallewar/basic-webservice-registry:0.0.1
+    mem_limit: 1073741824
+    restart: unless-stopped
+    ports:
+      - "8761:8761/tcp"
+    command:
+      - while ! curl -s http://configserver:8888/health > /dev/null; do echo Waiting for Config Service to start; sleep 5; done; /app/run.sh
+    depends_on:
+      - configserver
+    labels:
+      io.rancher.scheduler.affinity:host_label_soft: name=aa
+      io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+      io.rancher.container.pull_image: always
+
+  authserver:
+    image: anilallewar/basic-auth-server:0.0.1
+    mem_limit: 1073741824
+    restart: unless-stopped
+    ports:
+      - "8899/tcp"
+    command:
+      - while ! curl -s http://eurekaregistry:8761/health > /dev/null; do echo Waiting for Eureka Registry to start; sleep 5; done; /app/run.sh
+    depends_on:
+      - eurekaregistry
+    labels:
+      io.rancher.scheduler.affinity:host_label_soft: name=av
+      io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+      io.rancher.container.pull_image: always
+
+  apigateway:
+    image: anilallewar/basic-api-gateway:0.0.1
+    mem_limit: 1073741824
+    restart: unless-stopped
+    ports:
+      - "8765:8765/tcp"
+    command:
+      - while ! curl -s http://authserver:8899/health > /dev/null; do echo Waiting for OAuth2 Server to start; sleep 5; done; /app/run.sh
+    depends_on:
+      - authserver
+    labels:
+      io.rancher.scheduler.affinity:host_label_soft: name=sd
+      io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+      io.rancher.container.pull_image: always
+
+  webportal:
+    image: anilallewar/basic-web-portal:0.0.1
+    mem_limit: 1073741824
+    restart: unless-stopped
+    ports:
+      - "8080/tcp"
+    command:
+      - while ! curl -s http://eurekaregistry:8761/health > /dev/null; do echo Waiting for Eureka Registry to start; sleep 5; done; /app/run.sh
+    depends_on:
+      - eurekaregistry
+    labels:
+      io.rancher.scheduler.affinity:host_label_soft: name=aa
+      io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+      io.rancher.container.pull_image: always
+
+  userwebservice:
+    image: anilallewar/basic-user-webservice:0.0.1
+    mem_limit: 1073741824
+    restart: unless-stopped
+    ports:
+      - "8080/tcp"
+    command:
+      - while ! curl -s http://eurekaregistry:8761/health > /dev/null; do echo Waiting for Eureka Registry to start; sleep 5; done; /app/run.sh
+    depends_on:
+      - eurekaregistry
+    labels:
+      io.rancher.scheduler.affinity:host_label_soft: name=av
+      io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+      io.rancher.container.pull_image: always
+
+  taskwebservice:
+    image: anilallewar/basic-task-webservice:0.0.1
+    mem_limit: 1073741824
+    restart: unless-stopped
+    ports:
+      - "8080/tcp"
+    command:
+      - while ! curl -s http://eurekaregistry:8761/health > /dev/null; do echo Waiting for Eureka Registry to start; sleep 5; done; /app/run.sh
+    depends_on:
+      - eurekaregistry
+    labels:
+      io.rancher.scheduler.affinity:host_label_soft: name=sd
+      io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+      io.rancher.container.pull_image: always
+
+  commentswebservice:
+    image: anilallewar/basic-comments-webservice:0.0.1
+    mem_limit: 1073741824
+    restart: unless-stopped
+    ports:
+      - "8080/tcp"
+    command:
+      - while ! curl -s http://eurekaregistry:8761/health > /dev/null; do echo Waiting for Eureka Registry to start; sleep 5; done; /app/run.sh
+    depends_on:
+      - eurekaregistry
+    labels:
+      io.rancher.scheduler.affinity:host_label_soft: name=aa
+      io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+      io.rancher.container.pull_image: always
+
+  zipkinserver:
+    image: anilallewar/basic-zipkin-server:0.0.1
+    mem_limit: 1073741824
+    restart: unless-stopped
+    ports:
+      - "9411:9411/tcp"
+    command:
+      - while ! curl -s http://configserver:8888/health > /dev/null; do echo Waiting for Config Service to start; sleep 5; done; /app/run.sh
+    links:
+      - configserver:configserver
+    labels:
+      io.rancher.scheduler.affinity:host_label_soft: name=aa
+      io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+      io.rancher.container.pull_image: always

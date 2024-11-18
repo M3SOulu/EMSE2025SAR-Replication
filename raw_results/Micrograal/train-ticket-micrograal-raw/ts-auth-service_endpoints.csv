@@ -1,6 +1,0 @@
-ts-auth-service,auth.controller.UserController,auth.controller.UserController.deleteUserById,@PathVariable_String_userId&@RequestHeader_HttpHeaders_headers,/api/v1/users/{userId},DELETE,class org.springframework.http.ResponseEntity<class edu.fudan.common.util.Response>,true
-ts-auth-service,auth.controller.AuthController,auth.controller.AuthController.createDefaultUser,@RequestBody_AuthDto_authDto,/api/v1/auth,POST,class org.springframework.http.HttpEntity<class edu.fudan.common.util.Response>,true
-ts-auth-service,auth.controller.UserController,auth.controller.UserController.getToken,@RequestBody_BasicAuthDto_dao&@RequestHeader_HttpHeaders_headers,/api/v1/users/login,POST,class org.springframework.http.ResponseEntity<class edu.fudan.common.util.Response>,true
-ts-auth-service,auth.controller.UserController,auth.controller.UserController.getHello,,/api/v1/users/hello,GET,class java.lang.Object,false
-ts-auth-service,auth.controller.UserController,auth.controller.UserController.getAllUser,@RequestHeader_HttpHeaders_headers,/api/v1/users,GET,class org.springframework.http.ResponseEntity<?>,true
-ts-auth-service,auth.controller.AuthController,auth.controller.AuthController.getHello,,/api/v1/auth/hello,GET,class java.lang.String,false

@@ -1,1 +1,0 @@
-{"nodes": [{"nodeName":"movie-service","nodeType":"service"},{"nodeName":"recommendation-service","nodeType":"service"},{"nodeName":"eureka-service","nodeType":"service"},{"nodeName":"user-service","nodeType":"service"},{"nodeName":"recommendation-client","nodeType":"service"},{"nodeName":"config-service","nodeType":"service"}], "links": []}

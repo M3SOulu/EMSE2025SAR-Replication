@@ -1,0 +1,187 @@
+---
+# Source: app-microservices-project/templates/app-service-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: userservice
+spec:
+  selector:
+    app: anilallewar-user-service
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8080
+---
+# Source: app-microservices-project/templates/app-service-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: taskservice
+spec:
+  selector:
+    app: anilallewar-task-service
+  ports:
+  - name: http
+    protocol: TCP
+    # Not exposing the service to external endpoints
+    port: 8080
+---
+# Source: app-microservices-project/templates/app-service-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: commentservice
+spec:
+  selector:
+    app: anilallewar-comment-service
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8080
+    targetPort: 
+  type: ClusterIP
+---
+# Source: app-microservices-project/templates/app-service-deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anilallewar-user-service
+spec:
+  selector:
+    matchLabels:
+      app: anilallewar-user-service
+  template:
+    metadata:
+      labels:
+        app: anilallewar-user-service
+    spec:
+      containers:
+      - name: anilallewar-user-service
+        image: anilallewar/basic-user-webservice:0.0.1
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: 256Mi
+          limits:
+            memory: 512Mi
+        ports:
+        - containerPort: 8080
+          name: "http"
+        env:
+        - name: SPRING_ACTIVE_PROFILE
+          value: docker
+        - name: JAVA_OPTIONS
+          value: -Xms256M -Xmx512M
+        command: ["/bin/bash"]
+        args: ["-c", 'while ! curl -s http://eurekaregistry:8761/health > /dev/null; do echo Waiting for Eureka Registry Service to start; sleep 5; done; /app/run.sh']
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 120
+          periodSeconds: 10
+          timeoutSeconds: 5
+---
+# Source: app-microservices-project/templates/app-service-deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anilallewar-task-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anilallewar-task-service
+  template:
+    metadata:
+      labels:
+        app: anilallewar-task-service
+    spec:
+      containers:
+      - name: anilallewar-task-service
+        image: anilallewar/basic-task-webservice:0.0.1
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: 256Mi
+          limits:
+            memory: 512Mi
+        ports:
+        - containerPort: 8080
+          name: "http"
+        env:
+        - name: SPRING_ACTIVE_PROFILE
+          value: docker
+        - name: JAVA_OPTIONS
+          value: -Xms256M -Xmx512M
+        command: ["/bin/bash"]
+        args: ["-c", 'while ! curl -s http://eurekaregistry:8761/health > /dev/null; do echo Waiting for Eureka Registry Service to start; sleep 5; done; /app/run.sh']
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 120
+          periodSeconds: 10
+          timeoutSeconds: 5
+---
+# Source: app-microservices-project/templates/app-service-deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anilallewar-comment-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anilallewar-comment-service
+  template:
+    metadata:
+      labels:
+        app: anilallewar-comment-service
+    spec:
+      containers:
+      - name: anilallewar-comment-service
+        image: anilallewar/basic-comments-webservice:0.0.1
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: 256Mi
+          limits:
+            memory: 512Mi
+        ports:
+        - containerPort: 8080
+          name: "http"
+        env:
+        - name: SPRING_ACTIVE_PROFILE
+          value: docker
+        - name: JAVA_OPTIONS
+          value: -Xms256M -Xmx512M
+        command: ["/bin/bash"]
+        args: ["-c", 'while ! curl -s http://eurekaregistry:8761/health > /dev/null; do echo Waiting for Eureka Registry Service to start; sleep 5; done; /app/run.sh']
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 120
+          periodSeconds: 10
+          timeoutSeconds: 5
+---
+# Source: app-microservices-project/templates/app-service-autoscaler.yml
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler 
+metadata: 
+  name: user-service-autoscaler 
+spec: 
+  maxReplicas: 2
+  minReplicas: 1 
+  scaleTargetRef: 
+    apiVersion: app/v1 
+    kind: Deployment 
+    name: anilallewar-user-service 
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70

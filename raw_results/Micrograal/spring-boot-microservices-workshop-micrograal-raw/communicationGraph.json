@@ -1,1 +1,0 @@
-{"nodes": [{"nodeName":"movie-catalog-service","nodeType":"service"},{"nodeName":"movie-info-service","nodeType":"service"},{"nodeName":"ratings-data-service","nodeType":"service"},{"nodeName":"discovery-server","nodeType":"service"}], "links": []}

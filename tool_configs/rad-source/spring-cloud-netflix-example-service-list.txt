@@ -1,7 +1,0 @@
-admin-dashboard
-config-server
-eureka-server
-hystrix-dashboard
-service-a
-service-b
-zuul

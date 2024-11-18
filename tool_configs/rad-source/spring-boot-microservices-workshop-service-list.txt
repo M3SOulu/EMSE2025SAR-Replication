@@ -1,4 +1,0 @@
-discovery-server
-movie-catalog-service
-movie-info-service
-ratings-data-service

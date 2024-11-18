@@ -1,3 +1,0 @@
-ts-cancel-service,cancel.controller.CancelController,cancel.controller.CancelController.calculate,@PathVariable_String_orderId&@RequestHeader_HttpHeaders_headers,/api/v1/cancelservice/cancel/refound/{orderId},GET,class org.springframework.http.HttpEntity,false
-ts-cancel-service,cancel.controller.CancelController,cancel.controller.CancelController.home,@RequestHeader_HttpHeaders_headers,/api/v1/cancelservice/welcome,GET,class java.lang.String,false
-ts-cancel-service,cancel.controller.CancelController,cancel.controller.CancelController.cancelTicket,@PathVariable_String_orderId&@PathVariable_String_loginId&@RequestHeader_HttpHeaders_headers,/api/v1/cancelservice/cancel/{orderId}/{loginId},GET,class org.springframework.http.HttpEntity,false

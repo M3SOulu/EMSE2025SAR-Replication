@@ -1,8 +1,0 @@
-AccountService
-ConfigService
-CustomerService
-DiscoveryService
-FoodTrayService
-ItemService
-PriceService
-StoreService

@@ -1,0 +1,72 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: notification-service-svc
+  labels:
+    app: notification-service
+spec:
+  selector:
+    app:  notification-service
+  ports:
+  - port: 8000
+    # protocol: TCP
+    targetPort: 8000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-service
+  labels: 
+    app: notification-service
+spec:
+  selector:
+    matchLabels:
+      app: notification-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: notification-service
+    spec:
+      containers:
+      - name: notification-service
+        image: clintoncao/ms_pgm_notification_svc
+        env:
+        - name: CONFIG_SERVICE_PASSWORD
+          valueFrom: 
+            secretKeyRef:
+              name: piggymetrics
+              key: config_service_password
+        - name: MONGODB_PASSWORD
+          valueFrom: 
+            secretKeyRef:
+              name: piggymetrics
+              key: notification_mongodb_password
+        - name: NOTIFICATION_SERVICE_PASSWORD
+          valueFrom: 
+            secretKeyRef:
+              name: piggymetrics
+              key: notification_service_password
+        - name: NOTIFICATION_EMAIL_HOST
+          valueFrom: 
+            secretKeyRef:
+              name: piggymetrics
+              key: notification_email_host
+        - name: NOTIFICATION_EMAIL_PORT
+          valueFrom: 
+            secretKeyRef:
+              name: piggymetrics
+              key: notification_email_port
+        - name: NOTIFICATION_EMAIL_USER
+          valueFrom: 
+            secretKeyRef:
+              name: piggymetrics
+              key: notification_email_user
+        - name: NOTIFICATION_EMAIL_PASS
+          valueFrom: 
+            secretKeyRef:
+              name: piggymetrics
+              key: notification_email_pass
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8000

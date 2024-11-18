@@ -1,1 +1,0 @@
-{"nodes": [{"nodeName":"hystrix-dashboard","nodeType":"service"},{"nodeName":"cloud-config-server","nodeType":"service"},{"nodeName":"cloud-gateway","nodeType":"service"},{"nodeName":"service-registry","nodeType":"service"},{"nodeName":"user-service","nodeType":"service"},{"nodeName":"department-service","nodeType":"service"}], "links": []}

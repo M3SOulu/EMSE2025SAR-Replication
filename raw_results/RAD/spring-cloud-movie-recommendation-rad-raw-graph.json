@@ -1,4 +1,0 @@
-digraph cil_rad {
-rankdir = LR;
-node [shape=box];
-}

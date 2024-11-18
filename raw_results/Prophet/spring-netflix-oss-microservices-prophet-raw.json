@@ -1,1 +1,0 @@
-{"global":{"projectName":"spring-netflix-oss-microservices","noCommunication":true,"communication":"graph TD\nN/A\n","noContextMap":true,"contextMap":"classDiagram\n","cannotClone":false},"ms":[{"name":"rabbit-mq-server","noBoundedContext":true,"notJava":true,"boundedContext":null},{"name":"microservices-config","noBoundedContext":true,"notJava":true,"boundedContext":null}]}

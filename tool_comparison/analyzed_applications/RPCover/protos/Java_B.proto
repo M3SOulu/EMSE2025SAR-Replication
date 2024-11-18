@@ -1,0 +1,11 @@
+syntax = "proto3";
+package protos;
+import "protos/message.proto";
+option go_package = "./proto";
+option java_package = "com.rpcoverbench";
+
+service Java_B {
+  rpc Java_B_1(CommonMessage) returns (CommonMessage) {}
+  rpc Java_B_2(CommonMessage) returns (CommonMessage) {}
+  rpc Java_B_3(CommonMessage) returns (CommonMessage) {}
+}

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalog
+  labels: 
+    app: catalog
+spec:
+  selector:
+    matchLabels:
+      app: catalog
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: catalog
+    spec:
+      containers:
+      - name: catalog
+        image: clintoncao/ms_catalog
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8080
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: catalog-svc
+spec:
+  selector:
+    app:  catalog
+  ports:
+    - port: 8080
+      targetPort: 8080
+

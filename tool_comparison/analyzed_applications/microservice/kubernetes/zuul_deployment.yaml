@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zuul
+  labels: 
+    app: zuul
+spec:
+  selector:
+    matchLabels:
+      app: zuul
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: zuul
+    spec:
+      containers:
+      - name: zuul
+        image: clintoncao/ms_zuul
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: zuul-svc-np
+  labels:
+    app: zuul
+spec:
+  type: NodePort
+  selector:
+    app:  zuul
+  ports:
+  - port: 8080
+    # protocol: TCP
+    targetPort: 8080
+    nodePort: 31101

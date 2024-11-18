@@ -1,0 +1,26 @@
+#Docker compose file
+services:
+  configserver:
+    image: jferrater/ConfigService
+    ports:
+    - "8888:8888"
+
+  accounts:
+    image: jferrater/AccountService
+    links:
+    - configserver
+    
+  prices:
+    image: jferrater/PriceService
+    links:
+    - configserver
+
+  customers:
+    image: jferrater/CustomerService
+    links:
+    - configserver
+
+  stores:
+    image: jferrater/StoreService
+    links:
+    - configserver

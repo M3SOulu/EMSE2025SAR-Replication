@@ -1,9 +1,0 @@
-admin-server
-api-gateway
-config-server
-eureka-server
-jmx-monitoring
-mail-service
-oauth-server
-remainder-service
-user-service

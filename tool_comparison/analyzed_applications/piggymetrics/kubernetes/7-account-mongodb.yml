@@ -1,0 +1,44 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: account-mongodb-svc
+  labels:
+    app: account-mongodb
+spec:
+  selector:
+    app:  account-mongodb
+  ports:
+  - port: 27017
+    # protocol: TCP
+    targetPort: 27017
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: account-mongodb
+  labels: 
+    app: account-mongodb
+spec:
+  selector:
+    matchLabels:
+      app: account-mongodb
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: account-mongodb
+    spec:
+      containers:
+      - name: account-mongodb
+        image: clintoncao/ms_pgm_account_mongodb
+        env:
+        - name: INIT_DUMP
+          value: account-service-dump.js
+        - name: MONGODB_PASSWORD
+          valueFrom: 
+            secretKeyRef:
+              name: piggymetrics
+              key: account_mongodb_password
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 27017

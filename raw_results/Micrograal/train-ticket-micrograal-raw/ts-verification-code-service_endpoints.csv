@@ -1,2 +1,0 @@
-ts-verification-code-service,verifycode.controller.VerifyCodeController,verifycode.controller.VerifyCodeController.verifyCode,@PathVariable_String_verifyCode&_HttpServletRequest_request&_HttpServletResponse_response&@RequestHeader_HttpHeaders_headers,/api/v1/verifycode/verify/{verifyCode},GET,boolean,false
-ts-verification-code-service,verifycode.controller.VerifyCodeController,verifycode.controller.VerifyCodeController.imageCode,@RequestHeader_HttpHeaders_headers&_HttpServletRequest_request&_HttpServletResponse_response,/api/v1/verifycode/generate,GET,void,false

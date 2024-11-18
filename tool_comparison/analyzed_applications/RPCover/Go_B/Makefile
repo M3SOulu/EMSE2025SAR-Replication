@@ -1,0 +1,4 @@
+
+
+all:
+	go mod download

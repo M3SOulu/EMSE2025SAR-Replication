@@ -1,0 +1,44 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: monitoring-service-svc
+  labels:
+    app: monitoring-service
+spec:
+  type: NodePort
+  selector:
+    app:  monitoring-service
+  ports:
+  - port: 8080
+    # protocol: TCP
+    targetPort: 8080
+    nodePort: 31401
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: monitoring-service
+  labels: 
+    app: monitoring-service
+spec:
+  selector:
+    matchLabels:
+      app: monitoring-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: monitoring-service
+    spec:
+      containers:
+      - name: monitoring-service
+        image: clintoncao/ms_pgm_monitoring
+        env:
+        - name: CONFIG_SERVICE_PASSWORD
+          valueFrom: 
+            secretKeyRef:
+              name: piggymetrics
+              key: config_service_password
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8080

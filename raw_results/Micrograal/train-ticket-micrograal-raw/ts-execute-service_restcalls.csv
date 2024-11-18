@@ -1,4 +1,0 @@
-ts-execute-service,execute.serivce.ExecuteServiceImpl,execute.serivce.ExecuteServiceImpl.getOrderByIdFromOrder,ts-order-service/api/v1/orderservice/order/,GET,org.springframework.http.HttpEntity,true,false,null,1,false
-ts-execute-service,execute.serivce.ExecuteServiceImpl,execute.serivce.ExecuteServiceImpl.getOrderByIdFromOrderOther,ts-order-other-service/api/v1/orderOtherService/orderOther/,GET,org.springframework.http.HttpEntity,true,false,null,1,false
-ts-execute-service,execute.serivce.ExecuteServiceImpl,execute.serivce.ExecuteServiceImpl.executeOrder,ts-order-service/api/v1/orderservice/order/status//,GET,org.springframework.http.HttpEntity,true,false,null,2,false
-ts-execute-service,execute.serivce.ExecuteServiceImpl,execute.serivce.ExecuteServiceImpl.executeOrderOther,ts-order-other-service/api/v1/orderOtherService/orderOther/status//,GET,org.springframework.http.HttpEntity,true,false,null,2,false

@@ -1,3 +1,0 @@
-microservice-kafka/microservice-kafka-invoicing
-microservice-kafka/microservice-kafka-order
-microservice-kafka/microservice-kafka-shipping

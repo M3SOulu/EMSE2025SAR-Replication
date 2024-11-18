@@ -1,6 +1,0 @@
-config-service
-eureka-service
-movie-service
-recommendation-client
-recommendation-service
-user-service

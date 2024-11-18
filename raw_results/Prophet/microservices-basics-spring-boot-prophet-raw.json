@@ -1,1 +1,0 @@
-{"global":{"projectName":"microservices-basics-spring-boot","noCommunication":true,"communication":"graph TD\nN/A\n","noContextMap":true,"contextMap":"classDiagram\n","cannotClone":false},"ms":[{"name":"images","noBoundedContext":true,"notJava":true,"boundedContext":null},{"name":"docker-orchestration","noBoundedContext":true,"notJava":true,"boundedContext":null}]}
