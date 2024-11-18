@@ -1,6 +1,0 @@
-.idea
-target
-*.iml
-node_modules/
-realm-export.json
-.DS_Store

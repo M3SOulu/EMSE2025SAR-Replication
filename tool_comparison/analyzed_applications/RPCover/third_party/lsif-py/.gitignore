@@ -1,7 +1,0 @@
-.vscode/
-*.lsif
-.DS_Store
-venv/
-__pycache__/
-.mypy_cache/
-*.pyc
