@@ -4,9 +4,7 @@ This repository contains all data necessary to replicate the results presented i
 
 ## Repository structure
 
-- ```multivocal_literature_review/```: Data to replicate the identification of static architecture recovery tools for microservice applications.
-    - ```gray_literature_review/```: Data for the review of gray literature (informally published) sources.
-    - ```systematic_literature_review/```: Data for the review of academic (formally published) sources.
+- ```multivocal_literature_review/```: Data to replicate the identification of static architecture recovery tools for microservice applications via a gray literature review (informally published sources) and a systematic literature review (formally published sources).
 - ```tool_comparison```: Data to replicate the comparison of the identified tools.
     - ```analyzed_applications/```: The microservice applications that the tools are evaluated on as submodules. 
     - ```groundtruth_textual/```: The groundtruth architectural models (dataflof diagrams, DFDs) of the applications that the tools are evaluated on as simple text documents.
