@@ -1,0 +1,57 @@
+Components:
+TP config (config.default)
+TP registry (registry.default)
+TP monitoring (monitoring-service.default)
+TP turbine_stream_service (turbine-service.default)
+TP rabbitmq (rabbitmq.default)
+TP auth_service (auth-svc.default)
+TP account_service (account-service.default)
+TP notification_service (notification-service.default)
+FN mail_server
+TP statistics_service (statistics-service.default)
+FN external_website
+TP auth_mongodb (auth-mongodb.default)
+TP account_mongodb (account-mongodb.default)
+TP statistics_mongodb (statistics-mongodb.default)
+TP notification_mongodb (notification-mongodb.default)
+TP gateway (gateway.default)
+FN FN user
+
+Connections:
+/ config -> registry 
+/ config -> monitoring 
+/ turbine_stream_service -> registry 
+/ config -> turbine_stream_service 
+/ turbine_stream_service -> monitoring
+/ rabbitmq -> turbine_stream_service 
+/ auth_service -> registry 
+/ config -> auth_service 
+/ account_service -> registry 
+/ auth_service -> account_service 
+/ account_service -> auth_service 
+/ config -> account_service 
+/ account_service -> rabbitmq 
+/ notification_service -> registry 
+/ auth_service -> notification_service 
+/ config -> notification_service
+/ notification_service -> rabbitmq 
+/ notification_service -> mail_server 
+/ statistics_service -> registry 
+/ auth_service -> statistics_service
+/ config -> statistics_service 
+/ statistics_service -> rabbitmq 
+/ external_website -> statistics_service 
+/ account_service -> statistics_service 
+/ notification_service -> account_service
+/ account_mongodb -> account_service 
+/ notification_mongodb -> notification_service 
+/ statistics_mongodb -> statistics_service 
+/ auth_mongodb -> auth_service 
+/ registry -> gateway 
+/ user -> gateway 
+/ gateway -> user 
+/ config -> gateway 
+/ gateway -> account_service 
+/ gateway -> statistics_service 
+/ gateway -> notification_service 
+/ gateway -> auth_service 

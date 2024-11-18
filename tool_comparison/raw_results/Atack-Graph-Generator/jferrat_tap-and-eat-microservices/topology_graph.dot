@@ -1,0 +1,26 @@
+// Topology Graph
+graph {
+	outside
+	"docker host"
+	"jferrater/ConfigService"
+	"jferrater/AccountService"
+	"jferrater/PriceService"
+	"jferrater/CustomerService"
+	"jferrater/StoreService"
+	outside -- "jferrater/ConfigService" [contstraint=false]
+	"docker host" -- "jferrater/ConfigService" [contstraint=false]
+	"docker host" -- "jferrater/AccountService" [contstraint=false]
+	"docker host" -- "jferrater/PriceService" [contstraint=false]
+	"docker host" -- "jferrater/CustomerService" [contstraint=false]
+	"docker host" -- "jferrater/StoreService" [contstraint=false]
+	"jferrater/ConfigService" -- "jferrater/AccountService" [contstraint=false]
+	"jferrater/ConfigService" -- "jferrater/PriceService" [contstraint=false]
+	"jferrater/ConfigService" -- "jferrater/CustomerService" [contstraint=false]
+	"jferrater/ConfigService" -- "jferrater/StoreService" [contstraint=false]
+	"jferrater/AccountService" -- "jferrater/PriceService" [contstraint=false]
+	"jferrater/AccountService" -- "jferrater/CustomerService" [contstraint=false]
+	"jferrater/AccountService" -- "jferrater/StoreService" [contstraint=false]
+	"jferrater/PriceService" -- "jferrater/CustomerService" [contstraint=false]
+	"jferrater/PriceService" -- "jferrater/StoreService" [contstraint=false]
+	"jferrater/CustomerService" -- "jferrater/StoreService" [contstraint=false]
+}

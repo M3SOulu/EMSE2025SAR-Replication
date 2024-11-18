@@ -1,0 +1,31 @@
+Components:
+/ eureka 
+/ zuul 
+/ user
+/ turbine
+/ catalog
+/ customer
+/ order
+
+Connections:
+FN eureka -> zuul  
+FN user -> zuul 
+FN zuul -> user 
+FN turbine -> eureka 
+FN catalog -> eureka 
+FN customer -> eureka 
+FN order -> eureka 
+FN order -> catalog 
+FN order -> customer 
+FN order -> turbine 
+FN zuul -> customer 
+FN zuul -> catalog 
+FN zuul -> order 
+
+Endpoints:
+TP(5) catalog: "/{id}.html", "/list.html", "/form.html", "/searchForm.html", "/searchByName.html"
+FN(1) catalog: "/catalog"
+TP(3) customer: "/form.html", "/list.html", "/{id}.html"
+FN(1) customer: "/customer"
+TP(4) order: "/", "/form.html", "/{id}", "/line"
+FN(1) order: "/order"

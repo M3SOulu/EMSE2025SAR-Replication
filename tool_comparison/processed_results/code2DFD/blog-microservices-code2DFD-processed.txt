@@ -1,0 +1,73 @@
+Components:
+TP elasticsearch (elasticsearch) 
+TP kibana (kibana)
+TP logstash (logstash)
+TP rabbitmq (rabbitmq)
+TP config_server (config_server)
+TP discovery_server (discovery_server)
+FN github_repository 
+TP auth_server (auth_server)
+TP monitor_dashboard (monitor_dashboard)
+TP turbine_server (turbine_server)
+TP zipkin_server (zipkin_server)
+TP product_service (product_service)
+TP recommendation_service (recommendation_service)
+TP review_service (review_service)
+TP composite_service (composite_service)
+TP edge_server (edge_server)
+TP user (user)
+
+Connections:
+TP elasticsearch -> kibana  
+TP logstash -> elasticsearch 
+FN github_repository -> config_server 
+TP config_server -> discovery_server 
+FN config_server -> rabbitmq 
+TP config_server -> auth_server 
+TP config_server -> monitor_dashboard 
+FN monitor_dashboard -> discovery_server 
+FN rabbitmq -> turbine_server 
+TP turbine_server -> discovery_server 
+TP config_server -> turbine_server 
+TP turbine_server -> monitor_dashboard 
+FN rabbitmq -> zipkin_server 
+TP config_server -> product_service 
+TP product_service -> discovery_server 
+TP config_server -> recommendation_service 
+TP recommendation_service -> discovery_server 
+TP config_server -> review_service 
+TP review_service -> discovery_server 
+TP config_server -> composite_service 
+FN auth_server -> composite_service 
+TP composite_service -> discovery_server 
+FN composite_service -> rabbitmq 
+FN composite_service -> product_service 
+FN composite_service -> recommendation_service 
+FN composite_service -> review_service 
+TP edge_server -> user 
+TP user -> edge_server 
+FN edge_server -> composite_service 
+FN discovery_server -> edge_server 
+TP config_server -> edge_server 
+FN edge_server -> auth_server 
+FN discovery_server -> logstash 
+FN config_server -> logstash 
+FN auth_server -> logstash 
+FN product_service -> logstash 
+FN recommendation_service -> logstash 
+FN review_service -> logstash 
+FN composite_service -> logstash 
+FN monitor_dashboard -> logstash 
+FN edge_server -> logstash 
+FN zipkin_server -> logstash 
+
+Endpoints:
+TP(1) auth_server: "/user"
+TP(2) product_service: "/product/{productId}", "/set-processing-time"
+TP(2) recommendation_service: "/recommendation", "/set-processing-time"
+TP(2) review_service: "/review", "/set-processing-time"
+TP(2) composite_service: "/", "/{productId}"
+TP(1) monitor_dashboard: "/"
+
+FP:
+zipkin

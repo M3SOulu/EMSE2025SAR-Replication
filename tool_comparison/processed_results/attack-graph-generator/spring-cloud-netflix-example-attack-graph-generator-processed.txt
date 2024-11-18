@@ -1,0 +1,71 @@
+Components:
+TP admin_dashboard (spring-cloud-netflix-example/admin-dashboard)
+TP eureka_server (spring-cloud-netflix-example/eureka-server)
+TP rabbitmq (rabbitmq)
+TP config_server (spring-cloud-netflix-example/config-server)
+TP hystrix_dashboard (spring-cloud-netflix-example/hystrix-dashboard)
+TP service_a (spring-cloud-netflix-example/service-a)
+TP service_b (spring-cloud-netflix-example/service-b)
+TP zuul (spring-cloud-netflix-example/zuul)
+TP user (outside)
+TP zipkin (openzipkin/zipkin)
+
+Connections:
+TP admin_dashboard -> config_server 
+TP config_server -> eureka_server 
+TP config_server -> rabbitmq 
+TP admin_dashboard -> eureka_server 
+TP admin_dashboard -> hystrix_dashboard 
+TP hystrix_dashboard -> eureka_server
+TP admin_dashboard -> service_a 
+TP service_a -> rabbitmq 
+TP config_server -> service_a 
+TP service_a -> eureka_server 
+TP service_a -> hystrix_dashboard 
+TP admin_dashboard -> service_b 
+TP service_b -> rabbitmq 
+TP config_server -> service_b 
+TP service_b -> eureka_server 
+TP service_a -> service_b 
+TP zuul -> user 
+TP user -> zuul 
+TP zuul -> service_a 
+TP eureka_server -> zuul 
+TP rabbitmq -> zipkin 
+TP service_b -> zipkin 
+TP service_b -> hystrix_dashboard 
+TP service_a -> zipkin 
+TP admin_dashboard -> rabbitmq 
+TP admin_dashboard -> zuul 
+TP zuul -> rabbitmq 
+TP zuul -> zipkin 
+TP zuul -> config_server 
+
+FP:
+docker host
+rabbitmq:3-management
+spring-cloud-netflix-example/zuul - docker host
+spring-cloud-netflix-example/zuul - spring-cloud-netflix-example/service-b
+spring-cloud-netflix-example/zuul - spring-cloud-netflix-example/hystrix-dashboard
+spring-cloud-netflix-example/hystrix-dashboard - spring-cloud-netflix-example/config-server
+spring-cloud-netflix-example/hystrix-dashboard - outside
+spring-cloud-netflix-example/hystrix-dashboard - openzipkin/zipkin
+spring-cloud-netflix-example/hystrix-dashboard - docker host
+spring-cloud-netflix-example/hystrix-dashboard - rabbitmq
+spring-cloud-netflix-example/service-a - docker host
+spring-cloud-netflix-example/admin-dashboard - outside
+spring-cloud-netflix-example/admin-dashboard - openzipkin/zipkin
+spring-cloud-netflix-example/admin-dashboard - docker host
+spring-cloud-netflix-example/service-b - docker host
+spring-cloud-netflix-example/service-b - spring-cloud-netflix-example/config-server
+spring-cloud-netflix-example/service-b - spring-cloud-netflix-example/eureka-server
+spring-cloud-netflix-example/config-server - openzipkin/zipkin
+spring-cloud-netflix-example/config-server - docker host
+spring-cloud-netflix-example/eureka-server - outside
+spring-cloud-netflix-example/eureka-server - docker host
+spring-cloud-netflix-example/eureka-server - rabbitmq
+spring-cloud-netflix-example/eureka-server - openzipkin/zipkin
+openzipkin/zipkin - docker host
+openzipkin/zipkin - outside
+rabbitmq - docker host
+rabbitmq - outside

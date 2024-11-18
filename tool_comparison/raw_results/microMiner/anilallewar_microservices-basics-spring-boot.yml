@@ -1,0 +1,82 @@
+description: Generic application
+imports:
+- {micro: https://di-unipi-socc.github.io/microTOSCA/1.1/microTOSCA.yaml}
+topology_template:
+  groups:
+    edge:
+      members: [eurekaregistry.default.svc, zipkinserver.default.svc, apigateway.default.svc,
+        config-server-service.default.svc]
+      type: micro.groups.Edge
+  node_templates:
+    anilallewar-api-gateway.default:
+      requirements: []
+      type: micro.nodes.Service
+    anilallewar-auth-server.default:
+      requirements: []
+      type: micro.nodes.Service
+    anilallewar-config-server.default:
+      requirements: []
+      type: micro.nodes.Service
+    anilallewar-eurekaregistry.default:
+      requirements: []
+      type: micro.nodes.Service
+    anilallewar-mysql.default:
+      requirements: []
+      type: micro.nodes.Datastore
+    anilallewar-zipkin-server.default:
+      requirements: []
+      type: micro.nodes.Service
+    apigateway.default.svc:
+      requirements:
+      - {interaction: anilallewar-api-gateway.default}
+      type: micro.nodes.MessageRouter
+    authserver.default.svc:
+      requirements:
+      - {interaction: anilallewar-auth-server.default}
+      type: micro.nodes.MessageRouter
+    config-server-service.default.svc:
+      requirements:
+      - {interaction: config-server.default}
+      type: micro.nodes.MessageRouter
+    config-server.default:
+      requirements: []
+      type: micro.nodes.Service
+    configserver.default.svc:
+      requirements:
+      - {interaction: anilallewar-config-server.default}
+      type: micro.nodes.MessageRouter
+    eurekaregistry.default.svc:
+      requirements:
+      - {interaction: anilallewar-eurekaregistry.default}
+      type: micro.nodes.MessageRouter
+    mysqldb.default.svc:
+      requirements:
+      - {interaction: anilallewar-mysql.default}
+      type: micro.nodes.MessageRouter
+    zipkinserver.default.svc:
+      requirements:
+      - {interaction: anilallewar-zipkin-server.default}
+      type: micro.nodes.MessageRouter
+  relationship_templates:
+    c:
+      properties: {circuit_breaker: true}
+      type: micro.relationships.InteractsWith
+    cd:
+      properties: {circuit_breaker: true, dynamic_discovery: true}
+      type: micro.relationships.InteractsWith
+    d:
+      properties: {dynamic_discovery: true}
+      type: micro.relationships.InteractsWith
+    t:
+      properties: {timeout: true}
+      type: micro.relationships.InteractsWith
+    tc:
+      properties: {circuit_breaker: true, timeout: true}
+      type: micro.relationships.InteractsWith
+    tcd:
+      properties: {circuit_breaker: true, dynamic_discovery: true, timeout: true}
+      type: micro.relationships.InteractsWith
+    td:
+      properties: {dynamic_discovery: true, timeout: true}
+      type: micro.relationships.InteractsWith
+tosca_definitions_version: micro_tosca_yaml_1.1

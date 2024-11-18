@@ -1,0 +1,8 @@
+{
+  "realm": "UserManagement",
+  "auth-server-url": "http://ec2-3-87-186-137.compute-1.amazonaws.com:8080/auth",
+  "ssl-required": "none",
+  "resource": "ums-frontend",
+  "public-client": true,
+  "confidential-port": 0
+}

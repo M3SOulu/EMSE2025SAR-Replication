@@ -1,0 +1,148 @@
+Components:
+TP elasticsearch (docker.elastic.co/elasticsearch/elasticsearch)
+TP kibana  (docker.elastic.co/kibana/kibana)
+TP logstash (docker.elastic.co/logstash/logstash)
+TP rabbitmq (rabbitmq)
+TP config_server (_config)
+TP discovery_server (_discovery)
+FN github_repository 
+TP auth_server (_auth)
+TP monitor_dashboard (_monitor)
+FN turbine_server
+TP zipkin_server (_zipkin)
+TP product_service (_pro)
+TP recommendation_service (_rec)
+TP review_service (_rev)
+TP composite_service (_composite)
+TP edge_server (_edge)
+TP user (outside)
+
+Connections:
+TP elasticsearch -> kibana  
+TP logstash -> elasticsearch 
+FN github_repository -> config_server 
+TP config_server -> discovery_server 
+TP config_server -> rabbitmq 
+TP config_server -> auth_server 
+TP config_server -> monitor_dashboard 
+TP monitor_dashboard -> discovery_server 
+FN rabbitmq -> turbine_server 
+FN turbine_server -> discovery_server 
+FN config_server -> turbine_server 
+FN turbine_server -> monitor_dashboard 
+TP rabbitmq -> zipkin_server 
+TP config_server -> product_service 
+TP product_service -> discovery_server 
+TP config_server -> recommendation_service 
+TP recommendation_service -> discovery_server 
+TP config_server -> review_service 
+TP review_service -> discovery_server 
+TP config_server -> composite_service 
+TP auth_server -> composite_service 
+TP composite_service -> discovery_server 
+TP composite_service -> rabbitmq 
+TP composite_service -> product_service 
+TP composite_service -> recommendation_service 
+TP composite_service -> review_service 
+TP edge_server -> user 
+TP user -> edge_server 
+TP edge_server -> composite_service 
+TP discovery_server -> edge_server 
+TP config_server -> edge_server 
+TP edge_server -> auth_server 
+TP discovery_server -> logstash 
+TP config_server -> logstash 
+TP auth_server -> logstash 
+TP product_service -> logstash 
+TP recommendation_service -> logstash 
+TP review_service -> logstash 
+TP composite_service -> logstash 
+TP monitor_dashboard -> logstash 
+TP edge_server -> logstash 
+TP zipkin_server -> logstash 
+
+FP:
+docker host
+docker.elastic.co/elasticsearch/elasticsearch:5.2.2
+docker.elastic.co/kibana/kibana:5.2.2
+docker.elastic.co/logstash/logstash:5.2.2
+rabbitmq:3-management
+outside - _zipkin
+outside - _monitor
+outside - _discovery
+outside - docker.elastic.co/elasticsearch/elasticsearch
+outside - _auth
+outside - docker.elastic.co/logstash/logstash
+outside - docker.elastic.co/kibana/kibana
+outside - rabbitmq
+outside - _config
+_config - _zipkin
+_config - docker.elastic.co/kibana/kibana
+_config - docker.elastic.co/elasticsearch/elasticsearch
+docker.elastic.co/elasticsearch/elasticsearch - _monitor
+docker.elastic.co/elasticsearch/elasticsearch - _zipkin
+docker.elastic.co/elasticsearch/elasticsearch - _edge
+docker.elastic.co/elasticsearch/elasticsearch - _rec
+docker.elastic.co/elasticsearch/elasticsearch - _discovery
+docker.elastic.co/elasticsearch/elasticsearch - _auth
+docker.elastic.co/elasticsearch/elasticsearch - _pro
+docker.elastic.co/elasticsearch/elasticsearch - rabbitmq
+docker.elastic.co/elasticsearch/elasticsearch - _rev
+docker.elastic.co/elasticsearch/elasticsearch - _composite
+docker.elastic.co/elasticsearch/elasticsearch - docker host
+docker.elastic.co/logstash/logstash - docker host
+docker.elastic.co/logstash/logstash - rabbitmq
+docker.elastic.co/logstash/logstash - docker.elastic.co/kibana/kibana
+docker.elastic.co/kibana/kibana - docker host
+docker.elastic.co/kibana/kibana - _composite
+docker.elastic.co/kibana/kibana - _rev
+docker.elastic.co/kibana/kibana - _pro
+docker.elastic.co/kibana/kibana - rabbitmq
+docker.elastic.co/kibana/kibana - _rec
+docker.elastic.co/kibana/kibana - _auth
+docker.elastic.co/kibana/kibana - _discovery
+docker.elastic.co/kibana/kibana - _zipkin
+docker.elastic.co/kibana/kibana - _zipkin (connections appears twice)
+docker.elastic.co/kibana/kibana - _monitor
+_discovery - docker host
+_discovery - rabbitmq
+_discovery - _auth
+_discovery - _zipkin
+docker host - _auth
+docker host - rabbitmq
+docker host - _pro
+docker host - _monitor
+docker host - _rec
+docker host - _rev
+docker host - _composite
+docker host - _edge
+docker host - _zipkin
+_composite - _zipkin
+_composite - _monitor
+_zipkin - _monitor
+_zipkin - _edge
+_zipkin - _rec
+_zipkin - -rev
+_zipkin - _pro
+_monitor - rabbitmq
+_monitor - _edge
+_monitor - _auth
+_monitor - _rec
+_monitor - _pro
+_monitor - _rev
+_auth - rabbitmq
+_auth - _pro
+_auth - _rev
+_auth - _rec
+_auth - _edge
+_edge - rabbitmq
+_edge - _rec
+_edge - _rev
+_edge - _pro
+_rec - _rev
+_rec - _pro
+_rec - rabbitmq
+_rev - _pro
+_rev - rabbitmq
+_pro - rabbitmq
+

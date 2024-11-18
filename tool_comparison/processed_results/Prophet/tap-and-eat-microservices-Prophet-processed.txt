@@ -1,0 +1,33 @@
+Components:
+FN discovery_service 
+FN config_service 
+FN github_repository 
+TP account_service
+TP customer_service
+TP store_service
+TP item_service
+TP price_service
+FN foodtray_service
+
+Connections:
+FN github_repository -> config_service 
+FN config_service -> discovery_service 
+FN config_service -> account_service 
+FN account_service -> discovery_service 
+FN config_service -> customer_service 
+FN customer_service -> discovery_service 
+FN config_service -> store_service 
+FN store_service -> discovery_service 
+FN config_service -> item_service
+FN item_service -> discovery_service 
+FN config_service -> price_service 
+FN price_service -> discovery_service 
+FN config_service -> foodtray_service 
+FN foodtray_service -> discovery_service 
+FN foodtray_service -> item_service 
+FN foodtray_service -> price_service 
+
+FP:
+Docker
+tap-and-eat-ui
+.settings

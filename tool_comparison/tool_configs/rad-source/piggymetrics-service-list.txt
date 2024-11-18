@@ -1,0 +1,9 @@
+account-service
+auth-service
+gateway
+mongodb
+monitoring
+notification-service
+registry
+statistics-service
+turbine-stream-service

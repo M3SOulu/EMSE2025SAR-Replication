@@ -1,0 +1,42 @@
+Groundtruth, attack-graph-generator, code2DFD, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
+configserver, TP, TP, TP, TP, FN, /, /
+github_repository, FN, TP, FN, FN, FN, /, /
+webservice_registry, TP, TP, TP, TP, FN, /, /
+zipkin_tracing, TP, TP, TP, TP, FN, /, /
+mysqldb, TP, TP, TP, TP, FN, /, /
+auth_server, TP, TP, TP, TP, FN, /, /
+web_portal, TP, TP, TP, FN, FN, /, /
+user_webservice, TP, TP, TP, FN, FN, /, /
+comments_webservice, TP, TP, TP, FN, FN, /, /
+task_webservice, TP, TP, TP, FN, FN, /, /
+api_gateway, TP, TP, TP, TP, FN, /, /
+user, TP, TP, FN, FN, FN, /, /
+github_repository -> configserver, FN, TP, FN, FN, FP, /, FN
+configserver -> webservice_registry, TP, TP, TP, FN, FP, /, FN
+configserver -> zipkin_tracing, TP, TP, TP, FN, FN, /, FN
+configserver -> auth_server, TP, TP, FN, FN, FN, /, FN
+mysqldb -> auth_server, TP, TP, FN, FN, FN, /, FN
+auth_server -> webservice_registry, TP, TP, TP, FN, FN, /, FN
+web_portal -> webservice_registry, TP, TP, TP, FN, FN, /, FN
+configserver -> web_portal, TP, TP, FN, FN, FN, /, FN
+user_webservice -> zipkin_tracing, TP, FN, FN, FN, FN, /, FN
+configserver -> user_webservice, TP, TP, FN, FN, FN, /, FN
+user_webservice -> webservice_registry, TP, TP, TP, FN, FN, /, FN
+auth_server -> user_webservice, TP, FN, FN, FN, FN, /, FN
+comments_webservice -> zipkin_tracing, TP, FN, FN, FN, FN, /, FN
+configserver -> comments_webservice, TP, TP, FN, FN, FN, /, FN
+comments_webservice -> webservice_registry, TP, TP, TP, FN, FN, /, FN
+task_webservice -> zipkin_tracing, TP, FN, FN, FN, FN, /, FN
+configserver -> task_webservice, TP, TP, FN, FN, FN, /, FN
+auth_server -> task_webservice, TP, FN, FN, FN, FN, /, FN
+task_webservice -> webservice_registry, TP, TP, TP, FN, FN, /, FN
+task_webservice -> web_portal, TP, FN, FN, FN, FN, /, FN
+task_webservice -> comments_webservice, TP, TP, FN, FN, FN, /, FN
+api_gateway -> user, TP, TP, FN, FN, FN, /, FN
+user -> api_gateway, TP, TP, FN, FN, FN, /, FN
+configserver -> api_gateway, TP, TP, FN, FN, FN, /, FN
+webservice_registry -> api_gateway, TP, TP, FN, FN, FN, /, FN
+api_gateway -> zipkin_tracing, TP, FN, FN, FN, FN, /, FN
+auth_server -> api_gateway, TP, FN, TP, FN, FN, /, FN
+api_gateway -> user_webservice, TP, FN, FN, FN, FN, /, FN
+api_gateway -> task_webservice, TP, FN, FN, FN, FN, /, FN

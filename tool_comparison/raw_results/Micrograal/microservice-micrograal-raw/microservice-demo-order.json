@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "microservice-demo-order",
+			"fullName" : "microservice-demo-order"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

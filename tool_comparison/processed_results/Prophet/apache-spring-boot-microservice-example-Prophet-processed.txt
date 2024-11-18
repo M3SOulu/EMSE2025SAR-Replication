@@ -1,0 +1,14 @@
+Components:
+TP apache_server (apache-configuration)
+FN user 
+FN content_service 
+FN product_service 
+FN cart_service 
+
+Connections:
+FN user -> apache_server 
+FN apache_server -> user 
+FN cart_service -> product_service 
+FN apache_server -> cart_service 
+FN apache_server -> product_service 
+FN apache_server -> content_service 

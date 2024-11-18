@@ -1,0 +1,29 @@
+Components:
+/ zookeeper
+/ kafka
+/ shipping
+/ order
+/ invoicing
+/ apache
+/ user
+/ postgres
+
+Connections:
+FN zookeeper -> kafka
+FN order -> kafka
+FN kafka -> invoicing
+FN kafka -> shipping
+FN apache -> order
+FN apache -> shipping
+FN apache -> invoicing
+FN user -> apache
+FN apache -> user
+FN postgres -> order
+FN postgres -> shipping
+FN postgres -> invoicing
+
+Endpoints:
+TP(4) order: "/line", "/", "/{id}, "/form.html"
+FN(3) order: "/order", "/customer", "/item"
+TP(2) shipping: "/", "/{id}
+TP(2) invoicing: "/", "/{id}"

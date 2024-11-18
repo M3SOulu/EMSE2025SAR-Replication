@@ -1,0 +1,38 @@
+Components:
+TP config_server (config_server)
+FN github_repository 
+TP discovery_service (discovery-service)
+TP rabbitmq (rabbitmq)
+TP monitor_dashboard (monitor)
+TP turbine (turbine)
+TP statement_service (statement)
+TP card_service (card)
+TP card_statement_composite (card_statement)
+TP edge_server (edge_server)
+FN user 
+
+Connections:
+FN github_repository -> config_server 
+TP config_server -> discovery_service 
+TP monitor_dashboard -> discovery_service 
+TP config_server -> monitor_dashboard 
+TP turbine -> discovery_service 
+TP rabbitmq -> turbine 
+TP config_server -> turbine 
+FN turbine -> monitor_dashboard 
+TP statement_service -> discovery_service 
+TP config_server -> statement_service 
+TP card_service -> discovery_service 
+TP config_server -> card_service 
+TP card_statement_composite -> discovery_service 
+TP card_statement_composite -> card_service 
+TP card_statement_composite -> statement_service 
+TP config_server -> card_statement_composite 
+FN card_statement_composite -> rabbitmq 
+TP discovery_service -> edge_server 
+FN user -> edge_server 
+FN edge_server -> user 
+TP config_server -> edge_server 
+FN edge_server -> card_service 
+FN edge_server -> statement_service 
+FN edge_server -> card_statement_composite 

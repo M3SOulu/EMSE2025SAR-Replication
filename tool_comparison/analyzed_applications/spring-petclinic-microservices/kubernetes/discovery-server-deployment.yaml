@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: eureka
+  namespace: spring-petclinic
+spec:
+  serviceName: "eureka"
+  selector:
+    matchLabels:
+      app: eureka
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: eureka
+    spec:
+      containers:
+        - name: eureka
+          image: clintoncao/spring-petclinic-cloud-discovery-service:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8761
+          env:
+            - name: EUREKA_SERVER_ADDRESS
+              value: http://eureka-0.eureka.spring-petclinic.svc.cluster.local:8761/eureka/
+            - name: SPRING_CLOUD_CONFIG_ENABLED
+              value: "false"
+
+---

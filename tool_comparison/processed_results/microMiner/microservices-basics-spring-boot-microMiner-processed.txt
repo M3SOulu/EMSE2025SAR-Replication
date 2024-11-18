@@ -1,0 +1,47 @@
+Components:
+TP configserver (config-server.default)
+FN github_repository 
+TP webservice_registry (anilallewar-eurekaregistry.default)
+TP zipkin_tracing (anilallewar-zipkin-server.default)
+TP mysqldb (anilallewar-mysql.default)
+TP auth_server (anilallewar-auth-server.default)
+FN web_portal 
+FN user_webservice
+FN comments_webservice
+FN task_webservice
+TP api_gateway (apigateway.default.svc)
+FN user 
+
+Connections:
+/ github_repository -> configserver 
+/ configserver -> webservice_registry 
+/ configserver -> zipkin_tracing  
+/ configserver -> auth_server 
+/ mysqldb -> auth_server 
+/ auth_server -> webservice_registry 
+/ web_portal -> webservice_registry 
+/ configserver -> web_portal 
+/ user_webservice -> zipkin_tracing 
+/ configserver -> user_webservice 
+/ user_webservice -> webservice_registry 
+/ auth_server -> user_webservice 
+/ comments_webservice -> zipkin_tracing 
+/ configserver -> comments_webservice 
+/ comments_webservice -> webservice_registry 
+/ task_webservice -> zipkin_tracing 
+/ configserver -> task_webservice 
+/ auth_server -> task_webservice 
+/ task_webservice -> webservice_registry 
+/ task_webservice -> web_portal 
+/ task_webservice -> comments_webservice 
+/ api_gateway -> user 
+/ user -> api_gateway 
+/ configserver -> api_gateway 
+/ webservice_registry -> api_gateway 
+/ api_gateway -> zipkin_tracing 
+/ auth_server -> api_gateway 
+/ api_gateway -> user_webservice 
+/ api_gateway -> task_webservice 
+
+FP:
+config-server.default

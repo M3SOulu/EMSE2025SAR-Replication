@@ -1,0 +1,105 @@
+{
+    "microservices": {
+        "0": {
+            "servicename": "product-service",
+            "type": "service",
+            "stereotype_instances": [
+                "internal"
+            ],
+            "tagged_values": [
+                [
+                    "Port",
+                    11081
+                ]
+            ]
+        },
+        "1": {
+            "servicename": "cart-service",
+            "type": "service",
+            "stereotype_instances": [
+                "internal"
+            ],
+            "tagged_values": [
+                [
+                    "Port",
+                    11082
+                ]
+            ]
+        },
+        "2": {
+            "servicename": "content-service",
+            "type": "service",
+            "stereotype_instances": [
+                "internal"
+            ],
+            "tagged_values": [
+                [
+                    "Port",
+                    11080
+                ]
+            ]
+        },
+        "3": {
+            "servicename": "apache-server",
+            "stereotype_instances": [
+                "web_server",
+                "infrastructural"
+            ],
+            "tagged_values": [
+                [
+                    "Web Server",
+                    "Apache httpd"
+                ]
+            ],
+            "type": "service"
+        }
+    },
+    "information_flows": {
+        "0": {
+            "sender": "user",
+            "receiver": "apache-server",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "1": {
+            "sender": "apache-server",
+            "receiver": "user",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "2": {
+            "sender": "apache-server",
+            "receiver": "product-service",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "3": {
+            "sender": "apache-server",
+            "receiver": "cart-service",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "4": {
+            "sender": "apache-server",
+            "receiver": "content-service",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        }
+    },
+    "external_components": {
+        "0": {
+            "name": "user",
+            "type": "external_component",
+            "stereotype_instances": [
+                "user_stereotype",
+                "entrypoint",
+                "exitpoint"
+            ]
+        }
+    }
+}

@@ -1,0 +1,35 @@
+Components:
+FN config_service 
+FN github_repository 
+FN eureka_service
+TP movie_service
+FN database_movie_service
+TP user_service
+FN database_user_service
+FN recommendation_service
+FN database_recommendation_service
+TP recommendation_client
+FN user
+
+Connections:
+FN github_repository -> config_service 
+FN config_service -> eureka_service 
+FN movie_service -> eureka_service 
+FN config_service -> movie_service 
+FN database_movie_service -> movie_service 
+FN user_service -> eureka_service 
+FN config_service -> user_service 
+FN database_user_service -> user_service 
+FN recommendation_service -> eureka_service
+FN config_service -> recommendation_service 
+FN database_recommendation_service -> recommendation_service 
+FN eureka_service -> recommendation_client 
+FN user -> recommendation_client 
+FN recommendation_client -> user 
+FN config_service -> recommendation_client 
+FN recommendation_client -> recommendation_service 
+TP recommendation_client -> movie_service 
+FN recommendation_client -> user_service 
+
+FP:
+dump

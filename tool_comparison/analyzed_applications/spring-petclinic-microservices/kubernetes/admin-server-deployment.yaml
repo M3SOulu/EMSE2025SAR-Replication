@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: admin-server
+  name: admin-server
+  namespace: spring-petclinic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin-server
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: admin-server
+    spec:
+      containers:
+      - image: ${REPOSITORY_PREFIX}/spring-petclinic-cloud-admin-server:latest
+        name: admin-server
+        imagePullPolicy: Always
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: kubernetes
+        - name: MANAGEMENT_METRICS_EXPORT_WAVEFRONT_URI
+          value: proxy://wavefront-proxy.spring-petclinic.svc.cluster.local:2878
+        - name: SPRING_CLOUD_CONFIG_ENABLED
+          value: "false"
+        ports:
+        - containerPort: 9090
+      restartPolicy: Always

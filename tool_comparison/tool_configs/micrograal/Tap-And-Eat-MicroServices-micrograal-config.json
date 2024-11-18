@@ -1,0 +1,40 @@
+{
+  "systemName": "Tap-And-Eat-MicroServices",
+  "microservices": [
+    {
+      "baseDir": "$MS_ROOT/AccountService",
+      "basePackage": "accountservice",
+      "microserviceName": "AccountService"
+    },
+    {
+      "baseDir": "$MS_ROOT/ConfigService",
+      "basePackage": "configservice",
+      "microserviceName": "ConfigService"
+    },
+    {
+      "baseDir": "$MS_ROOT/CustomerService",
+      "basePackage": "customerservice",
+      "microserviceName": "CustomerService"
+    },
+    {
+      "baseDir": "$MS_ROOT/DiscoveryService",
+      "basePackage": "discoveryservice",
+      "microserviceName": "DiscoveryService"
+    },
+    {
+      "baseDir": "$MS_ROOT/FoodTrayService",
+      "basePackage": "foodtrayservice",
+      "microserviceName": "FoodTrayService"
+    },
+    {
+      "baseDir": "$MS_ROOT/PriceService",
+      "basePackage": "priceservice",
+      "microserviceName": "PriceService"
+    },
+    {
+      "baseDir": "$MS_ROOT/StoreService",
+      "basePackage": "storeservice",
+      "microserviceName": "StoreService"
+    }
+  ]
+}

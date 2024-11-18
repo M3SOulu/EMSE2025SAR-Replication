@@ -1,0 +1,1 @@
+{"nodes": [{"nodeName":"microservice-kafka-invoicing","nodeType":"service"},{"nodeName":"microservice-kafka-order","nodeType":"service"},{"nodeName":"microservice-kafka-shipping","nodeType":"service"}], "links": []}

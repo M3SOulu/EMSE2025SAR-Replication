@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "microservice-kafka-order",
+			"fullName" : "microservice-kafka-order"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

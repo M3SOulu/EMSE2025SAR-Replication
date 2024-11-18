@@ -1,0 +1,40 @@
+Groundtruth, attack-graph-generator, code2DFD, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
+admin_dashboard, TP, TP, TP, /, FN, /, /
+eureka_server, TP, TP, TP, /, FN, /, /
+rabbitmq, TP, TP, TP, /, FN, /, /
+config_server, TP, TP, TP, /, FN, /, /
+hystrix_dashboard, TP, TP, TP, /, FN, /, /
+service_a, TP, TP, TP, /, FN, /, /
+service_b, TP, TP, TP, /, FN, /, /
+zuul, TP, TP, TP, /, FN, /, /
+user, TP, TP, FN, /, FN, /, /
+zipkin, TP, TP, TP, /, FN, /, /
+admin_dashboard -> config_server, TP, FN, TP, /, FP, /, FN
+config_server -> eureka_server, TP, TP, TP, /, FP, /, FN
+config_server -> rabbitmq, TP, TP, TP, /, FN, /, FN
+admin_dashboard -> eureka_server, TP, TP, TP, /, FN, /, FN
+admin_dashboard -> hystrix_dashboard, TP, TP, TP, /, FN, /, FN
+hystrix_dashboard -> eureka_server, TP, TP, TP, /, FN, /, FN
+admin_dashboard -> service_a, TP, TP, TP, /, FN, /, FN
+service_a -> rabbitmq, TP, TP, TP, /, FN, /, FN
+config_server -> service_a, TP, TP, TP, /, FN, /, FN
+service_a -> eureka_server, TP, TP, TP, /, FN, /, FN
+service_a -> hystrix_dashboard, TP, TP, TP, /, FN, /, FN
+admin_dashboard -> service_b, TP, TP, TP, /, FN, /, FN
+service_b -> rabbitmq, TP, TP, TP, /, FN, /, FN
+config_server -> service_b, TP, TP, TP, /, FN, /, FN
+service_b -> eureka_server, TP, TP, TP, /, FN, /, FN
+service_a -> service_b, TP, TP, TP, /, FN, /, FN
+zuul -> user, TP, TP, FN, /, FN, /, FN
+user -> zuul, TP, TP, FN, /, FN, /, FN
+zuul -> service_a, TP, TP, TP, /, FN, /, FN
+eureka_server -> zuul, TP, TP, TP, /, FN, /, FN
+rabbitmq -> zipkin, TP, FN, FN, /, FN, /, FN
+service_b -> zipkin, TP, TP, TP, /, FN, /, FN
+service_b -> hystrix_dashboard, TP, TP, TP, /, FN, /, FN
+service_a -> zipkin, TP, TP, TP, /, FN, /, FN
+admin_dashboard -> rabbitmq, TP, TP, TP, /, FN, /, FN
+admin_dashboard -> zuul, TP, TP, TP, /, FN, /, FN
+zuul -> rabbitmq, TP, TP, TP, /, FN, /, FN
+zuul -> zipkin, TP, TP, TP, /, FN, /, FN
+zuul -> config_server, TP, FN, TP, /, FN, /, FN

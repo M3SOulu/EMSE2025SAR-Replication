@@ -1,0 +1,31 @@
+Components:
+TP eureka (eureka)
+TP zuul (zuul)
+TP user (user)
+TP turbine (turbine)
+TP catalog (catalog)
+TP customer (customer)
+TP order (order)
+
+Connections:
+TP eureka -> zuul  
+TP user -> zuul 
+TP zuul -> user 
+TP turbine -> eureka 
+TP catalog -> eureka 
+TP customer -> eureka 
+TP order -> eureka 
+TP order -> catalog 
+TP order -> customer 
+FN order -> turbine 
+TP zuul -> customer 
+TP zuul -> catalog 
+TP zuul -> order 
+
+Endpoints:
+TP(6) catalog: "/{id}.html", "/list.html", "/form.html", "/searchForm.html", "/searchByName.html", "/catalog"
+TP(4) customer: "/form.html", "/list.html", "/{id}.html", "/customer"
+TP(5) order: "/", "/form.html", "/{id}", "/line", "/order"
+
+FP:
+order -> order

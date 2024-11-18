@@ -1,0 +1,13 @@
+apache-spring-boot-microservice-example,io/github/georgwittberger/microserviceexample
+java-microservice,com/apssouza
+microservice,com/ewolff
+microservice-kafka,com/ewolff
+microservices-sample,com/mudigal
+piggymetrics,com/piggymetrics
+sample-spring-oauth2-microservices,pl/piomin/services
+spring-boot-microservices-workshop,io/javabrains
+spring-cloud-movie-recommendation,com/example
+spring-netflix-oss-microservices,com/spring/netflix/oss/microservices
+spring-petclinic-microservices,org/springframework/samples/petclinic
+Springboot-Microservice,com/dailycodebuffer
+Tap-And-Eat-MicroServices,com/github/joffryferrater

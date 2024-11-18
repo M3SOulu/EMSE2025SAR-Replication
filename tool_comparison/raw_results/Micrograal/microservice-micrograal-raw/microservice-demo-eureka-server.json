@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "microservice-demo-eureka-server",
+			"fullName" : "microservice-demo-eureka-server"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

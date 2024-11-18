@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "user-service",
+			"fullName" : "user-service"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "microservice-kafka-shipping",
+			"fullName" : "microservice-kafka-shipping"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

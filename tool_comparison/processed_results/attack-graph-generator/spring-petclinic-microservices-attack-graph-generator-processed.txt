@@ -1,0 +1,91 @@
+Components:
+TP config_server (springcommunity/spring-petclinic-config-server)
+FN github_repository 
+TP discovery_server (springcommunity/spring-petclinic-discovery-server)
+TP tracing_server (openzipkin/zipkin)
+TP admin_server (springcommunity/spring-petclinic-admin-server)
+TP prometheus_server (_prometheus-server)
+TP grafana_server (_graana-server)
+TP customers_service (springcommunity/spring-petclinic-customers-service)
+TP vets_service (springcommunity/spring-petclinic-vets-service)
+TP visits_service (springcommunity/spring-petclinic-visits-service)
+TP api_gateway (springcommunity/spring-petclinic-api-gateway)
+TP user (outside)
+
+Connections:
+FN github_repository -> config_server 
+TP config_server -> discovery_server 
+TP tracing_server -> discovery_server 
+TP config_server -> tracing_server 
+TP admin_server -> discovery_server 
+TP config_server -> admin_server 
+TP prometheus_server -> grafana_server 
+TP customers_service -> discovery_server 
+TP config_server -> customers_service 
+TP customers_service -> tracing_server 
+TP customers_service -> prometheus_server 
+TP vets_service -> discovery_server 
+TP config_server -> vets_service 
+TP vets_service -> tracing_server 
+TP vets_service -> prometheus_server 
+TP visits_service -> discovery_server 
+TP config_server -> visits_service 
+TP visits_service -> tracing_server 
+TP visits_service -> prometheus_server 
+TP discovery_server -> api_gateway 
+TP user -> api_gateway 
+TP api_gateway -> user 
+TP config_server -> api_gateway 
+TP api_gateway -> prometheus_server 
+TP api_gateway -> vets_service 
+TP api_gateway -> visits_service 
+TP api_gateway -> customers_service 
+TP api_gateway -> tracing_server 
+
+FP:
+docker host
+docker host - springcommunity/spring-petclinic-config-server
+docker host - springcommunity/spring-petclinic-discovery-server
+docker host - springcommunity/spring-petclinic-visits-service
+docker host - springcommunity/spring-petclinic-customers-service
+docker host - springcommunity/spring-petclinic-api-gateway
+docker host - springcommunity/spring-petclinic-vets-service
+docker host - springcommunity/spring-petclinic-admin-server
+docker host - openzipkin/zipkin
+docker host - _grafana-server
+docker host - _prometheus-server
+springcommunity/spring-petclinic-api-gateway - _grafana-server
+springcommunity/spring-petclinic-api-gateway - springcommunity/spring-petclinic-admin-server
+springcommunity/spring-petclinic-config-server - outside
+springcommunity/spring-petclinic-config-server - _prometheus-server
+springcommunity/spring-petclinic-config-server - _grafana-server
+_prometheus-server - outside
+_prometheus-server - springcommunity/spring-petclinic-admin-server
+_prometheus-server - openzipkin/zipkin
+_prometheus-server - springcommunity/spring-petclinic-discovery-server
+_grafana-server - outside
+_grafana-server - springcommunity/spring-petclinic-discovery-server
+_grafana-server - springcommunity/spring-petclinic-customers-service
+_grafana-server - springcommunity/spring-petclinic-visits-service
+_grafana-server - springcommunity/spring-petclinic-admin-server
+_grafana-server - springcommunity/spring-petclinic-vets-service
+_grafana-server - openzipkin/zipkin
+springcommunity/spring-petclinic-admin-server - outside
+springcommunity/spring-petclinic-admin-server - springcommunity/spring-petclinic-customers-service
+springcommunity/spring-petclinic-admin-server - springcommunity/spring-petclinic-visits-service
+springcommunity/spring-petclinic-admin-server - springcommunity/spring-petclinic-vets-service
+springcommunity/spring-petclinic-admin-server - openzipkin/zipkin
+openzipkin/zipkin - outside
+springcommunity/spring-petclinic-vets-service - springcommunity/spring-petclinic-visits-service
+springcommunity/spring-petclinic-vets-service - springcommunity/spring-petclinic-customers-service
+springcommunity/spring-petclinic-vets-service - outside
+springcommunity/spring-petclinic-visits-service - springcommunity/spring-petclinic-customers-service
+springcommunity/spring-petclinic-visits-service - outside
+springcommunity/spring-petclinic-customers-service - outside
+springcommunity/spring-petclinic-discovery-server - outside
+
+
+
+
+
+

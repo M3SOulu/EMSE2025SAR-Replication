@@ -1,0 +1,57 @@
+Components:
+TP consul (consul)
+TP consul2 (consul2)
+TP consul3 (consul3)
+TP elasticsearch (elasticsearch)
+TP logstash (logstash)
+TP kibana (kibana)
+TP rabbit (rabbit)
+TP service_one (service-one)
+TP service_two (service-two)
+TP service_one_db (service-one-db)
+TP service_two_db (service-two-db)
+TP api_gateway (api-gateway)
+TP web_application (web-application)
+TP user (user)
+TP scope (scope)
+
+Connections:
+TP consul2 -> consul 
+TP consul3 -> consul 
+TP consul3 -> consul2 
+TP logstash -> elasticsearch 
+TP elasticsearch -> kibana 
+TP consul -> service_one 
+TP service_one -> logstash 
+TP service_one -> rabbit 
+TP rabbit -> service_one 
+TP consul -> service_two 
+TP service_two -> logstash 
+TP service_two -> rabbit 
+TP rabbit -> service_two 
+TP service_one_db -> service_one 
+TP service_two_db -> service_two 
+TP api_gateway -> service_one 
+TP api_gateway -> service_two 
+TP consul -> api_gateway 
+TP user -> web_application 
+TP web_application -> user 
+TP web_application -> api_gateway 
+TP api_gateway -> scope 
+TP service_one -> scope 
+TP service_one_db -> scope 
+TP service_two -> scope 
+TP service_two_db -> scope 
+TP web_application -> scope 
+TP rabbit -> scope 
+TP consul -> scope 
+TP consul2 -> scope 
+TP consul3 -> scope 
+TP kibana -> scope 
+TP elasticsearch -> scope 
+TP logstash -> scope 
+
+Endpoints:
+FN(1) service_one: "/"
+FN(1) service_two: "/"
+FN(1) api_gateway: "/"

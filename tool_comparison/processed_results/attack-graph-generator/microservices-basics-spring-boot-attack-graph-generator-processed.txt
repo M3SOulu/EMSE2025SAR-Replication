@@ -1,0 +1,97 @@
+Components:
+TP configserver (anilallewar/basic-config-server)
+FN github_repository 
+TP webservice_registry (anilallewar/basic-webservice-registry)
+TP zipkin_tracing (anilallewar/basic-zipkin-server)
+TP mysqldb (mysql)
+TP auth_server (anilallewar/basic-auth-server)
+TP web_portal (anilallewar/basic-web-portal)
+TP user_webservice (anilallewar/basic-user-webservice)
+TP comments_webservice (anilallewar/basic-comments-webservice)
+TP task_webservice (anilallewar/basic-task-webservice)
+TP api_gateway (anilallewar/basic-api-gateway)
+TP user (outside)
+
+Connections:
+FN github_repository -> configserver 
+TP configserver -> webservice_registry 
+TP configserver -> zipkin_tracing  
+TP configserver -> auth_server 
+TP mysqldb -> auth_server 
+TP auth_server -> webservice_registry 
+TP web_portal -> webservice_registry 
+TP configserver -> web_portal 
+TP user_webservice -> zipkin_tracing 
+TP configserver -> user_webservice 
+TP user_webservice -> webservice_registry 
+TP auth_server -> user_webservice 
+TP comments_webservice -> zipkin_tracing 
+TP configserver -> comments_webservice 
+TP comments_webservice -> webservice_registry 
+TP task_webservice -> zipkin_tracing 
+TP configserver -> task_webservice 
+TP auth_server -> task_webservice 
+TP task_webservice -> webservice_registry 
+TP task_webservice -> web_portal 
+TP task_webservice -> comments_webservice 
+TP api_gateway -> user 
+TP user -> api_gateway 
+TP configserver -> api_gateway 
+TP webservice_registry -> api_gateway 
+TP api_gateway -> zipkin_tracing 
+TP auth_server -> api_gateway 
+TP api_gateway -> user_webservice 
+TP api_gateway -> task_webservice
+
+FP:
+docker host 
+mysql:latest
+anilallewar/basic-config-server:0.0.1
+anilallewar/basic-webservice-registrx:0.0.1
+anilallewar/basic-auth-server:0.0.1
+anilallewar/basic-api-gateway:0.0.1
+anilallewar/basic-web-portal:0.0.1
+anilallewar/basic-user-webservice:0.0.1
+anilallewar/basic-task-webservice:0.0.1
+anilallewar/basic-comments-webservice:0.0.1
+anilallewar/basic-zipkin-server:0.0.1
+outside - anilallewar/basic-zipkin-server 
+outside - anilallewar/basic-cmoments-webservice 
+outside - anilallewar/basic-web-portal
+outside - anilallewar/basic-tasl-webservice 
+outside - anilallewar/basic-webservice-registry 
+outside - anilallewar/basic-auth-server 
+outside - mysql 
+outside - anilallewar/basic-config-server
+outside - anilallewar/basic-user-webservice
+docker host - anilallewar/basic-comments-webservice
+docker host - mysql
+docker host - anilallewar/basic-web-portal
+docker host - anilallewar/basic-webservice-registry
+docker host - anilallewar/basic-config-server
+docker host - anilallewar/basic-auth-server
+docker host - anilallewar/basic-api-gateway
+docker host - anilallewar/basic-user-webservice
+docker host - anilallewar/basic-task-webservice
+docker host - anilallewar/basic-zipkin-server
+mysql - anilallewar/basic-comments-webservice
+mysql - anilallewar/basic-web-portal
+mysql - anilallewar/basic-webservice-registry
+mysql - anilallewar/basic-config-server
+mysql - anilallewar/basic-auth-server
+mysql - anilallewar/basic-api-gateway
+mysql - anilallewar/basic-user-webservice
+mysql - anilallewar/basic-task-webservice
+mysql - anilallewar/basic-zipkin-server
+anilallewar/basic-zipkin-server - anilallewar/basic-webservice-registry
+anilallewar/basic-auth-server - aniallewar/basic-zipkin-server 
+anilallewar/basic-auth-server - anilallewar/basic-web-portal 
+anilallewar/basic-auth-server - anilallewar/basic-comments-webservice 
+anilallewar/basic-api-gateway - anilallewar/basic-web-portal 
+anilallewar/basic-api-gateway - anilallewar/basic-comments-webservice
+anilallewar/basic-web-portal - anilallewar/basic-user-webservice
+anilallewar/basic-web-portal - anilallewar/basic-comments-webservice
+anilallewar/basic-web-portal - anilallewar/basic-zipkin-server
+anilallewar/basic-user-webservice - anilallewar/basic-comments-webservice
+anilallewar/basic-user-webservice - anilallewar/basic-task-webservice
+

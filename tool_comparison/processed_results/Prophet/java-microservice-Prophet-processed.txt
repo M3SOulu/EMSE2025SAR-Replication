@@ -1,0 +1,55 @@
+Components:
+FN config_server 
+FN admin 
+FN eureka_server
+FN user_service
+FN kafka 
+TP mailer (mail-service)
+TP reminder (remainder-service)
+FN api_gateway 
+FN oauth
+TP proxy
+TP user (user-service)
+FN zookeeper
+FN logstash
+FN jmx_monitoring 
+FN todo_infra 
+
+Connections:
+FN admin -> config_server  
+FN config_server -> eureka_server 
+FN eureka_server -> admin 
+FN admin -> user_service 
+FN config_server -> user_service 
+FN admin -> mailer 
+FN config_server -> mailer 
+FN mailer -> eureka_server 
+FN kafka -> mailer 
+FN reminder -> eureka_server 
+FN admin -> reminder 
+FN config_server -> reminder 
+FN reminder -> kafka 
+FN eureka_server -> api_gateway 
+FN admin -> api_gateway 
+FN config_server -> api_gateway 
+FN api_gateway -> user_service 
+FN config_server -> oauth 
+FN oauth -> user_service 
+FN oauth -> eureka_server 
+FN admin -> oauth 
+FN user -> proxy 
+FN proxy -> user 
+FN proxy -> api_gateway 
+FN zookeeper -> kafka 
+FN proxy -> logstash 
+FN user_service -> logstash 
+FN reminder -> logstash 
+FN eureka_server -> logstash 
+FN api_gateway -> logstash 
+FN oauth -> logstash 
+FN admin -> logstash 
+FN config_server -> logstash 
+FN mailer -> logstash 
+
+FP:
+assets

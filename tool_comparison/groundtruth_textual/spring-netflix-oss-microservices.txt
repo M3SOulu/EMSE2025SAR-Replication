@@ -1,0 +1,44 @@
+Components:
+config_server 
+github_repository 
+discovery_service
+rabbitmq
+monitor_dashboard 
+turbine 
+statement_service 
+card_service 
+card_statement_composite 
+edge_server 
+user 
+
+Connections:
+github_repository -> config_server 
+config_server -> discovery_service 
+monitor_dashboard -> discovery_service 
+config_server -> monitor_dashboard 
+turbine -> discovery_service 
+rabbitmq -> turbine 
+config_server -> turbine 
+turbine -> monitor_dashboard 
+statement_service -> discovery_service 
+config_server -> statement_service 
+card_service -> discovery_service 
+config_server -> card_service 
+card_statement_composite -> discovery_service 
+card_statement_composite -> card_service 
+card_statement_composite -> statement_service 
+config_server -> card_statement_composite 
+card_statement_composite -> rabbitmq 
+discovery_service -> edge_server 
+user -> edge_server 
+edge_server -> user 
+config_server -> edge_server 
+edge_server -> card_service 
+edge_server -> statement_service 
+edge_server -> card_statement_composite 
+
+Endpoints:
+card_service: "/api", "/api/cards", "/api/card/{cardId}", "/api/new-card"
+statement_service: "/api", "api/statement/{statementId}", "/api/statement", "/api/statements"
+card_statement_composite: "/api", "/api/cards", "/api/card/{cardId}", "/api/new-card", "/api/statement-by-card", "/api/statement/{statementId}", "/api/statement", "/api/statements"
+monitor_dashboard: "/"

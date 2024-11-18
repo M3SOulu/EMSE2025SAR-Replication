@@ -1,0 +1,50 @@
+{
+		"name" : {
+			"name" : "ts-verification-code-service",
+			"fullName" : "ts-verification-code-service"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			{
+				"httpMethod" : "GET",
+				"parentMethod" : "verifycode.controller.VerifyCodeController.verifyCode",
+				"arguments" : [
+					"@PathVariable String verifyCode",
+					" HttpServletRequest request",
+					" HttpServletResponse response",
+					"@RequestHeader HttpHeaders headers"
+					]
+				,
+				"returnType" : "boolean",
+				"path" : "/api/v1/verifycode/verify/{verifyCode}",
+				"isCollection" : false,
+				"endpointInClassName" : "verifycode.controller.VerifyCodeController",
+				"msName" : "ts-verification-code-service"
+				}
+			,
+			{
+				"httpMethod" : "GET",
+				"parentMethod" : "verifycode.controller.VerifyCodeController.imageCode",
+				"arguments" : [
+					"@RequestHeader HttpHeaders headers",
+					" HttpServletRequest request",
+					" HttpServletResponse response"
+					]
+				,
+				"returnType" : "void",
+				"path" : "/api/v1/verifycode/generate",
+				"isCollection" : false,
+				"endpointInClassName" : "verifycode.controller.VerifyCodeController",
+				"msName" : "ts-verification-code-service"
+				}
+			
+			]
+		
+		}
+	

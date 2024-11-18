@@ -1,0 +1,151 @@
+{
+		"name" : {
+			"name" : "ts-train-food-service",
+			"fullName" : "ts-train-food-service"
+			}
+		,
+		"entities" : [
+			{
+				"entityName" : {
+					"name" : "TrainFood",
+					"fullName" : "TrainFood"
+					}
+				,
+				"fields" : [
+					{
+						"name" : {
+							"name" : "tripId",
+							"fullName" : "tripId"
+							}
+						,
+						"type" : "String",
+						"annotations" : [
+							{
+								"name" : "@Column",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							
+							]
+						,
+						"isReference" : true,
+						"entityRefName" : "String",
+						"isCollection" : false
+						}
+					,
+					{
+						"name" : {
+							"name" : "foodList",
+							"fullName" : "foodList"
+							}
+						,
+						"type" : "List<Food>",
+						"annotations" : [
+							{
+								"name" : "@ElementCollection",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							,
+							{
+								"name" : "@CollectionTable",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							
+							]
+						,
+						"isReference" : true,
+						"entityRefName" : "List<Food>",
+						"isCollection" : true
+						}
+					,
+					{
+						"name" : {
+							"name" : "id",
+							"fullName" : "id"
+							}
+						,
+						"type" : "String",
+						"annotations" : [
+							{
+								"name" : "@Id",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							,
+							{
+								"name" : "@GeneratedValue",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							,
+							{
+								"name" : "@Column",
+								"stringValue" : null,
+								"intValue" : null
+								}
+							
+							]
+						,
+						"isReference" : true,
+						"entityRefName" : "String",
+						"isCollection" : false
+						}
+					
+					]
+				
+				}
+			
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			{
+				"httpMethod" : "GET",
+				"parentMethod" : "trainFood.controller.TrainFoodController.getTrainFoodOfTrip",
+				"arguments" : [
+					"@PathVariable String tripId",
+					"@RequestHeader HttpHeaders headers"
+					]
+				,
+				"returnType" : "class org.springframework.http.HttpEntity",
+				"path" : "/api/v1/trainfoodservice/trainfoods/{tripId}",
+				"isCollection" : false,
+				"endpointInClassName" : "trainFood.controller.TrainFoodController",
+				"msName" : "ts-train-food-service"
+				}
+			,
+			{
+				"httpMethod" : "GET",
+				"parentMethod" : "trainFood.controller.TrainFoodController.getAllTrainFood",
+				"arguments" : [
+					"@RequestHeader HttpHeaders headers"
+					]
+				,
+				"returnType" : "class org.springframework.http.HttpEntity",
+				"path" : "/api/v1/trainfoodservice/trainfoods",
+				"isCollection" : false,
+				"endpointInClassName" : "trainFood.controller.TrainFoodController",
+				"msName" : "ts-train-food-service"
+				}
+			,
+			{
+				"httpMethod" : "GET",
+				"parentMethod" : "trainFood.controller.TrainFoodController.home",
+				"arguments" : [
+					]
+				,
+				"returnType" : "class java.lang.String",
+				"path" : "/api/v1/trainfoodservice/trainfoods/welcome",
+				"isCollection" : false,
+				"endpointInClassName" : "trainFood.controller.TrainFoodController",
+				"msName" : "ts-train-food-service"
+				}
+			
+			]
+		
+		}
+	

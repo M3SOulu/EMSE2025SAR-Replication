@@ -1,0 +1,19 @@
+Components:
+/ apache_server 
+/ user 
+/ content_service 
+/ product_service 
+/ cart_service 
+
+Connections:
+FN user -> apache_server 
+FN apache_server -> user 
+FN cart_service -> product_service 
+FN apache_server -> cart_service 
+FN apache_server -> product_service 
+FN apache_server -> content_service 
+
+Endpoints:
+TP(3) cart_service: "/", "/count", "/add/{seoName}"
+TP(1) content_service: "/"
+TP(2) product_service: "/", "/{seoName}"

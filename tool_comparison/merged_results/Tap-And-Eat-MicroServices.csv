@@ -1,0 +1,26 @@
+Groundtruth, attack-graph-generator, code2DFD, MicroDepGraph, microMiner, Prophet, RAD, RAD-source
+discovery_service, FN, TP, FN, /, FN, /, /
+config_service, TP, TP, TP, /, FN, /, /
+github_repository, FN, TP, FN, /, FN, /, /
+account_service, TP, TP, TP, /, TP, /, /
+customer_service, TP, TP, TP, /, TP, /, /
+store_service, TP, TP, TP, /, TP, /, /
+item_service, FN, TP, FN, /, TP, /, /
+price_service, TP, TP, TP, /, TP, /, /
+foodtray_service, FN, TP, FN, /, FN, /, /
+github_repository -> config_service, FN, TP, FN, /, FP, FN, FN
+config_service -> discovery_service, FN, TP, FN, /, FP, FN, FN
+config_service -> account_service, TP, TP, TP, /, FP, FN, FN
+account_service -> discovery_service, FN, TP, FN, /, FN, FN, FN
+config_service -> customer_service, TP, TP, TP, /, FN, FN, FN
+customer_service -> discovery_service, FN, TP, FN, /, FN, FN, FN
+config_service -> store_service, TP, TP, TP, /, FN, FN, FN
+store_service -> discovery_service, FN, TP, FN, /, FN, FN, FN
+config_service -> item_service, FN, TP, FN, /, FN, FN, FN
+item_service -> discovery_service, FN, TP, FN, /, FN, FN, FN
+config_service -> price_service, TP, TP, TP, /, FN, FN, FN
+price_service -> discovery_service, FN, TP, FN, /, FN, FN, FN
+config_service -> foodtray_service, FN, TP, FN, /, FN, FN, FN
+foodtray_service -> discovery_service, FN, TP, FN, /, FN, FN, FN
+foodtray_service -> item_service, FN, TP, FN, /, FN, FN, FN
+foodtray_service -> price_service, FN, TP, FN, /, FN, FN, FN

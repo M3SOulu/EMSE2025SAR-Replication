@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "auth-service",
+			"fullName" : "auth-service"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

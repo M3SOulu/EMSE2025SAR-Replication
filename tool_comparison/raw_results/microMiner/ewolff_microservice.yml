@@ -1,0 +1,74 @@
+description: Generic application
+imports:
+- {micro: https://di-unipi-socc.github.io/microTOSCA/1.1/microTOSCA.yaml}
+topology_template:
+  groups:
+    edge:
+      members: [zuul-svc-np.default.svc, turbine-svc-np.default.svc, eureka-svc-np.default.svc]
+      type: micro.groups.Edge
+  node_templates:
+    catalog-svc.default.svc:
+      requirements:
+      - {interaction: catalog.default}
+      type: micro.nodes.MessageRouter
+    catalog.default:
+      requirements: []
+      type: micro.nodes.Service
+    customer-svc.default.svc:
+      requirements:
+      - {interaction: customer.default}
+      type: micro.nodes.MessageRouter
+    customer.default:
+      requirements: []
+      type: micro.nodes.Service
+    eureka-svc-np.default.svc:
+      requirements:
+      - {interaction: eureka.default}
+      type: micro.nodes.MessageRouter
+    eureka.default:
+      requirements: []
+      type: micro.nodes.Service
+    order-svc.default.svc:
+      requirements:
+      - {interaction: order.default}
+      type: micro.nodes.MessageRouter
+    order.default:
+      requirements: []
+      type: micro.nodes.Service
+    turbine-svc-np.default.svc:
+      requirements:
+      - {interaction: turbine.default}
+      type: micro.nodes.MessageRouter
+    turbine.default:
+      requirements: []
+      type: micro.nodes.Service
+    zuul-svc-np.default.svc:
+      requirements:
+      - {interaction: zuul.default}
+      type: micro.nodes.MessageRouter
+    zuul.default:
+      requirements: []
+      type: micro.nodes.Service
+  relationship_templates:
+    c:
+      properties: {circuit_breaker: true}
+      type: micro.relationships.InteractsWith
+    cd:
+      properties: {circuit_breaker: true, dynamic_discovery: true}
+      type: micro.relationships.InteractsWith
+    d:
+      properties: {dynamic_discovery: true}
+      type: micro.relationships.InteractsWith
+    t:
+      properties: {timeout: true}
+      type: micro.relationships.InteractsWith
+    tc:
+      properties: {circuit_breaker: true, timeout: true}
+      type: micro.relationships.InteractsWith
+    tcd:
+      properties: {circuit_breaker: true, dynamic_discovery: true, timeout: true}
+      type: micro.relationships.InteractsWith
+    td:
+      properties: {dynamic_discovery: true, timeout: true}
+      type: micro.relationships.InteractsWith
+tosca_definitions_version: micro_tosca_yaml_1.1

@@ -1,0 +1,40 @@
+server:
+  port: 9004
+
+keycloak:
+  auth-server-url: http://ec2-3-87-186-137.compute-1.amazonaws.com:8080/auth
+  resource: ums-backend
+  realm: UserManagement
+  public-client: false
+  principal-attribute: preferred_username
+  cors: true
+  cors-allowed-headers: '*'
+  cors-allowed-methods: 'GET,PUT,POST,DELETE'
+  cors-exposed-headers: '*'
+  cors-max-age: 3600
+  use-resource-role-mappings: false
+  ssl-required: 'none'
+  credentials:
+    secret: 'd5e5f5b5-cab2-46ae-a0dc-f081dfb8bc08'
+
+issuer-uri: http://ec2-3-87-186-137.compute-1.amazonaws.com:8080/auth/realms/UserManagement
+
+security:
+  oauth2:
+    resource:
+      id: ums-backend
+      token-info-uri: ${issuer-uri}/protocol/openid-connect/token/introspect
+      user-info-uri: ${issuer-uri}/protocol/openid-connect/userinfo
+      jwt:
+        key-value: '-----BEGIN PUBLIC KEY-----
+        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAncB16NqcuR2zHrG3h5F+DjY1+rbPps+tyUIJ4+af6zBXuZww9QCXESC8nx3f/KoeRkKuzbDpkHWpxLcW/tzHxlFvyVXD2kKnVtT3UFMGqYTKAjOAYtBa9E9R3kiPW/cSydwhDBUpht2JwvSBijr8+TASQxtgVn5vuSGQ4ZBK5oBL4fwEDe3fhSAkBCG9I68GPDfdH1HnJV4jXf5GTnz0ozLZ1Y5o1zHhGasZXBsn1LRSdJWuXb/qqaEWFVuFSG38/JjXw1N+MI9CnIoN+j+ogdFdLdcO4UV6MSNd8wkOUtfbzFId97M4STmVf0RYBppvtCTwe9ZfJNwN3rYeYyK7/wIDAQAB
+        -----END PUBLIC KEY-----'
+#    Use if this service must call another service
+    client:
+      client-id: ums-backend
+      client-secret: d5e5f5b5-cab2-46ae-a0dc-f081dfb8bc08
+      user-authorization-uri: ${issuer-uri}/protocol/openid-connect/auth
+      access-token-uri: ${issuer-uri}/protocol/openid-connect/token
+      scope: openid
+      grant-type: client_credentials
+

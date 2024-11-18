@@ -1,0 +1,81 @@
+Components:
+TP config_server (_config-server)
+FN github_repository 
+TP discovery_service (_discovery-service)
+TP rabbitmq (_rabbitmq)
+TP monitor_dashboard (_monitor)
+TP turbine (_turbine)
+TP statement_service (_statement)
+TP card_service (_card)
+TP card_statement_composite (_card-statement)
+TP edge_server (_edge)
+TP user (outdoor)
+
+Connections:
+FN github_repository -> config_server 
+TP config_server -> discovery_service 
+TP monitor_dashboard -> discovery_service 
+TP config_server -> monitor_dashboard 
+TP turbine -> discovery_service 
+TP rabbitmq -> turbine 
+TP config_server -> turbine 
+TP turbine -> monitor_dashboard 
+TP statement_service -> discovery_service 
+TP config_server -> statement_service 
+TP card_service -> discovery_service 
+TP config_server -> card_service 
+TP card_statement_composite -> discovery_service 
+TP card_statement_composite -> card_service 
+TP card_statement_composite -> statement_service 
+TP config_server -> card_statement_composite 
+TP card_statement_composite -> rabbitmq 
+TP discovery_service -> edge_server 
+TP user -> edge_server 
+TP edge_server -> user 
+TP config_server -> edge_server 
+TP edge_server -> card_service 
+TP edge_server -> statement_service 
+TP edge_server -> card_statement_composite 
+
+FP:
+docker host
+_networks
+outside - _discovery-service
+outside - _config-server
+outside - _monitor
+outside - _rabbitmq
+outside - _turbine
+_config-server - docker host
+_config-server - _rabbitmq
+_config-server - _networks
+docker host - _edge-server
+docker host - _card
+docker host - _discovery-service
+docker host - _statement
+docker host - _card-statement
+docker host - _rabbitmq
+docker host - _monitor
+docker host - _turbine
+docker host - _networks
+_discovery-service - _rabbitmq
+_discovery-service - _networks
+_card - _statement
+_card - _monitor
+_card - _rabbitmq
+_card - _turbine
+_card - _networks
+_edge-server - _rabbitmq
+_edge-server - _monitor
+_edge-server - _turbine
+_edge-server - _networks
+_statement - _rabbitmq
+_statement - _monitor
+_statement - _turbine
+_statement - _networks
+_card-statement - _turbine
+_card-statement - _monitor
+_card-statement - _networks
+_monitor - _rabbitmq
+_monitor - _networks
+_rabbitmq - _networks
+_networks - _turbine

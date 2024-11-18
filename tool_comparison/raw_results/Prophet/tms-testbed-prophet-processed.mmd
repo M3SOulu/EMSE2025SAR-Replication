@@ -1,0 +1,22 @@
+graph TD
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: [@PathVariable Integer id]<br/>Return: edu.baylor.ecs.ems.model.Question<br/>Endpoint function: edu.baylor.ecs.ems.controller.ExamController.listAllQuestionsForExam"|tms-ems
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: [@PathVariable String email]<br/>Return: ResponseEntity<String><br/>Endpoint function: edu.baylor.ecs.ums.controller.UserInfoController.isEmailInUse"|tms-ums
+tms-cms-->|"HTTP Verb: POST<br/>Arguments: [@RequestBody ConfigurationDto object]<br/>Return: java.lang.Object<br/>Endpoint function: edu.baylor.ecs.cms.controller.ConfigurationController.createConfiguration"|tms-cms
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: [@PathVariable String username]<br/>Return: ResponseEntity<User><br/>Endpoint function: edu.baylor.ecs.ums.controller.UserInfoController.getUserByUsername"|tms-ums
+tms-ems-->|"HTTP Verb: GET<br/>Arguments: [@PathVariable String email]<br/>Return: ResponseEntity<String><br/>Endpoint function: edu.baylor.ecs.ums.controller.UserInfoController.isEmailInUse"|tms-ums
+tms-cms-->|"HTTP Verb: POST<br/>Arguments: [@RequestBody ExamDto object]<br/>Return: java.lang.Object<br/>Endpoint function: edu.baylor.ecs.cms.controller.ExamController.createExam"|tms-cms
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: []<br/>Return: java.lang.Object<br/>Endpoint function: edu.baylor.ecs.cms.controller.ConfigurationController.getConfigurations"|tms-cms
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: []<br/>Return: ResponseEntity<List<User>><br/>Endpoint function: edu.baylor.ecs.ums.controller.UserInfoController.getAllUsers"|tms-ums
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: []<br/>Return: edu.baylor.ecs.cms.model.Exam<br/>Endpoint function: edu.baylor.ecs.cms.controller.ExamController.getAllExamsInStatusINIT"|tms-cms
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: []<br/>Return: edu.baylor.ecs.ems.model.Exam<br/>Endpoint function: edu.baylor.ecs.ems.controller.ExamController.listAllExams"|tms-ems
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: [@PathVariable String id, @RequestHeader(#quot;Authorization#quot;) String auth]<br/>Return: edu.baylor.ecs.cms.model.User<br/>Endpoint function: edu.baylor.ecs.cms.controller.ExamController.getExamineeById"|tms-cms
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: [@PathVariable String id]<br/>Return: ResponseEntity<User><br/>Endpoint function: edu.baylor.ecs.ums.controller.UserInfoController.getUserById"|tms-ums
+tms-ems-->|"HTTP Verb: GET<br/>Arguments: [@PathVariable(#quot;id#quot;) Integer id]<br/>Return: java.lang.String<br/>Endpoint function: edu.baylor.ecs.ems.controller.ExamController.finishExam"|tms-ems
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: [@RequestHeader(#quot;Authorization#quot;) String authorication]<br/>Return: java.lang.Object<br/>Endpoint function: edu.baylor.ecs.cms.controller.ExamController.getAllUsers"|tms-cms
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: []<br/>Return: edu.baylor.ecs.cms.model.Exam<br/>Endpoint function: edu.baylor.ecs.cms.controller.ExamController.getAllExams"|tms-cms
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: [@PathVariable Integer id]<br/>Return: edu.baylor.ecs.cms.model.Question<br/>Endpoint function: edu.baylor.ecs.cms.controller.ExamController.getExamDetail"|tms-cms
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: []<br/>Return: Question<br/>Endpoint function: edu.baylor.ecs.qms.controller.QuestionController.findAllQuestions"|tms-qms
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: [@PathVariable(#quot;id#quot;) Integer id]<br/>Return: java.lang.String<br/>Endpoint function: edu.baylor.ecs.ems.controller.ExamController.finishExam"|tms-ems
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: []<br/>Return: java.lang.Object<br/>Endpoint function: edu.baylor.ecs.cms.controller.CategoryInfoController.getCategoryInfo"|tms-cms
+tms-cms-->|"HTTP Verb: GET<br/>Arguments: [@PathVariable String username, @RequestHeader(#quot;Authorization#quot;) String authorization]<br/>Return: edu.baylor.ecs.ems.model.Exam<br/>Endpoint function: edu.baylor.ecs.ems.controller.ExamController.getByUserName"|tms-ems
+

@@ -1,0 +1,229 @@
+{
+		"name" : {
+			"name" : "ts-basic-service",
+			"fullName" : "ts-basic-service"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			{
+				"httpMethod" : "GET",
+				"parentMethod" : "fdse.microservice.service.BasicServiceImpl.checkStationExists",
+				"returnType" : "org.springframework.http.HttpEntity",
+				"uri" : "ts-station-service/api/v1/stationservice/stations/id/",
+				"isCollection" : false,
+				"restCallInClassName" : "fdse.microservice.service.BasicServiceImpl",
+				"msName" : "ts-basic-service",
+				"param" : {
+					"isBody" : false,
+					"isPath" : true,
+					"paramType" : null,
+					"paramCount" : 1
+					}
+				
+				}
+			,
+			{
+				"httpMethod" : "GET",
+				"parentMethod" : "fdse.microservice.service.BasicServiceImpl.queryTrainTypeByName",
+				"returnType" : "org.springframework.http.HttpEntity",
+				"uri" : "ts-train-service/api/v1/trainservice/trains/byName/",
+				"isCollection" : false,
+				"restCallInClassName" : "fdse.microservice.service.BasicServiceImpl",
+				"msName" : "ts-basic-service",
+				"param" : {
+					"isBody" : false,
+					"isPath" : true,
+					"paramType" : null,
+					"paramCount" : 1
+					}
+				
+				}
+			,
+			{
+				"httpMethod" : "GET",
+				"parentMethod" : "fdse.microservice.service.BasicServiceImpl.queryPriceConfigByRouteIdAndTrainType",
+				"returnType" : "org.springframework.http.HttpEntity",
+				"uri" : "ts-price-service/api/v1/priceservice/prices//",
+				"isCollection" : false,
+				"restCallInClassName" : "fdse.microservice.service.BasicServiceImpl",
+				"msName" : "ts-basic-service",
+				"param" : {
+					"isBody" : false,
+					"isPath" : true,
+					"paramType" : null,
+					"paramCount" : 2
+					}
+				
+				}
+			,
+			{
+				"httpMethod" : "POST",
+				"parentMethod" : "fdse.microservice.service.BasicServiceImpl.queryTrainTypeByNames",
+				"returnType" : "org.springframework.http.HttpEntity",
+				"uri" : "ts-train-service/api/v1/trainservice/trains/byNames",
+				"isCollection" : false,
+				"restCallInClassName" : "fdse.microservice.service.BasicServiceImpl",
+				"msName" : "ts-basic-service",
+				"param" : {
+					"isBody" : false,
+					"isPath" : false,
+					"paramType" : null,
+					"paramCount" : 0
+					}
+				
+				}
+			,
+			{
+				"httpMethod" : "POST",
+				"parentMethod" : "fdse.microservice.service.BasicServiceImpl.getRoutesByRouteIds",
+				"returnType" : "org.springframework.http.HttpEntity",
+				"uri" : "ts-route-service/api/v1/routeservice/routes/byIds/",
+				"isCollection" : false,
+				"restCallInClassName" : "fdse.microservice.service.BasicServiceImpl",
+				"msName" : "ts-basic-service",
+				"param" : {
+					"isBody" : false,
+					"isPath" : true,
+					"paramType" : null,
+					"paramCount" : 1
+					}
+				
+				}
+			,
+			{
+				"httpMethod" : "POST",
+				"parentMethod" : "fdse.microservice.service.BasicServiceImpl.checkStationsExists",
+				"returnType" : "org.springframework.http.HttpEntity",
+				"uri" : "ts-station-service/api/v1/stationservice/stations/idlist",
+				"isCollection" : false,
+				"restCallInClassName" : "fdse.microservice.service.BasicServiceImpl",
+				"msName" : "ts-basic-service",
+				"param" : {
+					"isBody" : false,
+					"isPath" : false,
+					"paramType" : null,
+					"paramCount" : 0
+					}
+				
+				}
+			,
+			{
+				"httpMethod" : "POST",
+				"parentMethod" : "fdse.microservice.service.BasicServiceImpl.queryPriceConfigByRouteIdsAndTrainTypes",
+				"returnType" : "org.springframework.http.HttpEntity",
+				"uri" : "ts-price-service/api/v1/priceservice/prices/byRouteIdsAndTrainTypes",
+				"isCollection" : false,
+				"restCallInClassName" : "fdse.microservice.service.BasicServiceImpl",
+				"msName" : "ts-basic-service",
+				"param" : {
+					"isBody" : false,
+					"isPath" : false,
+					"paramType" : null,
+					"paramCount" : 0
+					}
+				
+				}
+			,
+			{
+				"httpMethod" : "GET",
+				"parentMethod" : "fdse.microservice.service.BasicServiceImpl.getRouteByRouteId",
+				"returnType" : "org.springframework.http.HttpEntity",
+				"uri" : "ts-route-service/api/v1/routeservice/routes/",
+				"isCollection" : false,
+				"restCallInClassName" : "fdse.microservice.service.BasicServiceImpl",
+				"msName" : "ts-basic-service",
+				"param" : {
+					"isBody" : false,
+					"isPath" : true,
+					"paramType" : null,
+					"paramCount" : 1
+					}
+				
+				}
+			,
+			{
+				"httpMethod" : "GET",
+				"parentMethod" : "fdse.microservice.service.BasicServiceImpl.queryForStationId",
+				"returnType" : "org.springframework.http.HttpEntity",
+				"uri" : "ts-station-service/api/v1/stationservice/stations/id/",
+				"isCollection" : false,
+				"restCallInClassName" : "fdse.microservice.service.BasicServiceImpl",
+				"msName" : "ts-basic-service",
+				"param" : {
+					"isBody" : false,
+					"isPath" : true,
+					"paramType" : null,
+					"paramCount" : 1
+					}
+				
+				}
+			
+			]
+		,
+		"endpoints" : [
+			{
+				"httpMethod" : "POST",
+				"parentMethod" : "fdse.microservice.controller.BasicController.queryForTravels",
+				"arguments" : [
+					"@RequestBody Travel> infos",
+					"@RequestHeader HttpHeaders headers"
+					]
+				,
+				"returnType" : "class org.springframework.http.HttpEntity",
+				"path" : "/api/v1/basicservice/basic/travels",
+				"isCollection" : false,
+				"endpointInClassName" : "fdse.microservice.controller.BasicController",
+				"msName" : "ts-basic-service"
+				}
+			,
+			{
+				"httpMethod" : "GET",
+				"parentMethod" : "fdse.microservice.controller.BasicController.queryForStationId",
+				"arguments" : [
+					"@PathVariable String stationName",
+					"@RequestHeader HttpHeaders headers"
+					]
+				,
+				"returnType" : "class org.springframework.http.HttpEntity",
+				"path" : "/api/v1/basicservice/basic/{stationName}",
+				"isCollection" : false,
+				"endpointInClassName" : "fdse.microservice.controller.BasicController",
+				"msName" : "ts-basic-service"
+				}
+			,
+			{
+				"httpMethod" : "POST",
+				"parentMethod" : "fdse.microservice.controller.BasicController.queryForTravel",
+				"arguments" : [
+					"@RequestBody Travel info",
+					"@RequestHeader HttpHeaders headers"
+					]
+				,
+				"returnType" : "class org.springframework.http.HttpEntity",
+				"path" : "/api/v1/basicservice/basic/travel",
+				"isCollection" : false,
+				"endpointInClassName" : "fdse.microservice.controller.BasicController",
+				"msName" : "ts-basic-service"
+				}
+			,
+			{
+				"httpMethod" : "GET",
+				"parentMethod" : "fdse.microservice.controller.BasicController.home",
+				"arguments" : [
+					"@RequestHeader HttpHeaders headers"
+					]
+				,
+				"returnType" : "class java.lang.String",
+				"path" : "/api/v1/basicservice/welcome",
+				"isCollection" : false,
+				"endpointInClassName" : "fdse.microservice.controller.BasicController",
+				"msName" : "ts-basic-service"
+				}
+			
+			]
+		
+		}
+	

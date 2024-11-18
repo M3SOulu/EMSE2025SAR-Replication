@@ -1,0 +1,25 @@
+{
+  "systemName": "tms-testbed",
+  "microservices": [
+    {
+      "baseDir": "$MS_ROOT/tms-cms",
+      "basePackage": "cms",
+      "microserviceName": "tms-cms"
+    },
+    {
+      "baseDir": "$MS_ROOT/tms-ems",
+      "basePackage": "ems",
+      "microserviceName": "tms-ems"
+    },
+    {
+      "baseDir": "$MS_ROOT/tms-qms",
+      "basePackage": "qms",
+      "microserviceName": "tms-qms"
+    },
+    {
+      "baseDir": "$MS_ROOT/tms-ums",
+      "basePackage": "ums",
+      "microserviceName": "tms-ums"
+    }
+  ]
+}

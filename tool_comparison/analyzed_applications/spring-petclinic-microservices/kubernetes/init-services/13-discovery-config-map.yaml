@@ -1,0 +1,73 @@
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: eureka-cm
+  namespace: spring-petclinic
+data:
+  application.yaml: |-
+    server:
+      port: 8761
+    spring:
+      datasource:
+        schema: classpath*:db/hsqldb/schema.sql
+        data: classpath*:db/hsqldb/data.sql
+      jpa:
+        show-sql: true
+        hibernate:
+          ddl-auto: none
+          generate-ddl: false
+      sleuth:
+        sampler:
+          probability: 1.0
+        config:
+          allow-override: true
+          override-none: true
+      cloud:
+        services:
+          registrationMethod: direct
+        refresh:
+          refreshable: false
+        kubernetes:
+          discovery:
+            enabled: false
+    management:
+      security:
+        enabled: false
+      endpoint:
+        metrics:
+          enabled: true
+        prometheus:
+          enabled: true
+      endpoints:
+        web:
+          exposure:
+            include: '*'
+      metrics:
+        export:
+          prometheus:
+            enabled: true
+    wavefront:
+      application:
+        name: pet-clinic-microservices-local
+    logging:
+      level:
+        org:
+          springframework: INFO
+          hibernate:
+            SQL: DEBUG
+            type:
+              descriptor:
+                sql:
+                  BasicBinder: TRACE
+          jdbc:
+            core:
+              springframework.JdbcTemplate: DEBUG
+              springframework.StatementCreatorUtils: TRACE
+    eureka:
+      client:
+        fetchRegistry: false
+        registerWithEureka: false
+      instance:
+        hostname: eureka
+---

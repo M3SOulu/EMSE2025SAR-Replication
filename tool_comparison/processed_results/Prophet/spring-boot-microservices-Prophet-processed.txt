@@ -1,0 +1,40 @@
+Components:
+FN configserver 
+FN github_repository 
+FN webservice_registry
+FN auth_server
+FN database_auth_server
+FN web_portal
+FN user_webservice
+FN comments_webservice
+FN task_webservice
+FN api_gateway
+FN user
+
+Connections:
+FN github_repository -> configserver 
+FN configserver -> webservice_registry 
+FN database_auth_server -> auth_server 
+FN configserver -> auth_server 
+FN auth_server -> webservice_registry 
+FN configserver -> web_portal
+FN web_portal -> webservice_registry 
+FN configserver -> user_webservice
+FN user_webservice -> webservice_registry
+FN auth_server -> user_webservice 
+FN configserver -> comments_webservice 
+FN comments_webservice -> webservice_registry 
+FN auth_server -> comments_webservice 
+FN task_webservice -> webservice_registry 
+FN auth_server -> task_webservice 
+FN configserver -> task_webservice 
+FN task_webservice -> comments_webservice
+FN user -> api_gateway
+FN api_gateway -> user 
+FN api_gateway -> auth_server 
+FN database_auth_server -> api_gateway 
+FN api_gateway -> user_webservice
+FN api_gateway -> task_webservice
+FN api_gateway -> web_portal 
+FN configserver -> api_gateway 
+FN webservice_registry -> api_gateway 

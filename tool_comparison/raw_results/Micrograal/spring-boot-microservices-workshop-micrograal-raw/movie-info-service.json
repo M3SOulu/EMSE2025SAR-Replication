@@ -1,0 +1,17 @@
+{
+		"name" : {
+			"name" : "movie-info-service",
+			"fullName" : "movie-info-service"
+			}
+		,
+		"entities" : [
+			]
+		,
+		"restCalls" : [
+			]
+		,
+		"endpoints" : [
+			]
+		
+		}
+	

@@ -1,0 +1,35 @@
+// Topology Graph
+graph {
+	outside
+	"docker host"
+	_eureka
+	_customer
+	_catalog
+	_order
+	_zuul
+	_turbine
+	outside -- _eureka [contstraint=false]
+	outside -- _zuul [contstraint=false]
+	outside -- _turbine [contstraint=false]
+	"docker host" -- _eureka [contstraint=false]
+	"docker host" -- _customer [contstraint=false]
+	"docker host" -- _catalog [contstraint=false]
+	"docker host" -- _order [contstraint=false]
+	"docker host" -- _zuul [contstraint=false]
+	"docker host" -- _turbine [contstraint=false]
+	_eureka -- _customer [contstraint=false]
+	_eureka -- _catalog [contstraint=false]
+	_eureka -- _order [contstraint=false]
+	_eureka -- _zuul [contstraint=false]
+	_eureka -- _turbine [contstraint=false]
+	_customer -- _catalog [contstraint=false]
+	_customer -- _order [contstraint=false]
+	_customer -- _zuul [contstraint=false]
+	_customer -- _turbine [contstraint=false]
+	_catalog -- _order [contstraint=false]
+	_catalog -- _zuul [contstraint=false]
+	_catalog -- _turbine [contstraint=false]
+	_order -- _zuul [contstraint=false]
+	_order -- _turbine [contstraint=false]
+	_zuul -- _turbine [contstraint=false]
+}

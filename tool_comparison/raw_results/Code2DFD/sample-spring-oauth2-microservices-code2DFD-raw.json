@@ -1,0 +1,279 @@
+{
+    "microservices": {
+        "0": {
+            "servicename": "auth-server",
+            "type": "service",
+            "stereotype_instances": [
+                "resource_server",
+                "authorization_server",
+                "local_logging",
+                "token_server",
+                "infrastructural"
+            ],
+            "tagged_values": [
+                [
+                    "Authorization Server",
+                    "Spring OAuth2"
+                ],
+                [
+                    "Port",
+                    9999
+                ]
+            ]
+        },
+        "1": {
+            "servicename": "discovery-server",
+            "type": "service",
+            "stereotype_instances": [
+                "infrastructural",
+                "service_discovery"
+            ],
+            "tagged_values": [
+                [
+                    "Service Discovery",
+                    "Eureka"
+                ],
+                [
+                    "Port",
+                    8761
+                ]
+            ]
+        },
+        "2": {
+            "servicename": "account-service",
+            "type": "service",
+            "stereotype_instances": [
+                "internal",
+                "resource_server",
+                "pre_authorized_endpoints"
+            ],
+            "tagged_values": [
+                [
+                    "Port",
+                    8082
+                ]
+            ]
+        },
+        "3": {
+            "servicename": "customer-service",
+            "type": "service",
+            "stereotype_instances": [
+                "internal",
+                "resource_server",
+                "pre_authorized_endpoints",
+                "local_logging"
+            ],
+            "tagged_values": [
+                [
+                    "Port",
+                    8083
+                ]
+            ]
+        },
+        "4": {
+            "servicename": "gateway-server",
+            "type": "service",
+            "stereotype_instances": [
+                "gateway",
+                "load_balancer",
+                "token_server",
+                "basic_authentication",
+                "infrastructural"
+            ],
+            "tagged_values": [
+                [
+                    "Gateway",
+                    "Zuul"
+                ],
+                [
+                    "Load Balancer",
+                    "Ribbon"
+                ],
+                [
+                    "Port",
+                    8765
+                ]
+            ]
+        }
+    },
+    "information_flows": {
+        "0": {
+            "sender": "database-auth-server",
+            "receiver": "auth-server",
+            "stereotype_instances": [
+                "jdbc",
+                "plaintext_credentials_link"
+            ],
+            "tagged_values": [
+                [
+                    "Password",
+                    "oauth2"
+                ],
+                [
+                    "Username",
+                    "oauth2"
+                ]
+            ]
+        },
+        "1": {
+            "sender": "database-gateway-server",
+            "receiver": "gateway-server",
+            "stereotype_instances": [
+                "jdbc",
+                "plaintext_credentials_link"
+            ],
+            "tagged_values": [
+                [
+                    "Username",
+                    "default"
+                ],
+                [
+                    "Password",
+                    "default"
+                ]
+            ]
+        },
+        "2": {
+            "sender": "account-service",
+            "receiver": "discovery-server",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "3": {
+            "sender": "customer-service",
+            "receiver": "discovery-server",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "4": {
+            "sender": "auth-server",
+            "receiver": "discovery-server",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "5": {
+            "sender": "discovery-server",
+            "receiver": "gateway-server",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "7": {
+            "sender": "user",
+            "receiver": "gateway-server",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "8": {
+            "sender": "gateway-server",
+            "receiver": "user",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "9": {
+            "sender": "gateway-server",
+            "receiver": "account-service",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "10": {
+            "sender": "gateway-server",
+            "receiver": "auth-server",
+            "stereotype_instances": [
+                "restful_http"
+            ]
+        },
+        "11": {
+            "sender": "auth-server",
+            "receiver": "account-service",
+            "stereotype_instances": [
+                "auth_provider",
+                "restful_http"
+            ],
+            "tagged_values": []
+        },
+        "12": {
+            "sender": "auth-server",
+            "receiver": "customer-service",
+            "stereotype_instances": [
+                "auth_provider",
+                "restful_http"
+            ],
+            "tagged_values": []
+        },
+        "13": {
+            "sender": "gateway-server",
+            "receiver": "gateway-server",
+            "stereotype_instances": [
+                "auth_provider",
+                "restful_http"
+            ],
+            "tagged_values": []
+        }
+    },
+    "external_components": {
+        "0": {
+            "name": "database-auth-server",
+            "type": "external_component",
+            "stereotype_instances": [
+                "external_database",
+                "exitpoint",
+                "entrypoint",
+                "plaintext_credentials"
+            ],
+            "tagged_values": [
+                [
+                    "Password",
+                    "oauth2"
+                ],
+                [
+                    "Username",
+                    "oauth2"
+                ],
+                [
+                    "Database",
+                    "MySQL"
+                ]
+            ]
+        },
+        "1": {
+            "name": "database-gateway-server",
+            "type": "external_component",
+            "stereotype_instances": [
+                "external_database",
+                "exitpoint",
+                "entrypoint",
+                "plaintext_credentials"
+            ],
+            "tagged_values": [
+                [
+                    "Username",
+                    "default"
+                ],
+                [
+                    "Password",
+                    "default"
+                ],
+                [
+                    "Database",
+                    "MySQL"
+                ]
+            ]
+        },
+        "2": {
+            "name": "user",
+            "type": "external_component",
+            "stereotype_instances": [
+                "exitpoint",
+                "user_stereotype",
+                "entrypoint"
+            ]
+        }
+    }
+}

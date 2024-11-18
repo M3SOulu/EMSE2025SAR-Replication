@@ -1,0 +1,48 @@
+Components:
+TP config_server (config-server)
+TP github_repository (github-repository)
+TP discovery_service (discovery-service)
+TP rabbitmq (rabbitmq)
+TP monitor_dashboard (monitor-dashboard)
+TP turbine (turbine)
+TP statement_service (statement-service)
+TP card_service (card-service)
+TP card_statement_composite (card-statement-composite)
+TP edge_server (edge-server)
+TP user (user)
+
+Connections:
+TP github_repository -> config_server 
+TP config_server -> discovery_service 
+TP monitor_dashboard -> discovery_service 
+TP config_server -> monitor_dashboard 
+TP turbine -> discovery_service 
+TP rabbitmq -> turbine 
+TP config_server -> turbine 
+TP turbine -> monitor_dashboard 
+TP statement_service -> discovery_service 
+TP config_server -> statement_service 
+TP card_service -> discovery_service 
+TP config_server -> card_service 
+TP card_statement_composite -> discovery_service 
+FN card_statement_composite -> card_service 
+FN card_statement_composite -> statement_service 
+TP config_server -> card_statement_composite 
+FN card_statement_composite -> rabbitmq 
+TP discovery_service -> edge_server 
+TP user -> edge_server 
+TP edge_server -> user 
+TP config_server -> edge_server 
+TP edge_server -> card_service 
+TP edge_server -> statement_service 
+TP edge_server -> card_statement_composite 
+
+Endpoints:
+FN(4) card_service: "/api", "/api/cards", "/api/card/{cardId}", "/api/new-card"
+FN(4) statement_service: "/api", "api/statement/{statementId}", "api/statement", "api/statements"
+FN(8) card_statement_composite: "api", "/api/cards", "/api/card/{cardId}", "/api/new-card", "api/statement/{statementId}", "api/statement", "api/statements", "/api/statement-by-card"
+FN(1) monitor_dashboard: "/"
+
+FP:
+turbine -> rabbitmq 
+monitor -> rabbitmq

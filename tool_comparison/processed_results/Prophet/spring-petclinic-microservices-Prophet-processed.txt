@@ -1,0 +1,43 @@
+Components:
+FN config_server 
+FN github_repository 
+FN discovery_server
+FN tracing_server
+FN admin_server
+FN prometheus_server
+FN grafana_server
+FN customers_service
+FN vets_service
+FN visits_service
+FN api_gateway
+FN user
+
+Connections:
+FN github_repository -> config_server 
+FN config_server -> discovery_server 
+FN tracing_server -> discovery_server 
+FN config_server -> tracing_server 
+FN admin_server -> discovery_server 
+FN config_server -> admin_server 
+FN prometheus_server -> grafana_server 
+FN customers_service -> discovery_server 
+FN config_server -> customers_service 
+FN customers_service -> tracing_server 
+FN customers_service -> prometheus_server 
+FN vets_service -> discovery_server 
+FN config_server -> vets_service 
+FN vets_service -> tracing_server 
+FN vets_service -> prometheus_server 
+FN visits_service -> discovery_server 
+FN config_server -> visits_service 
+FN visits_service -> tracing_server 
+FN visits_service -> prometheus_server 
+FN discovery_server -> api_gateway 
+FN user -> api_gateway 
+FN api_gateway -> user 
+FN config_server -> api_gateway 
+FN api_gateway -> prometheus_server 
+FN api_gateway -> vets_service 
+FN api_gateway -> visits_service 
+FN api_gateway -> customers_service 
+FN api_gateway -> tracing_server 

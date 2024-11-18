@@ -1,0 +1,40 @@
+Components:
+TP configserver (configserver)
+FN github_repository 
+TP webservice_registry (eurekaregistry)
+TP auth_server (authserver)
+FN database_auth_server
+TP web_portal (webportal)
+TP user_webservice (userwebservice)
+TP comments_webservice (commentswebservice)
+TP task_webservice (taskwebservice)
+TP api_gateway (apigateway)
+FN user
+
+Connections:
+FN github_repository -> configserver 
+TP configserver -> webservice_registry 
+FN database_auth_server -> auth_server 
+TP configserver -> auth_server 
+FN auth_server -> webservice_registry 
+TP configserver -> web_portal
+TP web_portal -> webservice_registry 
+TP configserver -> user_webservice
+TP user_webservice -> webservice_registry
+TP auth_server -> user_webservice 
+TP configserver -> comments_webservice 
+TP comments_webservice -> webservice_registry 
+TP auth_server -> comments_webservice 
+TP task_webservice -> webservice_registry 
+TP auth_server -> task_webservice 
+TP configserver -> task_webservice 
+FN task_webservice -> comments_webservice
+FN user -> api_gateway
+FN api_gateway -> user 
+TP api_gateway -> auth_server 
+FN database_auth_server -> api_gateway 
+FN api_gateway -> user_webservice
+FN api_gateway -> task_webservice
+FN api_gateway -> web_portal 
+TP configserver -> api_gateway 
+TP webservice_registry -> api_gateway 

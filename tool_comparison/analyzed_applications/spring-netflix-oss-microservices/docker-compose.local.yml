@@ -1,0 +1,44 @@
+version: '3.3'
+services:
+  config-server:
+    ports:
+     - "9090:9090"
+     
+  discovery-service:
+    ports:
+     - "8761:8761"
+     
+  edge-server:
+    ports:
+     - "8765:8765"
+     
+  card:
+    ports:
+     - "8080:8080"
+
+  statement:
+    ports:
+     - "8080:8080"
+        
+  card-statement:
+    ports:
+     - "8080:8080"
+     
+  rabbitmq:
+    ports:
+     - "5672:5672"
+     - "15672:15672"
+
+  monitor:
+    ports:
+     - "8179:8179"
+    
+  turbine:
+    ports:
+     - "8989:8989"
+  networks:
+    front-tier:
+      driver: bridge
+    back-tier:
+      driver: bridge
+      internal: true
