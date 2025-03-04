@@ -18,3 +18,9 @@ This repository contains all data necessary to replicate the results presented i
         - ```helper_scripts/```: Some helper scripts we used to analyze the results and get the tools running initially.
         - ```tool_configs/```: Configuration information for some of the tools.
         - ```tool_execution_scripts/```: Shell scripts for each tool that can be used to execute the tool on each application in the dataset.
+
+## Related repositories
+
+Forks of all compared tools are preserved in the [Tools repository](https://github.com/M3SOulu/EMSE2025SAR-Tools)
+
+Forks of all considered benchmarks are preserved in the [Benchmark repository](https://github.com/M3SOulu/EMSE2025SAR-Benchmarks)
